@@ -1,0 +1,16 @@
+---
+interface Props {
+  activeMarket?: string;
+}
+
+const { activeMarket = 'US' } = Astro.props;
+---
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">sum<span>.money</span></a>
+    <nav class="header-nav">
+      <a href="/us/mortgage" class:list={["market-badge", { active: activeMarket === 'US' }]}>US</a>
+      <a href="/de/hypothekenrechner" class:list={["market-badge", { active: activeMarket === 'DE' }]}>DE</a>
+    </nav>
+  </div>
+</header>

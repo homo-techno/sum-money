@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import MortgageCalculator from '../../components/MortgageCalculator.tsx';
+import CalculatorContent from '../../components/CalculatorContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How accurate is this calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It uses the same amortization formula as banks: M = P[r(1+r)^n]/[(1+r)^n-1]. The default interest rate and property tax are current averages for the US market. Your actual rate depends on your credit score, lender, and loan type. Use this as a starting point, then get pre-approved for your exact number."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I put 20% down to avoid PMI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not necessarily. PMI costs 0.5-1% of the loan annually, but waiting years to save 20% means paying rent instead of building equity. Run both scenarios in the calculator to compare monthly payments. Often the difference is smaller than expected."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if interest rates change after I calculate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rates move daily. The calculator uses today's average, but you can manually enter any rate under More Options. Try your expected rate plus or minus 1% to see sensitivity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I trust this for a non-US market?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each market has its own calculator with its own formulas. The German Hypothekenrechner calculates Zinsbindung and Kaufnebenkosten. These aren't translations — they're different financial products."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the calculator ask for income instead of loan amount?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because the question 'can I afford this house?' starts with your income, not with the bank's offer. Most calculators assume you already know how much you want to borrow. This one helps you figure that out."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="Free Mortgage Calculator — sum.money"
+  description="Enter your income and debt payments — see the maximum home price you can afford. Instant results, no registration, shareable link."
+  schema={schema}
+>
+  <Header activeMarket="US" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span><a href="/us">US</a><span>›</span>Mortgage Calculator
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">Free Mortgage Calculator</h1>
+    <p class="subtitle animate-in delay-2">Enter your income and debt payments — see the maximum home price you can afford.</p>
+    <MortgageCalculator client:load />
+    <CalculatorContent />
+  </main>
+</BaseLayout>

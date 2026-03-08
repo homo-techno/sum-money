@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+---
+<BaseLayout
+  title="Disclaimer — sum.money"
+  description="The calculators on sum.money are for informational and educational purposes only."
+>
+  <Header />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span>Disclaimer
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">Disclaimer</h1>
+
+    <section class="content-section animate-in delay-2">
+      <p>The calculators on sum.money are provided for <strong>informational and educational purposes only</strong>. They do not constitute financial, tax, legal, or investment advice.</p>
+
+      <p>While we strive to keep formulas and default values accurate and up-to-date, results are estimates based on simplified models. Actual loan terms, tax obligations, and financial outcomes depend on factors not captured by any calculator — including your credit history, lender policies, local regulations, and market conditions at the time of your transaction.</p>
+
+      <p><strong>Do not make financial decisions based solely on calculator results.</strong> Always consult a qualified financial advisor, tax professional, or mortgage lender before committing to any financial obligation.</p>
+
+      <h3>No warranty</h3>
+      <p>sum.money provides these tools "as is" without warranty of any kind, express or implied. We do not guarantee the accuracy, completeness, or timeliness of any calculation.</p>
+
+      <h3>Market-specific formulas</h3>
+      <p>Each calculator uses formulas specific to its market (country). Default values such as interest rates, tax rates, and insurance estimates are based on publicly available averages and may not reflect your specific situation. These defaults are updated periodically but may lag behind current market conditions.</p>
+
+      <h3>Third-party links</h3>
+      <p>Links to external websites or services are provided for convenience only. sum.money does not endorse, verify, or assume responsibility for external content.</p>
+
+      <h3>Data and privacy</h3>
+      <p>sum.money does not collect personal data. Calculations run entirely in your browser. No input data is stored on our servers. We do not use cookies. See our <a href="/privacy">Privacy Policy</a> for details.</p>
+    </section>
+  </main>
+</BaseLayout>

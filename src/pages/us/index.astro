@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+---
+<BaseLayout
+  title="US Financial Calculators — sum.money"
+  description="Free financial calculators for the United States. Mortgage, income tax, and more."
+>
+  <Header activeMarket="US" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span>US
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">Financial Calculators for the United States</h1>
+    <p class="subtitle animate-in delay-2">US-specific formulas, rates, and tax rules.</p>
+
+    <section class="content-section animate-in delay-3">
+      <div class="related-grid">
+        <a href="/us/mortgage" class="related-card">
+          <div class="related-card-title">🏠 Mortgage Calculator</div>
+          <div class="related-card-desc">Enter your income — see the maximum home price you can afford.</div>
+        </a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
