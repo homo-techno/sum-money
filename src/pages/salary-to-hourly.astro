@@ -1,15 +1,69 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
+import SalaryToHourlyCalculator from '../components/SalaryToHourlyCalculator.tsx';
+import SalaryToHourlyContent from '../components/SalaryToHourlyContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Should I use 52 weeks or fewer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use 52 for the standard calculation. If you want to see your effective rate excluding vacation time, either reduce weeks to 50 or 48, or enter your paid vacation days under More options."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this account for taxes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — this calculates your gross (pre-tax) hourly rate. To estimate your after-tax rate, multiply the result by (1 - your effective tax rate). For example, if your effective rate is 25%, multiply by 0.75."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I convert hourly to salary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiply your hourly rate by the hours you work per week, then multiply by 52. For example, $25/hr × 40 hours × 52 weeks = $52,000/year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What about overtime and benefits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This calculator uses base salary only. Overtime, bonuses, stock options, and benefits aren't included. For a true comparison, estimate the dollar value of benefits and add it to the salary."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my effective hourly rate higher with vacation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because paid vacation means you receive the same annual salary for fewer working hours. If you earn $75,000 and work 48 weeks instead of 52, your effective rate increases from $36.06/hr to $39.06/hr."
+      }
+    }
+  ]
+};
 ---
-<BaseLayout title="Salary to Hourly Calculator — sum.money" description="Convert salary to hourly rate.">
-  <Header />
-  <div class="breadcrumbs animate-in"><a href="/">Home</a><span>›</span>Salary to Hourly</div>
+<BaseLayout
+  title="Salary to Hourly Calculator — sum.money"
+  description="Convert annual salary to hourly rate instantly. Compare two job offers side by side. Free, no registration."
+  schema={schema}
+>
+  <Header activeMarket="" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span>Salary to Hourly
+  </div>
   <main>
     <h1 class="animate-in delay-1">Salary to Hourly Calculator</h1>
-    <section class="content-section animate-in delay-2">
-      <p>Coming soon.</p>
-      <p><a href="/">← Back to Home</a></p>
-    </section>
+    <p class="subtitle animate-in delay-2">Convert your annual salary to an hourly rate — or compare two job offers.</p>
+    <SalaryToHourlyCalculator client:load />
+    <SalaryToHourlyContent />
   </main>
 </BaseLayout>

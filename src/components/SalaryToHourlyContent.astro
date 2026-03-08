@@ -1,0 +1,206 @@
+<!-- ═══════════════════════════════════════ -->
+<!-- ZONE 2: Content below result           -->
+<!-- ═══════════════════════════════════════ -->
+
+<!-- ── HOW TO USE ── -->
+<div class="content-section reveal">
+  <div class="section-divider"></div>
+</div>
+
+<section class="content-section reveal">
+  <h2>How to Use This Calculator</h2>
+
+  <h3>Convert tab</h3>
+  <p>Enter your <strong>annual salary</strong> and <strong>hours per week</strong>. The calculator instantly shows your hourly rate, plus monthly, biweekly, and daily breakdowns. If you have paid vacation, expand <strong>"More options"</strong> and enter your <strong>vacation days</strong> — this reduces the working weeks and shows your true effective hourly rate (which is higher than the nominal one).</p>
+
+  <h3>Compare Offers tab</h3>
+  <p>Got two job offers? Enter <strong>Offer A</strong> and <strong>Offer B</strong> — each with salary and expected hours per week. The calculator shows which offer pays more per hour. A $85K job at 45 hours/week might pay less per hour than a $75K job at 40 hours — this tab reveals that.</p>
+
+  <h3>Share your result</h3>
+  <p>Every input is encoded in the URL. Click <strong>Share</strong>, send the link to your partner — they'll see your exact numbers. No re-entering, no screenshots.</p>
+</section>
+
+<!-- ── FORMULA ── -->
+<section class="content-section reveal">
+  <h2>The Formula</h2>
+  <p>The hourly rate is calculated as:</p>
+  <div class="formula-box">
+    Hourly Rate = Annual Salary &divide; (Hours per Week &times; Working Weeks per Year)
+  </div>
+  <p>If you have paid vacation:</p>
+  <div class="formula-box">
+    Working Weeks = Weeks per Year &minus; (Vacation Days &divide; 5)
+  </div>
+  <p>Paid vacation doesn't change your salary, but it changes your <strong>effective hourly rate</strong>. If you earn $75,000 with 4 weeks of paid vacation, your nominal rate is $36.06/hr (52 weeks), but your effective rate is $39.06/hr (48 working weeks) — because you're being paid the same amount for fewer hours of work.</p>
+  <p>The <strong>Compare Offers</strong> tab uses the same formula for each offer, so you compare the true hourly value of different salary + hours combinations.</p>
+</section>
+
+<!-- ── EXAMPLE ── -->
+<section class="content-section reveal">
+  <h2>Example</h2>
+
+  <div class="example-box">
+    <h4>Maria — comparing two job offers</h4>
+    <p>Maria has two offers. Offer A: $75,000/year, standard 40-hour week. Offer B: $85,000/year, but the team typically works 45 hours.</p>
+
+    <h3>Convert tab</h3>
+    <div class="example-data">
+      <div class="example-row"><span class="label">Annual salary</span><span class="value">$75,000</span></div>
+      <div class="example-row"><span class="label">Hours per week</span><span class="value">40</span></div>
+      <div class="example-row"><span class="label">Hourly rate</span><span class="value">$36.06/hr</span></div>
+      <div class="example-row"><span class="label">Monthly</span><span class="value">$6,250</span></div>
+      <div class="example-row"><span class="label">Biweekly</span><span class="value">$2,885</span></div>
+    </div>
+
+    <h3>Compare Offers tab</h3>
+    <div class="example-data">
+      <div class="example-row"><span class="label">Offer A ($75K, 40hr/wk)</span><span class="value">$36.06/hr</span></div>
+      <div class="example-row"><span class="label">Offer B ($85K, 45hr/wk)</span><span class="value">$36.32/hr</span></div>
+      <div class="example-row"><span class="label">Difference</span><span class="value">$0.26/hr — almost identical</span></div>
+    </div>
+    <p>The $10K higher salary almost disappears when you divide by the extra hours. Maria chose Offer A — same hourly rate with 5 hours more of free time each week. Over a year, that's <strong>260 extra hours</strong> of life.</p>
+
+    <p>She sent the link to her partner. The numbers made the decision obvious.</p>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="content-section reveal">
+  <h2>FAQ</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Should I use 52 weeks or fewer?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Use 52 for the standard calculation. If you want to see your effective rate excluding vacation time, either reduce weeks to 50 or 48, or enter your paid vacation days under "More options." Both approaches work — the vacation days method is more precise since it handles odd numbers of days.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Does this account for taxes?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        No — this calculates your gross (pre-tax) hourly rate. Tax rates vary by country, state, and filing status. To estimate your after-tax rate, multiply the result by (1 - your effective tax rate). For example, if your effective rate is 25%, multiply by 0.75.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      How do I convert hourly to salary?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Multiply your hourly rate by the hours you work per week, then multiply by 52 (or your working weeks per year). For example, $25/hr × 40 hours × 52 weeks = $52,000/year. Enter this salary into the calculator to see the monthly and biweekly breakdown.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      What about overtime and benefits?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        This calculator uses base salary only. Overtime, bonuses, stock options, and benefits (health insurance, 401k match) aren't included in the hourly rate. For a true comparison between offers, you'd need to estimate the dollar value of benefits. A $75K job with $15K in benefits has a total compensation of $90K — divide that by your working hours for the full picture.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Why is my effective hourly rate higher with vacation?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Because paid vacation means you receive the same annual salary for fewer working hours. If you earn $75,000 and work 52 weeks, your rate is $36.06/hr. With 4 weeks of paid vacation (20 days), you only work 48 weeks but still earn $75,000 — so your effective rate is $39.06/hr. The vacation is essentially extra pay.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RELATED CALCS ── -->
+<section class="content-section reveal">
+  <h2>Related Calculators</h2>
+  <div class="related-grid">
+    <a href="/us/income-tax" class="related-card">
+      <div class="related-card-title">📋 Income Tax Calculator</div>
+      <div class="related-card-desc">How much of your salary goes to federal and state taxes.</div>
+    </a>
+    <a href="/compound-interest" class="related-card">
+      <div class="related-card-title">📈 Compound Interest</div>
+      <div class="related-card-desc">See how your savings grow over time.</div>
+    </a>
+    <a href="/us/mortgage" class="related-card">
+      <div class="related-card-title">🏠 Mortgage Calculator</div>
+      <div class="related-card-desc">How much house can you afford with your salary.</div>
+    </a>
+    <a href="/loan-calculator" class="related-card">
+      <div class="related-card-title">💰 Loan Calculator</div>
+      <div class="related-card-desc">Monthly payments and total cost on any loan.</div>
+    </a>
+  </div>
+</section>
+
+<!-- ── EMBED ── -->
+<div class="embed-section reveal">
+  <h3>Add This Calculator to Your Website</h3>
+  <p>Embed the sum.money salary calculator on your site. Free, responsive, always up-to-date.</p>
+  <div class="embed-code">&lt;iframe src="https://sum.money/embed/salary-to-hourly" width="100%" height="600"&gt;&lt;/iframe&gt;</div>
+</div>
+
+<!-- ── FAQ Accordion + Scroll Reveal scripts ── -->
+<script is:inline>
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(function(q) {
+  q.addEventListener('click', function() {
+    var item = q.parentElement;
+    var answer = item.querySelector('.faq-answer');
+    var isOpen = item.classList.contains('open');
+
+    document.querySelectorAll('.faq-item').forEach(function(fi) {
+      fi.classList.remove('open');
+      fi.querySelector('.faq-answer').style.maxHeight = '0';
+      fi.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      q.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// Scroll reveal
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+// Track related calc clicks
+document.querySelectorAll('.related-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    try {
+      var payload = { event: 'related_click', timestamp: Date.now(), target: card.getAttribute('href'), url: location.pathname };
+      if (navigator.sendBeacon) navigator.sendBeacon('/api/track', JSON.stringify(payload));
+    } catch(e) {}
+  });
+});
+</script>
