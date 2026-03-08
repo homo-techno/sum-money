@@ -1,0 +1,202 @@
+<!-- ═══════════════════════════════════════ -->
+<!-- ZONE 2: Content below result           -->
+<!-- ═══════════════════════════════════════ -->
+
+<!-- ── HOW TO USE ── -->
+<div class="content-section reveal">
+  <div class="section-divider"></div>
+</div>
+
+<section class="content-section reveal">
+  <h2>How to Use This Calculator</h2>
+
+  <p>Enter your <strong>loan amount</strong> and <strong>interest rate</strong>. The calculator instantly shows your payment amount, total interest, total cost, and payoff date.</p>
+
+  <p>Need to adjust the term or payment schedule? Expand <strong>"More options"</strong> to change the <strong>loan term</strong> (1–30 years) or switch between <strong>monthly</strong> and <strong>biweekly</strong> payments. Biweekly payments result in 26 payments per year instead of 12 — you'll pay off the loan faster and save on interest.</p>
+
+  <h3>Share your result</h3>
+  <p>Every input is encoded in the URL. Click <strong>Share</strong>, send the link — they'll see your exact numbers. No re-entering, no screenshots.</p>
+</section>
+
+<!-- ── FORMULA ── -->
+<section class="content-section reveal">
+  <h2>The Formula</h2>
+  <p>The payment is calculated using the standard annuity formula:</p>
+  <div class="formula-box">
+    M = P &times; [r(1 + r)<sup>n</sup>] &divide; [(1 + r)<sup>n</sup> &minus; 1]
+  </div>
+  <p>Where:</p>
+  <ul>
+    <li><strong>M</strong> = payment amount (monthly or biweekly)</li>
+    <li><strong>P</strong> = loan principal (amount borrowed)</li>
+    <li><strong>r</strong> = periodic interest rate (annual rate &divide; number of periods per year)</li>
+    <li><strong>n</strong> = total number of payments (years &times; periods per year)</li>
+  </ul>
+  <p>For monthly payments, <strong>r</strong> = annual rate &divide; 12 and <strong>n</strong> = years &times; 12. For biweekly, <strong>r</strong> = annual rate &divide; 26 and <strong>n</strong> = years &times; 26.</p>
+  <p><strong>Total interest</strong> = (M &times; n) &minus; P. This is the true cost of borrowing — the amount you pay above the original loan.</p>
+</section>
+
+<!-- ── EXAMPLE ── -->
+<section class="content-section reveal">
+  <h2>Example</h2>
+
+  <div class="example-box">
+    <h4>Alex — financing a used car</h4>
+    <p>Alex is buying a used car for $18,000. The dealer offers 6.5% APR over 5 years with monthly payments.</p>
+
+    <div class="example-data">
+      <div class="example-row"><span class="label">Loan amount</span><span class="value">$18,000</span></div>
+      <div class="example-row"><span class="label">Interest rate</span><span class="value">6.5%</span></div>
+      <div class="example-row"><span class="label">Loan term</span><span class="value">5 years</span></div>
+      <div class="example-row"><span class="label">Monthly payment</span><span class="value">$352.19</span></div>
+      <div class="example-row"><span class="label">Total interest</span><span class="value">$3,131</span></div>
+      <div class="example-row"><span class="label">Total paid</span><span class="value">$21,131</span></div>
+    </div>
+
+    <p>Alex then checks: what if he shortens the term to 3 years?</p>
+
+    <div class="example-data">
+      <div class="example-row"><span class="label">3-year monthly payment</span><span class="value">$551.68</span></div>
+      <div class="example-row"><span class="label">3-year total interest</span><span class="value">$1,861</span></div>
+      <div class="example-row"><span class="label">Savings vs 5-year</span><span class="value">$1,271 less interest</span></div>
+    </div>
+    <p>Higher monthly payment, but $1,271 saved. Alex chose the 3-year term — the extra $199/month was worth it to be debt-free sooner and pay less overall.</p>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="content-section reveal">
+  <h2>FAQ</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      What's the difference between APR and interest rate?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        The interest rate is the cost of borrowing the principal. APR (Annual Percentage Rate) includes the interest rate plus fees and other costs. For this calculator, enter the APR if your lender provides one — it gives a more accurate picture of your true cost.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Why does a shorter term save money on interest?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        With a shorter term, you make fewer payments and your balance decreases faster, so there's less principal for interest to accumulate on. A $25,000 loan at 6% costs $3,999 in interest over 5 years, but $8,306 over 10 years — more than double, for the same loan amount and rate.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      How do biweekly payments help?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        With biweekly payments, you make 26 half-payments per year instead of 12 full payments. That's equivalent to 13 monthly payments instead of 12 — one extra payment per year. This reduces your principal faster and saves interest over the life of the loan.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Does this include taxes or insurance?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        No — this calculates principal and interest only. For auto loans, you may also have sales tax (usually rolled into the loan amount). For personal loans, there are typically no additional costs beyond what's included in the APR. If your loan has fees, add them to the loan amount for a more realistic estimate.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Can I use this for any type of loan?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Yes — this works for car loans, personal loans, student loans, business loans, or any fixed-rate amortizing loan. It uses the standard annuity formula that applies to all fixed-rate loans with regular payments. For mortgages, try our dedicated mortgage calculator which also factors in property tax, insurance, and PMI.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RELATED CALCS ── -->
+<section class="content-section reveal">
+  <h2>Related Calculators</h2>
+  <div class="related-grid">
+    <a href="/us/mortgage" class="related-card">
+      <div class="related-card-title">🏠 Mortgage Calculator</div>
+      <div class="related-card-desc">How much house can you afford — with taxes and insurance.</div>
+    </a>
+    <a href="/compound-interest" class="related-card">
+      <div class="related-card-title">📈 Compound Interest</div>
+      <div class="related-card-desc">See how your savings grow over time.</div>
+    </a>
+    <a href="/salary-to-hourly" class="related-card">
+      <div class="related-card-title">🕐 Salary to Hourly</div>
+      <div class="related-card-desc">Convert annual salary to hourly rate.</div>
+    </a>
+  </div>
+</section>
+
+<!-- ── EMBED ── -->
+<div class="embed-section reveal">
+  <h3>Add This Calculator to Your Website</h3>
+  <p>Embed the sum.money loan calculator on your site. Free, responsive, always up-to-date.</p>
+  <div class="embed-code">&lt;iframe src="https://sum.money/embed/loan-calculator" width="100%" height="600"&gt;&lt;/iframe&gt;</div>
+</div>
+
+<!-- ── FAQ Accordion + Scroll Reveal scripts ── -->
+<script is:inline>
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(function(q) {
+  q.addEventListener('click', function() {
+    var item = q.parentElement;
+    var answer = item.querySelector('.faq-answer');
+    var isOpen = item.classList.contains('open');
+
+    document.querySelectorAll('.faq-item').forEach(function(fi) {
+      fi.classList.remove('open');
+      fi.querySelector('.faq-answer').style.maxHeight = '0';
+      fi.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      q.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// Scroll reveal
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+// Track related calc clicks
+document.querySelectorAll('.related-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    try {
+      var payload = { event: 'related_click', timestamp: Date.now(), target: card.getAttribute('href'), url: location.pathname };
+      if (navigator.sendBeacon) navigator.sendBeacon('/api/track', JSON.stringify(payload));
+    } catch(e) {}
+  });
+});
+</script>

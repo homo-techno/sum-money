@@ -1,15 +1,69 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
+import LoanCalculator from '../components/LoanCalculator.tsx';
+import LoanCalculatorContent from '../components/LoanCalculatorContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's the difference between APR and interest rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The interest rate is the cost of borrowing the principal. APR (Annual Percentage Rate) includes the interest rate plus fees and other costs. For this calculator, enter the APR if your lender provides one — it gives a more accurate picture of your true cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does a shorter term save money on interest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With a shorter term, you make fewer payments and your balance decreases faster, so there's less principal for interest to accumulate on. A $25,000 loan at 6% costs $3,999 in interest over 5 years, but $8,306 over 10 years — more than double, for the same loan amount and rate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do biweekly payments help?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With biweekly payments, you make 26 half-payments per year instead of 12 full payments. That's equivalent to 13 monthly payments instead of 12 — one extra payment per year. This reduces your principal faster and saves interest over the life of the loan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this include taxes or insurance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — this calculates principal and interest only. For auto loans, you may also have sales tax. For personal loans, there are typically no additional costs beyond what's included in the APR. If your loan has fees, add them to the loan amount for a more realistic estimate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this for any type of loan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — this works for car loans, personal loans, student loans, business loans, or any fixed-rate amortizing loan. It uses the standard annuity formula that applies to all fixed-rate loans with regular payments."
+      }
+    }
+  ]
+};
 ---
-<BaseLayout title="Loan Calculator — sum.money" description="Free loan calculator.">
-  <Header />
-  <div class="breadcrumbs animate-in"><a href="/">Home</a><span>›</span>Loan Calculator</div>
+<BaseLayout
+  title="Loan Calculator — sum.money"
+  description="Calculate monthly or biweekly loan payments instantly. See total interest, total cost, and payoff date. Works for car loans, personal loans, and more. Free, no registration."
+  schema={schema}
+>
+  <Header activeMarket="" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span>Loan Calculator
+  </div>
   <main>
     <h1 class="animate-in delay-1">Loan Calculator</h1>
-    <section class="content-section animate-in delay-2">
-      <p>Coming soon.</p>
-      <p><a href="/">← Back to Home</a></p>
-    </section>
+    <p class="subtitle animate-in delay-2">Calculate your loan payment — see total interest and payoff date.</p>
+    <LoanCalculator client:load />
+    <LoanCalculatorContent />
   </main>
 </BaseLayout>
