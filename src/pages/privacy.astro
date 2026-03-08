@@ -2,14 +2,52 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 ---
-<BaseLayout title="Privacy Policy — sum.money" description="Privacy policy for sum.money.">
+<BaseLayout title="Privacy Policy — sum.money" description="Privacy policy for sum.money. No cookies, no accounts, no personal data collection.">
   <Header />
-  <div class="breadcrumbs animate-in"><a href="/">Home</a><span>›</span>Privacy</div>
+  <div class="breadcrumbs animate-in"><a href="/">Home</a><span>›</span>Privacy Policy</div>
   <main>
     <h1 class="animate-in delay-1">Privacy Policy</h1>
-    <section class="content-section animate-in delay-2">
-      <p>Coming soon. sum.money does not use cookies or collect personal data. All calculations run entirely in your browser.</p>
-      <p><a href="/">← Back to Home</a></p>
+    <p class="subtitle animate-in delay-2">Last updated: March 8, 2026</p>
+
+    <section class="content-section animate-in delay-3">
+      <p>sum.money is a free website with financial calculators. This policy explains what data we collect (very little) and how we handle it.</p>
+
+      <h2>What We Collect</h2>
+      <p>Nothing personal. We have no user accounts, no registration forms, no email collection, and no login. All calculations run entirely in your browser — your inputs (income, interest rate, loan term, etc.) are never sent to our servers.</p>
+      <p>When you use the Share feature, your calculator inputs are encoded in the URL as plain numbers. These are not personally identifiable information — they are generic financial parameters with no connection to your identity.</p>
+
+      <h2>Analytics</h2>
+      <p>We use <strong>Cloudflare Web Analytics</strong> to understand how many people visit the site and which pages are popular. Cloudflare Web Analytics does not use cookies, does not use tracking pixels, does not collect personal data, and does not track individual users across sites.</p>
+      <p>We also collect anonymous usage events (tab switches, calculator completions, share clicks) via <code>navigator.sendBeacon</code> to improve the product. These events contain no user ID, no IP address, no device fingerprint, and no personally identifiable information. We cannot connect these events to any individual person.</p>
+
+      <h2>Cookies</h2>
+      <p><strong>Right now: zero cookies.</strong> sum.money does not set any cookies — not first-party, not third-party.</p>
+      <p>In the future, if we add advertising (such as Google AdSense), third-party advertising cookies may be introduced. Before that happens, we will add a consent banner for visitors from the EU, UK, Brazil, Canada, and other jurisdictions that require opt-in consent. Advertising scripts will not load until consent is given.</p>
+
+      <h2>Third-Party Services</h2>
+      <p>We use the following third-party services:</p>
+      <ul>
+        <li><strong>Cloudflare</strong> — hosting, CDN, and analytics. Cloudflare may log IP addresses in their infrastructure access logs as part of standard web hosting. This is Cloudflare's infrastructure, not data we collect or have access to. <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare Privacy Policy</a></li>
+      </ul>
+      <p>In the future, we may add:</p>
+      <ul>
+        <li><strong>Google AdSense</strong> — advertising. Google will have its own cookies and data collection, subject to their privacy policy and your consent choices.</li>
+      </ul>
+
+      <h2>Your Data Rights</h2>
+      <p>Under GDPR (EU), UK GDPR, LGPD (Brazil), PIPEDA (Canada), and similar laws, you have the right to access, correct, delete, and export your personal data.</p>
+      <p>Since we do not collect any personal data, these requests are not applicable — there is nothing to access, correct, delete, or export. If you believe we hold any data about you or have questions, contact us and we will respond within 30 days.</p>
+
+      <h2>Children</h2>
+      <p>sum.money is not directed at children under 16. We do not knowingly collect any data from children. Since we collect no personal data from anyone, this is inherently the case.</p>
+
+      <h2>Changes to This Policy</h2>
+      <p>We may update this privacy policy from time to time, particularly if we add new features or third-party services. The "Last updated" date at the top of this page will reflect the most recent revision. Continued use of the site after changes constitutes acceptance of the updated policy.</p>
+
+      <h2>Contact</h2>
+      <p>If you have questions about this privacy policy, email us at <a href="mailto:privacy@sum.money">privacy@sum.money</a>.</p>
+
+      <p style="margin-top: 40px;"><a href="/us/mortgage">← Back to calculator</a></p>
     </section>
   </main>
 </BaseLayout>
