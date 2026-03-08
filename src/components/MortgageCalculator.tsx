@@ -53,10 +53,6 @@ function formatRate(v: number): string {
   return v % 1 === 0 ? v.toString() : v.toFixed(1);
 }
 
-function parseRawValue(raw: string): number {
-  return parseFloat(String(raw).replace(/[^0-9.\-]/g, '')) || 0;
-}
-
 // ── Soft Warning component ──
 function SoftWarning({ fieldId, value }: { fieldId: string; value: number }) {
   const rule = SOFT_WARNINGS[fieldId];
@@ -79,7 +75,7 @@ function SoftWarning({ fieldId, value }: { fieldId: string; value: number }) {
 // ── Input component ──
 function CalcInput({
   id, label, prefix, suffix, defaultValue, helpText, pattern,
-  value, onChange, onWarning,
+  value, onChange,
 }: {
   id: string;
   label: string;
@@ -90,7 +86,7 @@ function CalcInput({
   pattern?: string;
   value: number;
   onChange: (id: string, val: number) => void;
-  onWarning?: boolean;
+
 }) {
   const [displayValue, setDisplayValue] = useState(
     prefix ? formatCurrency(defaultValue) : formatRate(defaultValue)
@@ -247,9 +243,6 @@ export default function MortgageCalculator() {
   // ── State: copy feedback ──
   const [feedbackMsg, setFeedbackMsg] = useState('');
   const [showFeedback, setShowFeedback] = useState(false);
-
-  // ── Tab state storage for transfer ──
-  const savedTabValues = useRef<Record<string, Record<string, number | string>>>({});
 
   // ── Calculation functions ──
   const calcFirstHome = useCallback(() => {
@@ -471,8 +464,9 @@ export default function MortgageCalculator() {
 
   const handleShare = () => {
     const url = buildShareURL(activeTab, getCurrentValues());
-    trackEvent('share_click', { method: navigator.share ? 'native' : 'clipboard', tab: activeTab });
-    if (navigator.share) {
+    const canShare = typeof navigator.share === 'function';
+    trackEvent('share_click', { method: canShare ? 'native' : 'clipboard', tab: activeTab });
+    if (canShare) {
       navigator.share({ title: 'Mortgage Calculator — sum.money', url });
     } else {
       navigator.clipboard.writeText(url).then(() => doShowFeedback('Link copied to clipboard'));
@@ -544,6 +538,7 @@ export default function MortgageCalculator() {
                 <CalcSelect id="fh-term" label="Loan term" options={[
                   { value: '15', label: '15 years' },
                   { value: '20', label: '20 years' },
+                  { value: '25', label: '25 years' },
                   { value: '30', label: '30 years' },
                 ]} value={fhTerm} onChange={handleSelect} />
                 <CalcInput id="fh-down" label="Down payment" suffix="%" defaultValue={10} value={fhDown} onChange={handleInput} />
