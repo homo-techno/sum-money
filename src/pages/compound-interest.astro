@@ -1,15 +1,69 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
+import CompoundInterestCalculator from '../components/CompoundInterestCalculator.tsx';
+import CompoundInterestContent from '../components/CompoundInterestContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What interest rate should I use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on where you put your money. High-yield savings accounts offer 4-5% (as of 2026). Stock market index funds have historically returned 7-10% annually over long periods, but with significant year-to-year variation. CDs and bonds fall in between. Use the rate your specific account or investment offers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between APY and APR?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "APR (Annual Percentage Rate) is the stated rate without compounding. APY (Annual Percentage Yield) includes the effect of compounding. A 5% APR compounded monthly gives an APY of about 5.12%. Banks advertise savings account rates as APY. If you enter APY into this calculator, set compounding to 'Annually' since the compounding is already baked into the number."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should interest compound?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "More frequent compounding means slightly more growth. Monthly compounding at 5% gives $16,470 on $10,000 over 10 years. Daily compounding gives $16,487 — a $17 difference. For most planning purposes, monthly is accurate enough."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this calculator account for taxes and inflation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — and that's intentional. Tax treatment varies by country, account type, and your income bracket. Inflation is unpredictable. To approximate after-inflation returns, subtract 2-3% from your interest rate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does a small rate difference matter so much over time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because compound interest is exponential, not linear. $10,000 at 5% for 30 years becomes $43,219. At 7%, it becomes $76,123 — 76% more, from just a 2% rate difference. The longer the time horizon, the bigger the gap."
+      }
+    }
+  ]
+};
 ---
-<BaseLayout title="Compound Interest Calculator — sum.money" description="Free compound interest calculator.">
-  <Header />
-  <div class="breadcrumbs animate-in"><a href="/">Home</a><span>›</span>Compound Interest</div>
+<BaseLayout
+  title="Compound Interest Calculator — sum.money"
+  description="Calculate how your savings grow with compound interest. Set a savings goal, compare investment options, and see your money work over time. Free, no registration."
+  schema={schema}
+>
+  <Header activeMarket="" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span>Compound Interest
+  </div>
   <main>
     <h1 class="animate-in delay-1">Compound Interest Calculator</h1>
-    <section class="content-section animate-in delay-2">
-      <p>Coming soon.</p>
-      <p><a href="/">← Back to Home</a></p>
-    </section>
+    <p class="subtitle animate-in delay-2">See how your money grows — or find out how much to save for a goal.</p>
+    <CompoundInterestCalculator client:load />
+    <CompoundInterestContent />
   </main>
 </BaseLayout>

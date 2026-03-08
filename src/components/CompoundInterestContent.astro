@@ -1,0 +1,215 @@
+<!-- ═══════════════════════════════════════ -->
+<!-- ZONE 2: Content below result           -->
+<!-- ═══════════════════════════════════════ -->
+
+<!-- ── HOW TO USE ── -->
+<div class="content-section reveal">
+  <div class="section-divider"></div>
+</div>
+
+<section class="content-section reveal">
+  <h2>How to Use This Calculator</h2>
+
+  <h3>Investment Growth tab</h3>
+  <p>The default tab. Enter your <strong>initial deposit</strong> and <strong>monthly contribution</strong> — the calculator shows your total balance after compound interest. Expand <strong>"More options"</strong> to adjust the interest rate, compounding frequency, and time period. The default rate reflects a long-term stock market average. For savings accounts, lower it to 3–5%.</p>
+
+  <h3>Savings Goal tab</h3>
+  <p>Start with your <strong>target amount</strong> and <strong>years to reach it</strong>. The calculator reverse-solves: it tells you how much to save each month. If you already have savings, enter them under "More options" as <strong>starting balance</strong> — this reduces your required monthly contribution.</p>
+
+  <h3>Compare tab</h3>
+  <p>Enter two scenarios side by side: <strong>Option A</strong> and <strong>Option B</strong>. Each row takes an initial deposit, interest rate, and time period. The result shows which option earns more and by how much. Use this to compare a conservative savings account vs. an index fund, or a 10-year vs. 20-year horizon.</p>
+
+  <h3>Share your result</h3>
+  <p>Every input is encoded in the URL. Click <strong>Share</strong>, send the link to your partner — they'll open it and see your exact numbers. No re-entering, no screenshots.</p>
+</section>
+
+<!-- ── FORMULA ── -->
+<section class="content-section reveal">
+  <h2>The Formula</h2>
+  <p>Compound interest is calculated using this formula:</p>
+  <div class="formula-box">
+    A = P(1 + r/n)^(nt) + PMT &times; [((1 + r/n)^(nt) &minus; 1) / (r/n)]
+  </div>
+  <p>Where:</p>
+  <ul>
+    <li><strong>A</strong> = future value (what you end up with)</li>
+    <li><strong>P</strong> = initial deposit (principal)</li>
+    <li><strong>r</strong> = annual interest rate (as a decimal)</li>
+    <li><strong>n</strong> = compounding frequency per year (12 for monthly, 4 for quarterly, 1 for annually)</li>
+    <li><strong>t</strong> = time in years</li>
+    <li><strong>PMT</strong> = regular monthly contribution</li>
+  </ul>
+  <p>The first part, <strong>P(1 + r/n)^(nt)</strong>, calculates the growth of your initial deposit. The second part calculates the accumulated value of your regular contributions. When you move the <strong>rate</strong> slider in the calculator, you change <strong>r</strong> — and you can see how even a 1% difference compounds over decades.</p>
+  <p>The <strong>Savings Goal</strong> tab uses the same formula but solves for PMT — the monthly amount you need to reach your target.</p>
+</section>
+
+<!-- ── EXAMPLE ── -->
+<section class="content-section reveal">
+  <h2>Example</h2>
+
+  <div class="example-box">
+    <h4>Alex — saving for a down payment</h4>
+    <p>Alex has $5,000 in savings and wants $40,000 for a house down payment in 5 years. A high-yield savings account offers 4.5% APY, compounded daily.</p>
+
+    <h3>Savings Goal tab</h3>
+    <div class="example-data">
+      <div class="example-row"><span class="label">Target amount</span><span class="value">$40,000</span></div>
+      <div class="example-row"><span class="label">Years to goal</span><span class="value">5</span></div>
+      <div class="example-row"><span class="label">Starting balance</span><span class="value">$5,000</span></div>
+      <div class="example-row"><span class="label">Interest rate</span><span class="value">4.5%</span></div>
+    </div>
+    <p>Result: Alex needs to save <strong>$527/month</strong>. Of the $40,000 total, $31,620 comes from deposits and $3,380 from interest — money earned while sleeping.</p>
+
+    <h3>Compare tab</h3>
+    <p>Alex wonders: what if they invest in an index fund at 7% instead of a savings account at 4.5%?</p>
+    <div class="example-data">
+      <div class="example-row"><span class="label">Option A (savings account)</span><span class="value">$40,362</span></div>
+      <div class="example-row"><span class="label">Option B (index fund)</span><span class="value">$43,816</span></div>
+      <div class="example-row"><span class="label">Difference</span><span class="value">$3,454 more with the index fund</span></div>
+    </div>
+    <p>The index fund earns more — but comes with risk. The savings account is FDIC-insured. For a 5-year goal with a specific deadline, Alex chose the guaranteed option and opened a high-yield savings account.</p>
+
+    <p>Alex shared the link with their partner. Same numbers, same page, no explaining needed.</p>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="content-section reveal">
+  <h2>FAQ</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      What interest rate should I use?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        It depends on where you put your money. High-yield savings accounts offer 4–5% (as of 2026). Stock market index funds have historically returned 7–10% annually over long periods, but with significant year-to-year variation. CDs and bonds fall in between. Use the rate your specific account or investment offers — not a generic "average."
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      What's the difference between APY and APR?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        APR (Annual Percentage Rate) is the stated rate without compounding. APY (Annual Percentage Yield) includes the effect of compounding. A 5% APR compounded monthly gives an APY of about 5.12%. Banks advertise savings account rates as APY. If you enter APY into this calculator, set compounding to "Annually" since the compounding is already baked into the number.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      How often should interest compound?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        More frequent compounding means slightly more growth. Monthly compounding at 5% gives $16,470 on $10,000 over 10 years. Daily compounding gives $16,487 — a $17 difference. For most planning purposes, monthly is accurate enough. Check your account terms for the actual frequency.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Does this calculator account for taxes and inflation?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        No — and that's intentional. Tax treatment varies by country, account type (tax-free, tax-deferred, taxable), and your income bracket. Inflation is unpredictable. To approximate after-inflation returns, subtract 2–3% from your interest rate. For a rough after-tax estimate, reduce the rate by your marginal tax rate (e.g., 5% rate × 0.75 = 3.75% after 25% tax).
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Why does a small rate difference matter so much over time?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Because compound interest is exponential, not linear. $10,000 at 5% for 30 years becomes $43,219. At 7%, it becomes $76,123 — 76% more, from just a 2% rate difference. Use the Compare tab to see this for your specific numbers. The longer the time horizon, the bigger the gap.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RELATED CALCS ── -->
+<section class="content-section reveal">
+  <h2>Related Calculators</h2>
+  <div class="related-grid">
+    <a href="/us/mortgage" class="related-card">
+      <div class="related-card-title">🏠 Mortgage Calculator</div>
+      <div class="related-card-desc">How much house can you afford with your income.</div>
+    </a>
+    <a href="/us/income-tax" class="related-card">
+      <div class="related-card-title">📋 Income Tax Calculator</div>
+      <div class="related-card-desc">How much of your income goes to federal and state taxes.</div>
+    </a>
+    <a href="/salary-to-hourly" class="related-card">
+      <div class="related-card-title">🕐 Salary to Hourly</div>
+      <div class="related-card-desc">Compare job offers in the same units.</div>
+    </a>
+    <a href="/loan-calculator" class="related-card">
+      <div class="related-card-title">💰 Loan Calculator</div>
+      <div class="related-card-desc">Monthly payments and total cost on any loan.</div>
+    </a>
+  </div>
+</section>
+
+<!-- ── EMBED ── -->
+<div class="embed-section reveal">
+  <h3>Add This Calculator to Your Website</h3>
+  <p>Embed the sum.money compound interest calculator on your site. Free, responsive, always up-to-date.</p>
+  <div class="embed-code">&lt;iframe src="https://sum.money/embed/compound-interest" width="100%" height="600"&gt;&lt;/iframe&gt;</div>
+</div>
+
+<!-- ── FAQ Accordion + Scroll Reveal scripts ── -->
+<script is:inline>
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(function(q) {
+  q.addEventListener('click', function() {
+    var item = q.parentElement;
+    var answer = item.querySelector('.faq-answer');
+    var isOpen = item.classList.contains('open');
+
+    document.querySelectorAll('.faq-item').forEach(function(fi) {
+      fi.classList.remove('open');
+      fi.querySelector('.faq-answer').style.maxHeight = '0';
+      fi.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      q.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// Scroll reveal
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+// Track related calc clicks
+document.querySelectorAll('.related-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    try {
+      var payload = { event: 'related_click', timestamp: Date.now(), target: card.getAttribute('href'), url: location.pathname };
+      if (navigator.sendBeacon) navigator.sendBeacon('/api/track', JSON.stringify(payload));
+    } catch(e) {}
+  });
+});
+</script>

@@ -423,6 +423,7 @@ select {
 }
 
 .result-detail-value.green { color: var(--green); }
+.result-detail-value.red { color: var(--red); }
 
 .result-actions {
   display: flex;
@@ -787,6 +788,29 @@ footer {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ── COMPARE ROW ── */
+.compare-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.compare-row .row-label {
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  min-width: 70px;
+  flex-shrink: 0;
+}
+.compare-row .input-group { flex: 1; min-width: 0; }
+.compare-row .input-group label { display: none; }
+
+@media (max-width: 560px) {
+  .compare-row { flex-wrap: wrap; }
+  .compare-row .row-label { width: 100%; min-width: unset; margin-bottom: 4px; }
+  .compare-row .input-group label { display: block; }
 }
 
 /* ── SEPARATOR ── */
