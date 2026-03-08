@@ -1,0 +1,244 @@
+<!-- ═══════════════════════════════════════ -->
+<!-- ZONE 2: Content below result           -->
+<!-- ═══════════════════════════════════════ -->
+
+<!-- ── HOW TO USE ── -->
+<div class="content-section reveal">
+  <div class="section-divider"></div>
+</div>
+
+<section class="content-section reveal">
+  <h2>How to Use This Calculator</h2>
+
+  <h3>Employee tab</h3>
+  <p>Enter your <strong>annual income</strong> (gross salary before taxes) and <strong>filing status</strong>. The calculator instantly shows your take-home pay after federal income tax and FICA (Social Security + Medicare). If you contribute to a 401(k) or have other pre-tax deductions, expand <strong>"More options"</strong> to reduce your taxable income.</p>
+
+  <h3>Self-Employed tab</h3>
+  <p>Enter your <strong>annual revenue</strong> and <strong>business expenses</strong>. The calculator computes your self-employment tax (15.3% on 92.35% of net profit) plus federal income tax — and shows how much to set aside each quarter. The deductible half of SE tax is automatically factored in.</p>
+
+  <h3>Filing status</h3>
+  <ul>
+    <li><strong>Single</strong> — unmarried, or legally separated</li>
+    <li><strong>Married Filing Jointly</strong> — married couples filing one return (usually the lowest tax)</li>
+    <li><strong>Head of Household</strong> — unmarried with a qualifying dependent you support</li>
+  </ul>
+
+  <h3>Share your result</h3>
+  <p>Every input is encoded in the URL. Click <strong>Share</strong>, send the link — they'll see your exact numbers. No re-entering, no screenshots.</p>
+</section>
+
+<!-- ── FORMULA ── -->
+<section class="content-section reveal">
+  <h2>The Formula</h2>
+  <p>The US federal income tax uses a <strong>progressive bracket system</strong>. You don't pay your marginal rate on all income — each bracket applies only to the income within that range.</p>
+  <div class="formula-box">
+    Taxable Income = Gross Income &minus; Pre-tax Deductions &minus; Standard Deduction<br><br>
+    Federal Tax = &sum; (Income in Each Bracket &times; Bracket Rate)
+  </div>
+
+  <h3>2025 Federal Tax Brackets — Single</h3>
+  <div class="example-data">
+    <div class="example-row"><span class="label">10%</span><span class="value">$0 – $11,925</span></div>
+    <div class="example-row"><span class="label">12%</span><span class="value">$11,926 – $48,475</span></div>
+    <div class="example-row"><span class="label">22%</span><span class="value">$48,476 – $103,350</span></div>
+    <div class="example-row"><span class="label">24%</span><span class="value">$103,351 – $197,300</span></div>
+    <div class="example-row"><span class="label">32%</span><span class="value">$197,301 – $250,525</span></div>
+    <div class="example-row"><span class="label">35%</span><span class="value">$250,526 – $626,350</span></div>
+    <div class="example-row"><span class="label">37%</span><span class="value">$626,351+</span></div>
+  </div>
+
+  <h3>Self-employment tax</h3>
+  <div class="formula-box">
+    SE Tax Base = Net Profit &times; 92.35%<br>
+    SE Tax = (Base &times; 12.4% SS, up to $176,100) + (Base &times; 2.9% Medicare)<br>
+    Half of SE Tax is deductible from gross income
+  </div>
+</section>
+
+<!-- ── EXAMPLE ── -->
+<section class="content-section reveal">
+  <h2>Example</h2>
+
+  <div class="example-box">
+    <h4>Sarah — evaluating a $95K job offer</h4>
+    <p>Sarah received a job offer for $95,000. She's single with no 401(k) contributions. She wants to know her actual take-home pay.</p>
+
+    <h3>Employee tab</h3>
+    <div class="example-data">
+      <div class="example-row"><span class="label">Gross income</span><span class="value">$95,000</span></div>
+      <div class="example-row"><span class="label">Standard deduction</span><span class="value">$15,750</span></div>
+      <div class="example-row"><span class="label">Taxable income</span><span class="value">$79,250</span></div>
+    </div>
+
+    <p>Her tax is calculated across three brackets:</p>
+    <div class="example-data">
+      <div class="example-row"><span class="label">10% on first $11,925</span><span class="value">$1,193</span></div>
+      <div class="example-row"><span class="label">12% on next $36,550</span><span class="value">$4,386</span></div>
+      <div class="example-row"><span class="label">22% on next $30,775</span><span class="value">$6,771</span></div>
+      <div class="example-row"><span class="label">Federal income tax</span><span class="value">$12,349</span></div>
+      <div class="example-row"><span class="label">FICA (SS + Medicare)</span><span class="value">$7,268</span></div>
+      <div class="example-row"><span class="label">Take-home pay</span><span class="value">$75,384/yr ($6,282/mo)</span></div>
+      <div class="example-row"><span class="label">Effective rate</span><span class="value">13.0%</span></div>
+    </div>
+    <p>Sarah's marginal rate is 22%, but her effective rate is only 13.0% — because the first $48,475 of taxable income is taxed at lower rates.</p>
+  </div>
+
+  <div class="example-box" style="margin-top: 20px;">
+    <h4>Marcus — freelance developer</h4>
+    <p>Marcus earns $120,000 in freelance revenue with $20,000 in business expenses. He's single.</p>
+
+    <h3>Self-Employed tab</h3>
+    <div class="example-data">
+      <div class="example-row"><span class="label">Revenue</span><span class="value">$120,000</span></div>
+      <div class="example-row"><span class="label">Expenses</span><span class="value">$20,000</span></div>
+      <div class="example-row"><span class="label">Net profit</span><span class="value">$100,000</span></div>
+      <div class="example-row"><span class="label">Self-employment tax</span><span class="value">$14,130</span></div>
+      <div class="example-row"><span class="label">Federal income tax</span><span class="value">$11,895</span></div>
+      <div class="example-row"><span class="label">Total tax owed</span><span class="value">$26,024/yr</span></div>
+      <div class="example-row"><span class="label">Quarterly payment</span><span class="value">$6,506</span></div>
+      <div class="example-row"><span class="label">Effective rate</span><span class="value">26.0%</span></div>
+    </div>
+    <p>Marcus needs to set aside $6,506 each quarter. His effective rate is higher than Sarah's because self-employed workers pay both the employee and employer portions of FICA (15.3% vs 7.65%).</p>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="content-section reveal">
+  <h2>FAQ</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Why is my effective rate lower than my marginal rate?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Because the US uses progressive tax brackets. Only the income within each bracket is taxed at that rate. If you earn $95,000 and your marginal rate is 22%, only the portion above $48,475 (after deductions) is taxed at 22%. The first $11,925 is taxed at just 10%, and the next chunk at 12%. Your effective rate — what you actually pay as a percentage of total income — is always lower than your marginal rate.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Does this include state taxes?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        No — this calculates federal income tax and FICA only. State income tax varies widely: some states (Texas, Florida, Nevada) have no income tax, while others (California, New York) can add 5-13% on top. Your actual take-home will be lower in states with income tax.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Why do self-employed pay more in taxes?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Employees split FICA with their employer — each pays 7.65%. Self-employed workers pay both halves (15.3%). The IRS offsets this slightly: you calculate SE tax on 92.35% of net profit (not 100%), and you can deduct half of your SE tax from your gross income. Still, the self-employed effective rate is noticeably higher for the same income level.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Should I use standard or itemized deduction?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Use whichever is higher — it reduces your taxable income more. The 2025 standard deduction is $15,750 (single) or $31,500 (married filing jointly). Most taxpayers use the standard deduction. You'd itemize only if your mortgage interest, state/local taxes (up to $10,000), charitable donations, and other deductions exceed the standard amount. To try itemized, edit the deduction field under "More options."
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      How does a 401(k) reduce my taxes?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Traditional 401(k) contributions are pre-tax — they reduce your taxable income in the year you contribute. If you earn $95,000 and contribute $10,000 to your 401(k), you're taxed on $85,000 instead. The 2025 contribution limit is $23,500 ($31,000 if you're 50 or older). Enter your contribution under "More options" to see the tax savings.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RELATED CALCS ── -->
+<section class="content-section reveal">
+  <h2>Related Calculators</h2>
+  <div class="related-grid">
+    <a href="/us/mortgage" class="related-card">
+      <div class="related-card-title">🏠 Mortgage Calculator</div>
+      <div class="related-card-desc">How much house can you afford with your after-tax income.</div>
+    </a>
+    <a href="/salary-to-hourly" class="related-card">
+      <div class="related-card-title">🕐 Salary to Hourly</div>
+      <div class="related-card-desc">Convert your salary to hourly rate.</div>
+    </a>
+    <a href="/compound-interest" class="related-card">
+      <div class="related-card-title">📈 Compound Interest</div>
+      <div class="related-card-desc">See how your savings grow over time.</div>
+    </a>
+    <a href="/loan-calculator" class="related-card">
+      <div class="related-card-title">💰 Loan Calculator</div>
+      <div class="related-card-desc">Monthly payment and total cost on any loan.</div>
+    </a>
+  </div>
+</section>
+
+<!-- ── EMBED ── -->
+<div class="embed-section reveal">
+  <h3>Add This Calculator to Your Website</h3>
+  <p>Embed the sum.money income tax calculator on your site. Free, responsive, always up-to-date.</p>
+  <div class="embed-code">&lt;iframe src="https://sum.money/embed/us/income-tax" width="100%" height="700"&gt;&lt;/iframe&gt;</div>
+</div>
+
+<!-- ── FAQ Accordion + Scroll Reveal scripts ── -->
+<script is:inline>
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(function(q) {
+  q.addEventListener('click', function() {
+    var item = q.parentElement;
+    var answer = item.querySelector('.faq-answer');
+    var isOpen = item.classList.contains('open');
+
+    document.querySelectorAll('.faq-item').forEach(function(fi) {
+      fi.classList.remove('open');
+      fi.querySelector('.faq-answer').style.maxHeight = '0';
+      fi.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      q.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// Scroll reveal
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+// Track related calc clicks
+document.querySelectorAll('.related-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    try {
+      var payload = { event: 'related_click', timestamp: Date.now(), target: card.getAttribute('href'), url: location.pathname };
+      if (navigator.sendBeacon) navigator.sendBeacon('/api/track', JSON.stringify(payload));
+    } catch(e) {}
+  });
+});
+</script>

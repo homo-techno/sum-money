@@ -1,15 +1,69 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
+import IncomeTaxCalculator from '../../components/IncomeTaxCalculator.tsx';
+import IncomeTaxContent from '../../components/IncomeTaxContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why is my effective rate lower than my marginal rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because the US uses progressive tax brackets. Only the income within each bracket is taxed at that rate. If you earn $95,000 and your marginal rate is 22%, only the portion above $48,475 (after deductions) is taxed at 22%. Your effective rate is always lower than your marginal rate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this include state taxes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — this calculates federal income tax and FICA only. State income tax varies widely: some states (Texas, Florida, Nevada) have no income tax, while others (California, New York) can add 5-13% on top."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do self-employed pay more in taxes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Employees split FICA with their employer — each pays 7.65%. Self-employed workers pay both halves (15.3%). The IRS offsets this slightly: you calculate SE tax on 92.35% of net profit and can deduct half of your SE tax from gross income."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I use standard or itemized deduction?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use whichever is higher. The 2025 standard deduction is $15,750 (single) or $31,500 (married filing jointly). Most taxpayers use the standard deduction. Itemize only if your deductions exceed the standard amount."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does a 401(k) reduce my taxes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Traditional 401(k) contributions are pre-tax — they reduce your taxable income. If you earn $95,000 and contribute $10,000 to your 401(k), you're taxed on $85,000 instead. The 2025 limit is $23,500 ($31,000 if 50+)."
+      }
+    }
+  ]
+};
 ---
-<BaseLayout title="Income Tax Calculator — sum.money" description="Free US income tax calculator.">
+<BaseLayout
+  title="US Income Tax Calculator 2025 — sum.money"
+  description="Calculate your 2025 federal income tax, take-home pay, and effective rate. Employee and self-employed. Updated for tax year 2025. Free, no registration."
+  schema={schema}
+>
   <Header activeMarket="US" />
-  <div class="breadcrumbs animate-in"><a href="/">Home</a><span>›</span><a href="/us">US</a><span>›</span>Income Tax</div>
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span><a href="/us">US</a><span>›</span>Income Tax 2025
+  </div>
   <main>
-    <h1 class="animate-in delay-1">Income Tax Calculator</h1>
-    <section class="content-section animate-in delay-2">
-      <p>Coming soon.</p>
-      <p><a href="/">← Back to Home</a></p>
-    </section>
+    <h1 class="animate-in delay-1">US Income Tax Calculator 2025</h1>
+    <p class="subtitle animate-in delay-2">See your take-home pay after federal tax — or estimate quarterly payments if self-employed.</p>
+    <IncomeTaxCalculator client:load />
+    <IncomeTaxContent />
   </main>
 </BaseLayout>
