@@ -353,7 +353,7 @@ function trackEvent(eventName: string, data?: Record<string, unknown>) {
 
 // ── Share URL ──
 function buildShareURL(activeTab: TabId, values: Record<string, number | string>) {
-  const PROD = 'https://sum.money/compound-interest';
+  const PROD = 'https://sum.money/compound-interest-calculator';
   const base = typeof window !== 'undefined' && window.location.hostname === 'sum.money'
     ? window.location.origin + window.location.pathname
     : PROD;
