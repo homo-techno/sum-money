@@ -9,8 +9,8 @@ const { activeMarket = 'US' } = Astro.props;
   <div class="header-inner">
     <a href="/" class="logo">sum<span>.money</span></a>
     <nav class="header-nav">
-      <a href="/us/mortgage-calculator" class:list={["market-badge", { active: activeMarket === 'US' }]}>US</a>
-      <a href="/de/hypothekenrechner" class:list={["market-badge", { active: activeMarket === 'DE' }]}>DE</a>
+      <a href="/us/" class:list={["market-badge", { active: activeMarket === 'US' }]}>US</a>
+      <a href="/de/" class:list={["market-badge", { active: activeMarket === 'DE' }]}>DE</a>
     </nav>
   </div>
 </header>
