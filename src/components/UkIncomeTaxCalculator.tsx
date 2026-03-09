@@ -258,8 +258,8 @@ export default function UkIncomeTaxCalculator() {
 
     const { tax: incomeTax, marginalRate } = calculateIncomeTax(taxableProfit);
 
-    // Class 2 NI: £3.50/week if profits ≥ £6,845
-    const class2NI = profit >= 6845 ? NI_CLASS2_WEEKLY * 52 : 0;
+    // Class 2 NI: auto-credited from 2024/25 onwards — no cost to pay
+    const class2NI = 0;
 
     // Class 4 NI
     let class4NI = 0;
@@ -278,7 +278,6 @@ export default function UkIncomeTaxCalculator() {
     setResultDetails([
       { label: 'Set aside quarterly', value: fmtGBP(quarterly) },
       { label: 'Income tax', value: fmtGBP(incomeTax) },
-      { label: 'Class 2 NI', value: fmtGBP(class2NI) },
       { label: 'Class 4 NI', value: fmtGBP(class4NI) },
       ...(studentLoan > 0 ? [{ label: 'Student loan', value: fmtGBP(studentLoan) }] : []),
       ...(pensionContribution > 0 ? [{ label: 'Pension (' + sePension + '%)', value: fmtGBP(pensionContribution) }] : []),

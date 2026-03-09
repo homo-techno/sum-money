@@ -11,8 +11,8 @@ const TABS: TabConfig[] = [
   { id: 'prepay', label: 'Досрочное погашение', icon: '⚡' },
 ];
 
-// Ставка ЦБ РФ на март 2025: 21%. Средняя рыночная ипотека: ~24-28%
-const DEFAULT_RATE = 24;
+// Ключевая ставка ЦБ РФ: 15,5% (февраль 2026). Средняя рыночная ипотека: ~20-21%
+const DEFAULT_RATE = 20;
 
 // ── Formatting (ru-RU) ──
 function fmtRUB(n: number): string {
@@ -408,12 +408,6 @@ export default function IpotekaCalculator() {
     navigator.clipboard.writeText(text).then(() => doShowFeedback('Результат скопирован'));
   };
 
-  const TERM_OPTIONS = [
-    { value: '5', label: '5 лет' }, { value: '10', label: '10 лет' },
-    { value: '15', label: '15 лет' }, { value: '20', label: '20 лет' },
-    { value: '25', label: '25 лет' }, { value: '30', label: '30 лет' },
-  ];
-
   return (
     <>
       <div className="tabs animate-in delay-3" role="tablist">
@@ -442,8 +436,8 @@ export default function IpotekaCalculator() {
             </div>
             <MoreOptions count={3}>
               <div className="inputs-grid">
-                <CalcInput id="pm-rate" label="Ставка" suffix="%" defaultValue={DEFAULT_RATE} value={pmRate} onChange={handleInput} helpText="Ключевая ставка ЦБ 21% + маржа банка" />
-                <CalcSelect id="pm-term" label="Срок" options={TERM_OPTIONS} value={pmTerm} onChange={handleSelect} />
+                <CalcInput id="pm-rate" label="Ставка" suffix="%" defaultValue={DEFAULT_RATE} value={pmRate} onChange={handleInput} helpText="Ключевая ставка ЦБ 15,5% + маржа банка" />
+                <CalcInput id="pm-term" label="Срок" suffix="лет" defaultValue={20} value={parseInt(pmTerm) || 20} onChange={(id, val) => setPmTerm(String(Math.max(1, Math.min(30, Math.round(val)))))} />
                 <CalcSelect id="pm-type" label="Тип платежа" options={[
                   { value: 'annuity', label: 'Аннуитетный' },
                   { value: 'diff', label: 'Дифференцированный' },
@@ -463,7 +457,7 @@ export default function IpotekaCalculator() {
             <MoreOptions count={3}>
               <div className="inputs-grid">
                 <CalcInput id="af-rate" label="Ставка" suffix="%" defaultValue={DEFAULT_RATE} value={afRate} onChange={handleInput} />
-                <CalcSelect id="af-term" label="Срок" options={TERM_OPTIONS} value={afTerm} onChange={handleSelect} />
+                <CalcInput id="af-term" label="Срок" suffix="лет" defaultValue={20} value={parseInt(afTerm) || 20} onChange={(id, val) => setAfTerm(String(Math.max(1, Math.min(30, Math.round(val)))))} />
                 <CalcInput id="af-down" label="Первоначальный взнос" prefix="₽" defaultValue={1000000} value={afDown} onChange={handleInput} />
               </div>
             </MoreOptions>
@@ -511,7 +505,7 @@ export default function IpotekaCalculator() {
       </div>
 
       <div style={{ textAlign: 'center', marginTop: '12px', fontSize: '.78rem', color: 'var(--ink-muted)', fontStyle: 'italic' }}>
-        Ключевая ставка ЦБ РФ: 21% (март 2025). Расчёт приблизительный.
+        Ключевая ставка ЦБ РФ: 15,5% (февраль 2026). Актуальную ставку уточняйте на cbr.ru
       </div>
 
       <div className={`copy-feedback ${showFeedback ? 'show' : ''}`}>{feedbackMsg}</div>

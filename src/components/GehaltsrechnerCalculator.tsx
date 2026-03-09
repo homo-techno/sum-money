@@ -10,14 +10,14 @@ const TABS: TabConfig[] = [
   { id: 'netto-brutto', label: 'Netto → Brutto', icon: '📈' },
 ];
 
-// ── 2025 Tax Constants ──
-const GRUNDFREIBETRAG = 12_096;
+// ── 2026 Tax Constants ──
+const GRUNDFREIBETRAG = 12_348;
 const WERBUNGSKOSTEN = 1_230;
 const SONDERAUSGABEN = 36;
 const ENTLASTUNG_ALLEINERZ = 4_260;
-const SOLI_FREIGRENZE = 39_900;
-const BBG_KV = 66_150;
-const BBG_RV = 96_600;
+const SOLI_FREIGRENZE = 40_700;
+const BBG_KV = 69_750;
+const BBG_RV = 101_400;
 const KV_SATZ = 0.146;
 const PV_SATZ = 0.036;
 const PV_KINDERLOS = 0.006;
@@ -39,20 +39,20 @@ const KIST_OPTIONS = [
   { value: '0.09', label: '9 % (übrige Bundesländer)' },
 ];
 
-// ── §32a EStG 2025 ──
+// ── §32a EStG 2026 ──
 function berechneESt(zvE: number): number {
   zvE = Math.floor(Math.max(zvE, 0));
-  if (zvE <= 12_096) return 0;
-  if (zvE <= 17_443) {
-    const y = (zvE - 12_096) / 10_000;
-    return Math.floor((932.30 * y + 1_400) * y);
+  if (zvE <= 12_348) return 0;
+  if (zvE <= 17_799) {
+    const y = (zvE - 12_348) / 10_000;
+    return Math.floor((914.51 * y + 1_400) * y);
   }
-  if (zvE <= 68_480) {
-    const z = (zvE - 17_443) / 10_000;
-    return Math.floor((176.64 * z + 2_397) * z + 1_015.13);
+  if (zvE <= 69_878) {
+    const z = (zvE - 17_799) / 10_000;
+    return Math.floor((173.10 * z + 2_397) * z + 1_034.87);
   }
-  if (zvE <= 277_825) return Math.floor(0.42 * zvE - 10_911.92);
-  return Math.floor(0.45 * zvE - 19_246.67);
+  if (zvE <= 277_825) return Math.floor(0.42 * zvE - 11_135.63);
+  return Math.floor(0.45 * zvE - 19_470.38);
 }
 
 function berechneSoli(est: number): number {
@@ -271,14 +271,14 @@ export default function GehaltsrechnerCalculator() {
   const [bnKlasse, setBnKlasse] = useState('I');
   const [bnKist, setBnKist] = useState('0');
   const [bnKinder, setBnKinder] = useState(0);
-  const [bnKvZusatz, setBnKvZusatz] = useState(2.5);
+  const [bnKvZusatz, setBnKvZusatz] = useState(2.9);
 
   // Netto → Brutto
   const [nbNetto, setNbNetto] = useState(3000);
   const [nbKlasse, setNbKlasse] = useState('I');
   const [nbKist, setNbKist] = useState('0');
   const [nbKinder, setNbKinder] = useState(0);
-  const [nbKvZusatz, setNbKvZusatz] = useState(2.5);
+  const [nbKvZusatz, setNbKvZusatz] = useState(2.9);
 
   // Result
   const [resultLabel, setResultLabel] = useState('');
@@ -369,14 +369,14 @@ export default function GehaltsrechnerCalculator() {
       if (p.has('klasse')) setBnKlasse(p.get('klasse') || 'I');
       if (p.has('kist')) setBnKist(p.get('kist') || '0');
       if (p.has('kinder')) setBnKinder(g('kinder', 0));
-      if (p.has('kvz')) setBnKvZusatz(g('kvz', 2.5));
+      if (p.has('kvz')) setBnKvZusatz(g('kvz', 2.9));
     }
     if (tabId === 'netto-brutto') {
       if (p.has('netto')) setNbNetto(g('netto', 3000));
       if (p.has('klasse')) setNbKlasse(p.get('klasse') || 'I');
       if (p.has('kist')) setNbKist(p.get('kist') || '0');
       if (p.has('kinder')) setNbKinder(g('kinder', 0));
-      if (p.has('kvz')) setNbKvZusatz(g('kvz', 2.5));
+      if (p.has('kvz')) setNbKvZusatz(g('kvz', 2.9));
     }
     const urlV = p.get('v');
     if (urlV && urlV < '2026-03-09') setShowVersionBanner(true);

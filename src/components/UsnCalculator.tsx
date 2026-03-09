@@ -233,8 +233,8 @@ export default function UsnCalculator() {
     <>
       <div className="calc-card animate-in delay-3">
         <div className="tabs" role="tablist">
-          <button role="tab" aria-selected={activeTab === 'dohody'} className={activeTab === 'dohody' ? 'active' : ''} onClick={() => switchTab('dohody')}>Доходы (6%)</button>
-          <button role="tab" aria-selected={activeTab === 'dohody-rashody'} className={activeTab === 'dohody-rashody' ? 'active' : ''} onClick={() => switchTab('dohody-rashody')}>Доходы − Расходы (15%)</button>
+          <button role="tab" aria-selected={activeTab === 'dohody'} className={activeTab === 'dohody' ? 'active' : ''} onClick={() => switchTab('dohody')}>УСН 6% (Доходы)</button>
+          <button role="tab" aria-selected={activeTab === 'dohody-rashody'} className={activeTab === 'dohody-rashody' ? 'active' : ''} onClick={() => switchTab('dohody-rashody')}>УСН 15% (Доходы − Расходы)</button>
         </div>
 
         <div className="calc-section-label">{activeTab === 'dohody' ? 'УСН «Доходы»' : 'УСН «Доходы минус расходы»'}</div>

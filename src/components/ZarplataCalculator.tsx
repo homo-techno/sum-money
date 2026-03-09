@@ -5,8 +5,8 @@ type TabId = 'gross-net' | 'net-gross';
 interface TabConfig { id: TabId; label: string; icon: string; }
 
 const TABS: TabConfig[] = [
-  { id: 'gross-net', label: 'Gross → Net', icon: '💰' },
-  { id: 'net-gross', label: 'Net → Gross', icon: '🔄' },
+  { id: 'gross-net', label: 'Начислено → На руки', icon: '💰' },
+  { id: 'net-gross', label: 'На руки → Начислено', icon: '🔄' },
 ];
 
 // НДФЛ 2025 прогрессивная шкала
@@ -142,7 +142,7 @@ export default function ZarplataCalculator() {
     setResultLabel('На руки');
     setResultPrimary(fmtRUB(monthlyNet) + '/мес.');
     setResultDetails([
-      { label: 'Gross', value: fmtRUB(monthlyGross) + '/мес.' },
+      { label: 'Начислено', value: fmtRUB(monthlyGross) + '/мес.' },
       { label: 'НДФЛ', value: fmtRUB(monthlyTax) + '/мес.' },
       ...(childDed > 0 ? [{ label: 'Вычеты на детей (год)', value: fmtRUB(childDed), green: true }] : []),
       { label: 'На руки за год', value: fmtRUB(monthlyNet * 12) },
@@ -171,10 +171,10 @@ export default function ZarplataCalculator() {
     const annualTax = calculateNDFL(taxable);
     const monthlyTax = annualTax / 12;
 
-    setResultLabel('Нужный Gross');
+    setResultLabel('Нужный оклад (начислено)');
     setResultPrimary(fmtRUB(grossNeeded) + '/мес.');
     setResultDetails([
-      { label: 'Желаемый Net', value: fmtRUB(desiredNet) + '/мес.' },
+      { label: 'Желаемая на руки', value: fmtRUB(desiredNet) + '/мес.' },
       { label: 'НДФЛ', value: fmtRUB(monthlyTax) + '/мес.' },
       { label: 'Разница', value: fmtRUB(grossNeeded - desiredNet) + '/мес.' },
       ...(childDed > 0 ? [{ label: 'Вычеты на детей (год)', value: fmtRUB(childDed), green: true }] : []),
@@ -266,9 +266,9 @@ export default function ZarplataCalculator() {
       <div className="calc-card animate-in delay-4">
         {activeTab === 'gross-net' && (
           <div>
-            <div className="calc-section-label">Зарплата до вычетов</div>
+            <div className="calc-section-label">Сколько получу на карту?</div>
             <div className="inputs-grid">
-              <CalcInput id="gn-gross" label="Gross в месяц" prefix="₽" defaultValue={200000} value={gnGross} onChange={handleInput} helpText="Сумма в вакансии / оффере" />
+              <CalcInput id="gn-gross" label="Оклад (начислено)" prefix="₽" defaultValue={200000} value={gnGross} onChange={handleInput} helpText="Сумма в вакансии / оффере" />
               <CalcSelect id="gn-children" label="Дети" options={CHILDREN_OPTIONS} value={gnChildren} onChange={handleSelect} />
             </div>
           </div>
@@ -276,9 +276,9 @@ export default function ZarplataCalculator() {
 
         {activeTab === 'net-gross' && (
           <div>
-            <div className="calc-section-label">Желаемая зарплата</div>
+            <div className="calc-section-label">Сколько просить у работодателя?</div>
             <div className="inputs-grid">
-              <CalcInput id="ng-net" label="Желаемый Net" prefix="₽" defaultValue={150000} value={ngNet} onChange={handleInput} helpText="Сколько хотите на руки" />
+              <CalcInput id="ng-net" label="Желаемая на руки" prefix="₽" defaultValue={150000} value={ngNet} onChange={handleInput} helpText="Сколько хотите получать на карту" />
               <CalcSelect id="ng-children" label="Дети" options={CHILDREN_OPTIONS} value={ngChildren} onChange={handleSelect} />
             </div>
           </div>

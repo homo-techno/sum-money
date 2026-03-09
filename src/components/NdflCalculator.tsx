@@ -153,6 +153,7 @@ export default function NdflCalculator() {
 
   // Employee
   const [empGross, setEmpGross] = useState(150000);
+  const [empPeriod, setEmpPeriod] = useState<'month' | 'year'>('month');
   const [empChildren, setEmpChildren] = useState('0');
   const [empPropertyDed, setEmpPropertyDed] = useState(0);
 
@@ -172,8 +173,8 @@ export default function NdflCalculator() {
   const savedTabValues = useRef<Record<string, Record<string, number | string>>>({});
 
   const calcEmployee = useCallback(() => {
-    const monthlyGross = empGross;
-    const annualGross = monthlyGross * 12;
+    const monthlyGross = empPeriod === 'month' ? empGross : empGross / 12;
+    const annualGross = empPeriod === 'month' ? empGross * 12 : empGross;
     const children = parseInt(empChildren);
     const childDeduction = getAnnualChildDeduction(monthlyGross, children);
     const propertyDeduction = empPropertyDed;
@@ -194,7 +195,7 @@ export default function NdflCalculator() {
       { label: 'Эффективная ставка', value: (effectiveRate * 100).toFixed(1) + '%' },
       { label: 'Маргинальная ставка', value: (marginalRate * 100) + '%' },
     ]);
-  }, [empGross, empChildren, empPropertyDed]);
+  }, [empGross, empPeriod, empChildren, empPropertyDed]);
 
   const calcSelfEmployed = useCallback(() => {
     const monthlyIncome = seIncome;
@@ -342,7 +343,16 @@ export default function NdflCalculator() {
           <div>
             <div className="calc-section-label">Ваша зарплата</div>
             <div className="inputs-grid">
-              <CalcInput id="e-gross" label="Зарплата gross" prefix="₽" defaultValue={150000} value={empGross} onChange={handleInput} helpText="До вычета НДФЛ, в месяц" />
+              <CalcInput id="e-gross" label="Зарплата gross" prefix="₽" defaultValue={150000} value={empGross} onChange={handleInput} helpText="До вычета НДФЛ" />
+              <div className="input-group">
+                <label>Период</label>
+                <div className="input-wrapper">
+                  <select value={empPeriod} onChange={(e) => setEmpPeriod(e.target.value as 'month' | 'year')}>
+                    <option value="month">В месяц</option>
+                    <option value="year">В год</option>
+                  </select>
+                </div>
+              </div>
               <CalcSelect id="e-children" label="Дети" options={[
                 { value: '0', label: 'Нет' }, { value: '1', label: '1 ребёнок' },
                 { value: '2', label: '2 детей' }, { value: '3', label: '3 и более' },

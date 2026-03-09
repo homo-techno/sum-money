@@ -1,15 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 
 // ── Constants ──
-const LAUFZEIT_OPTIONS = [
-  { value: '12', label: '12 Monate (1 Jahr)' },
-  { value: '24', label: '24 Monate (2 Jahre)' },
-  { value: '36', label: '36 Monate (3 Jahre)' },
-  { value: '48', label: '48 Monate (4 Jahre)' },
-  { value: '60', label: '60 Monate (5 Jahre)' },
-  { value: '72', label: '72 Monate (6 Jahre)' },
-  { value: '84', label: '84 Monate (7 Jahre)' },
-];
 
 // ── Annuity formula ──
 function berechneRate(betrag: number, zinsSatz: number, monate: number): number {
@@ -160,7 +151,7 @@ export default function KreditrechnerCalculator() {
 
   const [betrag, setBetrag] = useState(15000);
   const [zins, setZins] = useState(5.5);
-  const [laufzeit, setLaufzeit] = useState('48');
+  const [laufzeit, setLaufzeit] = useState(48);
   const [gebuehr, setGebuehr] = useState(0);
 
   const [resultLabel, setResultLabel] = useState('');
@@ -172,7 +163,7 @@ export default function KreditrechnerCalculator() {
   const [showFeedback, setShowFeedback] = useState(false);
 
   const calc = useCallback(() => {
-    const monate = parseInt(laufzeit);
+    const monate = Math.max(Math.round(laufzeit), 1);
     const rate = berechneRate(betrag, zins, monate);
     const gesamtkosten = rate * monate;
     const zinskosten = gesamtkosten - betrag;
@@ -205,7 +196,7 @@ export default function KreditrechnerCalculator() {
     const g = (k: string, fb: number) => { const v = p.get(k); return v !== null ? parseFloat(v) || fb : fb; };
     if (p.has('betrag')) setBetrag(g('betrag', 15000));
     if (p.has('zins')) setZins(g('zins', 5.5));
-    if (p.has('laufzeit')) setLaufzeit(p.get('laufzeit') || '48');
+    if (p.has('laufzeit')) setLaufzeit(g('laufzeit', 48));
     if (p.has('gebuehr')) setGebuehr(g('gebuehr', 0));
     const urlV = p.get('v');
     if (urlV && urlV < '2026-03-09') setShowVersionBanner(true);
@@ -213,13 +204,13 @@ export default function KreditrechnerCalculator() {
 
   const handleInput = (id: string, val: number) => {
     const m: Record<string, (v: number) => void> = {
-      'kr-betrag': setBetrag, 'kr-zins': setZins, 'kr-gebuehr': setGebuehr,
+      'kr-betrag': setBetrag, 'kr-zins': setZins, 'kr-laufzeit': setLaufzeit, 'kr-gebuehr': setGebuehr,
     };
     m[id]?.(val);
   };
 
-  const handleSelect = (id: string, val: string) => {
-    if (id === 'kr-laufzeit') setLaufzeit(val);
+  const handleSelect = (_id: string, _val: string) => {
+    // no more selects
   };
 
   const doShowFeedback = (msg: string) => {
@@ -260,8 +251,8 @@ export default function KreditrechnerCalculator() {
         </div>
         <MoreOptions count={2}>
           <div className="inputs-grid">
-            <CalcSelect id="kr-laufzeit" label="Laufzeit" options={LAUFZEIT_OPTIONS} value={laufzeit} onChange={handleSelect} />
-            <CalcInput id="kr-gebuehr" label="Bearbeitungsgebühr" prefix="€" value={gebuehr} onChange={handleInput} warnId="gebuehr" />
+            <CalcInput id="kr-laufzeit" label="Laufzeit" suffix="Monate" value={laufzeit} onChange={handleInput} />
+            <CalcInput id="kr-gebuehr" label="Sonstige Kosten" prefix="€" value={gebuehr} onChange={handleInput} warnId="gebuehr" />
           </div>
         </MoreOptions>
 

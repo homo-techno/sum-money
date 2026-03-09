@@ -10,14 +10,14 @@ const TABS: TabConfig[] = [
   { id: 'selbststaendig', label: 'Selbstständig', icon: '🏢' },
 ];
 
-// ── 2025 Tax Constants ──
-const GRUNDFREIBETRAG = 12_096;
+// ── 2026 Tax Constants ──
+const GRUNDFREIBETRAG = 12_348;
 const WERBUNGSKOSTEN = 1_230;
 const SONDERAUSGABEN = 36;
 const ENTLASTUNG_ALLEINERZ = 4_260;
-const SOLI_FREIGRENZE = 39_900;
-const BBG_KV = 66_150;
-const BBG_RV = 96_600;
+const SOLI_FREIGRENZE = 40_700; // Zusammenveranlagte; Einzelveranlagte: 20_350
+const BBG_KV = 69_750;
+const BBG_RV = 101_400;
 const KV_SATZ_AN = 0.146;
 const KV_SATZ_SE = 0.140; // ermäßigt, ohne Krankengeld
 const PV_SATZ = 0.036;
@@ -46,20 +46,20 @@ const KV_TYPE_OPTIONS = [
   { value: 'privat', label: 'Privat' },
 ];
 
-// ── §32a EStG 2025 ──
+// ── §32a EStG 2026 ──
 function berechneESt(zvE: number): number {
   zvE = Math.floor(Math.max(zvE, 0));
-  if (zvE <= 12_096) return 0;
-  if (zvE <= 17_443) {
-    const y = (zvE - 12_096) / 10_000;
-    return Math.floor((932.30 * y + 1_400) * y);
+  if (zvE <= 12_348) return 0;
+  if (zvE <= 17_799) {
+    const y = (zvE - 12_348) / 10_000;
+    return Math.floor((914.51 * y + 1_400) * y);
   }
-  if (zvE <= 68_480) {
-    const z = (zvE - 17_443) / 10_000;
-    return Math.floor((176.64 * z + 2_397) * z + 1_015.13);
+  if (zvE <= 69_878) {
+    const z = (zvE - 17_799) / 10_000;
+    return Math.floor((173.10 * z + 2_397) * z + 1_034.87);
   }
-  if (zvE <= 277_825) return Math.floor(0.42 * zvE - 10_911.92);
-  return Math.floor(0.45 * zvE - 19_246.67);
+  if (zvE <= 277_825) return Math.floor(0.42 * zvE - 11_135.63);
+  return Math.floor(0.45 * zvE - 19_470.38);
 }
 
 function berechneSoli(est: number): number {
@@ -216,7 +216,7 @@ export default function EinkommensteuerrechnerCalculator() {
   const [anKist, setAnKist] = useState('0');
   const [anKinder, setAnKinder] = useState(0);
   const [anKvType, setAnKvType] = useState('gesetzlich');
-  const [anKvZusatz, setAnKvZusatz] = useState(2.5);
+  const [anKvZusatz, setAnKvZusatz] = useState(2.9);
   const [anKvPrivat, setAnKvPrivat] = useState(400);
 
   // Selbstständig state
@@ -226,7 +226,7 @@ export default function EinkommensteuerrechnerCalculator() {
   const [seKist, setSeKist] = useState('0');
   const [seKinder, setSeKinder] = useState(0);
   const [seKvType, setSeKvType] = useState('gesetzlich');
-  const [seKvZusatz, setSeKvZusatz] = useState(2.5);
+  const [seKvZusatz, setSeKvZusatz] = useState(2.9);
   const [seKvPrivat, setSeKvPrivat] = useState(600);
 
   // Result
@@ -392,7 +392,7 @@ export default function EinkommensteuerrechnerCalculator() {
       if (p.has('kist')) setAnKist(p.get('kist') || '0');
       if (p.has('kinder')) setAnKinder(g('kinder', 0));
       if (p.has('kv')) setAnKvType(p.get('kv') || 'gesetzlich');
-      if (p.has('kvz')) setAnKvZusatz(g('kvz', 2.5));
+      if (p.has('kvz')) setAnKvZusatz(g('kvz', 2.9));
     }
     if (tabId === 'selbststaendig') {
       if (p.has('umsatz')) setSeUmsatz(g('umsatz', 80000));
@@ -401,7 +401,7 @@ export default function EinkommensteuerrechnerCalculator() {
       if (p.has('kist')) setSeKist(p.get('kist') || '0');
       if (p.has('kinder')) setSeKinder(g('kinder', 0));
       if (p.has('kv')) setSeKvType(p.get('kv') || 'gesetzlich');
-      if (p.has('kvz')) setSeKvZusatz(g('kvz', 2.5));
+      if (p.has('kvz')) setSeKvZusatz(g('kvz', 2.9));
     }
     const urlV = p.get('v');
     if (urlV && urlV < '2026-03-09') setShowVersionBanner(true);

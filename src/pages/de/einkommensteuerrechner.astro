@@ -13,7 +13,7 @@ const schema = {
       "name": "Was ist der Unterschied zwischen Grenzsteuersatz und effektivem Steuersatz?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Der Grenzsteuersatz ist der Steuersatz auf den letzten verdienten Euro. Der effektive Steuersatz ist die tatsächlich gezahlte Steuer als Prozentsatz des Gesamteinkommens. Bei €55.000 Brutto liegt der Grenzsteuersatz bei 22%, der effektive Steuersatz aber nur bei ca. 15,6% — weil die ersten €12.096 steuerfrei sind und niedrigere Zonen weniger besteuert werden."
+        "text": "Der Grenzsteuersatz ist der Steuersatz auf den letzten verdienten Euro. Der effektive Steuersatz ist die tatsächlich gezahlte Steuer als Prozentsatz des Gesamteinkommens. Bei €55.000 Brutto liegt der Grenzsteuersatz bei 22%, der effektive Steuersatz aber nur bei ca. 15,6% — weil die ersten €12.348 steuerfrei sind und niedrigere Zonen weniger besteuert werden."
       }
     },
     {
@@ -21,7 +21,7 @@ const schema = {
       "name": "Muss ich Solidaritätszuschlag zahlen?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Seit 2021 zahlen ca. 90% der Steuerzahler keinen Soli mehr. Die Freigrenze liegt 2025 bei €39.900 Einkommensteuer — das entspricht einem Bruttoeinkommen von ca. €121.000 (Steuerklasse I). Erst darüber wird der Soli von 5,5% fällig, mit einer Milderungszone für Einkommen knapp darüber."
+        "text": "Seit 2021 zahlen ca. 90% der Steuerzahler keinen Soli mehr. Die Freigrenze liegt 2026 bei €20.350 Einkommensteuer (Einzelveranlagte) — das entspricht einem Bruttoeinkommen von ca. €125.000 (Steuerklasse I). Erst darüber wird der Soli von 5,5% fällig, mit einer Milderungszone für Einkommen knapp darüber."
       }
     },
     {
@@ -57,8 +57,8 @@ const alternates = [
 ];
 ---
 <BaseLayout
-  title="Einkommensteuerrechner 2025 — sum.money"
-  description="Einkommensteuer 2025 berechnen: Nettoeinkommen für Arbeitnehmer und Selbstständige. Mit Sozialabgaben, Soli, Kirchensteuer. Kostenlos, sofort, teilbar."
+  title="Einkommensteuerrechner 2026 — sum.money"
+  description="Einkommensteuer 2026 berechnen: Nettoeinkommen für Arbeitnehmer und Selbstständige. Mit Sozialabgaben, Soli, Kirchensteuer. Kostenlos, sofort, teilbar."
   schema={schema}
   lang="de"
   alternates={alternates}
@@ -68,7 +68,7 @@ const alternates = [
     <a href="/">Home</a><span>›</span><a href="/de">DE</a><span>›</span>Einkommensteuerrechner
   </div>
   <main>
-    <h1 class="animate-in delay-1">Einkommensteuerrechner 2025</h1>
+    <h1 class="animate-in delay-1">Einkommensteuerrechner 2026</h1>
     <p class="subtitle animate-in delay-2">Berechnen Sie Ihr Nettoeinkommen — als Arbeitnehmer oder Selbstständiger.</p>
     <EinkommensteuerrechnerCalculator client:load />
     <EinkommensteuerrechnerContent />

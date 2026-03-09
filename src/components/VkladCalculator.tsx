@@ -9,10 +9,10 @@ const TABS: TabConfig[] = [
   { id: 'compare', label: 'Сравнить', icon: '⚖️' },
 ];
 
-// Средняя ставка по вкладам топ-10 банков (Q1 2025): ~20%
-const DEFAULT_RATE = 20;
-// НДФЛ на проценты по вкладам 2025: необлагаемая = 1 000 000 × 21% = 210 000 ₽
-const DEPOSIT_TAX_FREE = 210000;
+// Средняя ставка по вкладам топ-10 банков (март 2026): ~16-20%
+const DEFAULT_RATE = 18;
+// НДФЛ на проценты по вкладам: необлагаемая = 1 000 000 × 15,5% = 155 000 ₽
+const DEPOSIT_TAX_FREE = 155000;
 const DEPOSIT_TAX_RATE = 0.13;
 
 function fmtRUB(n: number): string {
@@ -167,7 +167,7 @@ export default function VkladCalculator() {
         { label: 'Проценты после налога', value: fmtRUB(netInterest), green: true },
       ] : [{ label: 'НДФЛ', value: 'Не облагается (проценты < ' + fmtRUB(DEPOSIT_TAX_FREE) + ')', green: true }]),
       { label: 'Вложено', value: fmtRUB(cAmount + cMonthlyAdd * months) },
-      { label: 'Капитализация', value: capitalize ? 'Ежемесячная' : 'В конце срока' },
+      { label: 'Начисление процентов', value: capitalize ? 'Ежемесячно' : 'В конце срока' },
     ]);
   }, [cAmount, cRate, cTerm, cCapitalize, cMonthlyAdd]);
 
@@ -180,13 +180,13 @@ export default function VkladCalculator() {
     const aWins = resA.interest > resB.interest;
     const diff = Math.abs(resA.interest - resB.interest);
 
-    setResultLabel(aWins ? 'Вклад A выгоднее' : resA.interest === resB.interest ? 'Одинаково' : 'Вклад B выгоднее');
+    setResultLabel(aWins ? 'Вклад №1 выгоднее' : resA.interest === resB.interest ? 'Одинаково' : 'Вклад №2 выгоднее');
     setResultPrimary('на ' + fmtRUB(diff));
     setResultDetails([
-      { label: 'Вклад A: проценты', value: fmtRUB(resA.interest), green: aWins },
-      { label: 'Вклад A: итого', value: fmtRUB(resA.total) },
-      { label: 'Вклад B: проценты', value: fmtRUB(resB.interest), green: !aWins },
-      { label: 'Вклад B: итого', value: fmtRUB(resB.total) },
+      { label: 'Вклад №1: проценты', value: fmtRUB(resA.interest), green: aWins },
+      { label: 'Вклад №1: итого', value: fmtRUB(resA.total) },
+      { label: 'Вклад №2: проценты', value: fmtRUB(resB.interest), green: !aWins },
+      { label: 'Вклад №2: итого', value: fmtRUB(resB.total) },
     ]);
   }, [aAmount, aRate, aTerm, bAmount, bRate, bTerm]);
 
@@ -260,12 +260,6 @@ export default function VkladCalculator() {
     navigator.clipboard.writeText(text).then(() => doShowFeedback('Результат скопирован'));
   };
 
-  const TERM_OPTIONS = [
-    { value: '3', label: '3 месяца' }, { value: '6', label: '6 месяцев' },
-    { value: '12', label: '12 месяцев' }, { value: '18', label: '18 месяцев' },
-    { value: '24', label: '24 месяца' },
-  ];
-
   return (
     <>
       <div className="tabs animate-in delay-3" role="tablist">
@@ -283,13 +277,13 @@ export default function VkladCalculator() {
             <div className="calc-section-label">Параметры вклада</div>
             <div className="inputs-grid">
               <CalcInput id="c-amount" label="Сумма вклада" prefix="₽" defaultValue={500000} value={cAmount} onChange={handleInput} />
-              <CalcInput id="c-rate" label="Ставка" suffix="%" defaultValue={DEFAULT_RATE} value={cRate} onChange={handleInput} helpText="Средняя ставка топ-10 банков: ~20%" />
+              <CalcInput id="c-rate" label="Ставка" suffix="%" defaultValue={DEFAULT_RATE} value={cRate} onChange={handleInput} helpText="Средняя ставка топ-10 банков: ~18%" />
             </div>
             <MoreOptions count={3}>
               <div className="inputs-grid">
-                <CalcSelect id="c-term" label="Срок" options={TERM_OPTIONS} value={cTerm} onChange={handleSelect} />
-                <CalcSelect id="c-capitalize" label="Капитализация" options={[
-                  { value: 'monthly', label: 'Ежемесячная' }, { value: 'end', label: 'В конце срока' },
+                <CalcInput id="c-term" label="Срок" suffix="мес." defaultValue={12} value={parseInt(cTerm) || 12} onChange={(id, val) => setCTerm(String(Math.max(1, Math.min(60, Math.round(val)))))} />
+                <CalcSelect id="c-capitalize" label="Начисление процентов" options={[
+                  { value: 'monthly', label: 'Ежемесячно' }, { value: 'end', label: 'В конце срока' },
                 ]} value={cCapitalize} onChange={handleSelect} />
                 <CalcInput id="c-add" label="Пополнение" prefix="₽" defaultValue={0} value={cMonthlyAdd} onChange={handleInput} helpText="Ежемесячное пополнение" />
               </div>
@@ -299,17 +293,17 @@ export default function VkladCalculator() {
 
         {activeTab === 'compare' && (
           <div>
-            <div className="calc-section-label">Вклад A</div>
+            <div className="calc-section-label">Вклад №1</div>
             <div className="inputs-grid">
               <CalcInput id="a-amount" label="Сумма" prefix="₽" defaultValue={500000} value={aAmount} onChange={handleInput} />
               <CalcInput id="a-rate" label="Ставка" suffix="%" defaultValue={20} value={aRate} onChange={handleInput} />
-              <CalcSelect id="a-term" label="Срок" options={TERM_OPTIONS} value={aTerm} onChange={handleSelect} />
+              <CalcInput id="a-term" label="Срок" suffix="мес." defaultValue={12} value={parseInt(aTerm) || 12} onChange={(id, val) => setATerm(String(Math.max(1, Math.min(60, Math.round(val)))))} />
             </div>
-            <div className="calc-section-label" style={{ marginTop: '16px' }}>Вклад B</div>
+            <div className="calc-section-label" style={{ marginTop: '16px' }}>Вклад №2</div>
             <div className="inputs-grid">
               <CalcInput id="b-amount" label="Сумма" prefix="₽" defaultValue={500000} value={bAmount} onChange={handleInput} />
               <CalcInput id="b-rate" label="Ставка" suffix="%" defaultValue={18} value={bRate} onChange={handleInput} />
-              <CalcSelect id="b-term" label="Срок" options={TERM_OPTIONS} value={bTerm} onChange={handleSelect} />
+              <CalcInput id="b-term" label="Срок" suffix="мес." defaultValue={18} value={parseInt(bTerm) || 18} onChange={(id, val) => setBTerm(String(Math.max(1, Math.min(60, Math.round(val)))))} />
             </div>
           </div>
         )}
@@ -339,7 +333,7 @@ export default function VkladCalculator() {
       </div>
 
       <div style={{ textAlign: 'center', marginTop: '12px', fontSize: '.78rem', color: 'var(--ink-muted)', fontStyle: 'italic' }}>
-        НДФЛ на проценты по вкладам: необлагаемая сумма 210 000 ₽ (2025). Ключевая ставка ЦБ: 21%.
+        Ключевая ставка ЦБ РФ: 15,5% (февраль 2026). Актуальную ставку уточняйте на cbr.ru
       </div>
 
       <div className={`copy-feedback ${showFeedback ? 'show' : ''}`}>{feedbackMsg}</div>

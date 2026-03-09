@@ -156,7 +156,7 @@ export default function UkMortgageCalculator() {
   const [ftIncome, setFtIncome] = useState(45000);
   const [ftDebts, setFtDebts] = useState(0);
   const [ftRate, setFtRate] = useState(4.5);
-  const [ftTerm, setFtTerm] = useState('25');
+  const [ftTerm, setFtTerm] = useState(25);
   const [ftDeposit, setFtDeposit] = useState(10);
 
   // Remortgage
@@ -193,7 +193,7 @@ export default function UkMortgageCalculator() {
     const maxPrice = maxMortgage / (1 - depositPct);
     const depositAmount = maxPrice * depositPct;
     const ltv = ((maxPrice - depositAmount) / maxPrice) * 100;
-    const term = parseInt(ftTerm);
+    const term = Math.max(Math.round(ftTerm), 1);
     const payment = monthlyPayment(maxMortgage, ftRate, term);
     const totalRepaid = payment * term * 12;
     const totalInterest = totalRepaid - maxMortgage;
@@ -309,7 +309,7 @@ export default function UkMortgageCalculator() {
       if (params.has('income')) setFtIncome(get('income', 45000));
       if (params.has('debts')) setFtDebts(get('debts', 0));
       if (params.has('rate')) setFtRate(get('rate', 4.5));
-      if (params.has('term')) setFtTerm(params.get('term') || '25');
+      if (params.has('term')) setFtTerm(get('term', 25));
       if (params.has('deposit')) setFtDeposit(get('deposit', 10));
     }
     if (tabId === 'remortgage') {
@@ -342,7 +342,7 @@ export default function UkMortgageCalculator() {
     const s = savedTabValues.current[tabId];
     if (!s) return;
     switch (tabId) {
-      case 'first-time': setFtIncome(s.income as number); setFtDebts(s.debts as number); setFtRate(s.rate as number); setFtTerm(s.term as string); setFtDeposit(s.deposit as number); break;
+      case 'first-time': setFtIncome(s.income as number); setFtDebts(s.debts as number); setFtRate(s.rate as number); setFtTerm(s.term as number); setFtDeposit(s.deposit as number); break;
       case 'remortgage': setRmBalance(s.balance as number); setRmCurrentRate(s.currentRate as number); setRmNewRate(s.newRate as number); setRmRemaining(s.remaining as number); setRmErc(s.erc as number); break;
       case 'overpayment': setOpBalance(s.balance as number); setOpOverpayment(s.overpayment as number); setOpRate(s.rate as number); setOpRemaining(s.remaining as number); break;
     }
@@ -350,15 +350,15 @@ export default function UkMortgageCalculator() {
 
   const handleInput = (id: string, val: number) => {
     const setters: Record<string, (v: number) => void> = {
-      'ft-income': setFtIncome, 'ft-debts': setFtDebts, 'ft-rate': setFtRate, 'ft-deposit': setFtDeposit,
+      'ft-income': setFtIncome, 'ft-debts': setFtDebts, 'ft-rate': setFtRate, 'ft-term': setFtTerm, 'ft-deposit': setFtDeposit,
       'rm-balance': setRmBalance, 'rm-currentRate': setRmCurrentRate, 'rm-newRate': setRmNewRate, 'rm-remaining': setRmRemaining, 'rm-erc': setRmErc,
       'op-balance': setOpBalance, 'op-overpayment': setOpOverpayment, 'op-rate': setOpRate, 'op-remaining': setOpRemaining,
     };
     setters[id]?.(val);
   };
 
-  const handleSelect = (id: string, val: string) => {
-    if (id === 'ft-term') setFtTerm(val);
+  const handleSelect = (_id: string, _val: string) => {
+    // no more selects in this calculator
   };
 
   const getCurrentValues = (): Record<string, number | string> => {
@@ -423,10 +423,7 @@ export default function UkMortgageCalculator() {
             <MoreOptions count={3}>
               <div className="inputs-grid">
                 <CalcInput id="ft-rate" label="Interest rate" suffix="%" defaultValue={4.5} value={ftRate} onChange={handleInput} />
-                <CalcSelect id="ft-term" label="Mortgage term" options={[
-                  { value: '20', label: '20 years' }, { value: '25', label: '25 years' },
-                  { value: '30', label: '30 years' }, { value: '35', label: '35 years' },
-                ]} value={ftTerm} onChange={handleSelect} />
+                <CalcInput id="ft-term" label="Mortgage term" suffix="years" defaultValue={25} value={ftTerm} onChange={handleInput} />
                 <CalcInput id="ft-deposit" label="Deposit" suffix="%" defaultValue={10} value={ftDeposit} onChange={handleInput} helpText="Typical: 5–20%. 10%+ gets better rates." />
               </div>
             </MoreOptions>
