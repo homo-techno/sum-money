@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+---
+<BaseLayout
+  title="Finanzrechner für Deutschland — sum.money"
+  description="Kostenlose Finanzrechner für Deutschland. Hypothekenrechner, Zinsrechner und mehr. Keine Registrierung, keine Cookies."
+  lang="de"
+>
+  <Header activeMarket="DE" />
+  <main>
+    <h1 class="animate-in delay-1">Finanzrechner für Deutschland</h1>
+    <p class="subtitle animate-in delay-2">Echte Formeln für den deutschen Markt. Keine Registrierung, keine Cookies.</p>
+
+    <section class="content-section animate-in delay-3">
+      <div class="related-grid">
+        <a href="/de/hypothekenrechner" class="related-card">
+          <div class="related-card-title">🏠 Hypothekenrechner</div>
+          <div class="related-card-desc">Maximalen Kaufpreis berechnen, Anschlussfinanzierung vergleichen, Sondertilgung planen.</div>
+        </a>
+      </div>
+      <p style="margin-top: 24px; color: var(--ink-muted); font-size: .88rem;">Weitere Rechner folgen in Kürze.</p>
+    </section>
+  </main>
+</BaseLayout>

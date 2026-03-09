@@ -3,18 +3,21 @@ interface Props {
   title: string;
   description: string;
   schema?: object;
+  lang?: string;
+  alternates?: Array<{ hreflang: string; href: string }>;
 }
 
-const { title, description, schema } = Astro.props;
+const { title, description, schema, lang = 'en', alternates } = Astro.props;
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
 <meta name="description" content={description}>
 {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+{alternates?.map(alt => <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />)}
 </head>
 
 <body>

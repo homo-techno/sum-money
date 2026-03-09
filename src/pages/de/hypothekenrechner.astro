@@ -1,15 +1,76 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
+import HypothekenrechnerCalculator from '../../components/HypothekenrechnerCalculator.tsx';
+import HypothekenrechnerContent from '../../components/HypothekenrechnerContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was passiert nach der Zinsbindung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nach Ablauf der Zinsbindung wird die Restschuld zu einem neuen Zinssatz weiterfinanziert (Anschlussfinanzierung). Der neue Zinssatz hängt von den dann aktuellen Marktbedingungen ab. Sie können den neuen Zinssatz bereits bis zu 5 Jahre vorher mit einem Forward-Darlehen sichern."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie viel Eigenkapital brauche ich?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mindestens die Kaufnebenkosten (8–15%) aus Eigenmitteln, besser 20% des Kaufpreises plus Nebenkosten. Bei 20% Eigenkapital erhalten Sie deutlich bessere Zinssätze."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was sind Kaufnebenkosten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Grunderwerbsteuer (3,5–6,5% je nach Bundesland), Notar- und Grundbuchkosten (~1,5%), und ggf. Maklerprovision (bis 3,57% inkl. MwSt.). Insgesamt 8–15% des Kaufpreises."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist der Unterschied zwischen Sollzins und Effektivzins?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der Sollzins ist der reine Darlehenszins. Der Effektivzins berücksichtigt zusätzlich Bearbeitungsgebühren und die Verrechnung der Tilgung. Der Effektivzins eignet sich besser zum Vergleich verschiedener Angebote."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Tilgung sollte ich wählen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mindestens 2%, besser 3% oder mehr. Bei 2% Tilgung und 3,5% Zinsen dauert die Rückzahlung ca. 29 Jahre. Bei 3% Tilgung sind es nur ca. 22 Jahre — und Sie sparen erheblich an Zinskosten."
+      }
+    }
+  ]
+};
+
+const alternates = [
+  { hreflang: 'de-de', href: 'https://sum.money/de/hypothekenrechner' },
+  { hreflang: 'en-us', href: 'https://sum.money/us/mortgage' },
+];
 ---
-<BaseLayout title="Hypothekenrechner — sum.money" description="Kostenloser Hypothekenrechner für Deutschland.">
+<BaseLayout
+  title="Hypothekenrechner Deutschland — sum.money"
+  description="Kostenloser Hypothekenrechner für Deutschland. Maximalen Kaufpreis berechnen, Anschlussfinanzierung vergleichen, Sondertilgung planen. Keine Registrierung."
+  schema={schema}
+  lang="de"
+  alternates={alternates}
+>
   <Header activeMarket="DE" />
-  <div class="breadcrumbs animate-in"><a href="/">Home</a><span>›</span><a href="/de/hypothekenrechner">DE</a><span>›</span>Hypothekenrechner</div>
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span><a href="/de">DE</a><span>›</span>Hypothekenrechner
+  </div>
   <main>
     <h1 class="animate-in delay-1">Hypothekenrechner</h1>
-    <section class="content-section animate-in delay-2">
-      <p>German Mortgage Calculator — Coming soon.</p>
-      <p><a href="/">← Zurück zur Startseite</a></p>
-    </section>
+    <p class="subtitle animate-in delay-2">Berechnen Sie Ihren maximalen Kaufpreis — oder vergleichen Sie Ihre Anschlussfinanzierung.</p>
+    <HypothekenrechnerCalculator client:load />
+    <HypothekenrechnerContent />
   </main>
 </BaseLayout>

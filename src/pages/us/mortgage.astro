@@ -50,11 +50,16 @@ const schema = {
     }
   ]
 };
+const alternates = [
+  { hreflang: 'en-us', href: 'https://sum.money/us/mortgage' },
+  { hreflang: 'de-de', href: 'https://sum.money/de/hypothekenrechner' },
+];
 ---
 <BaseLayout
   title="Free Mortgage Calculator — sum.money"
   description="Enter your income and debt payments — see the maximum home price you can afford. Instant results, no registration, shareable link."
   schema={schema}
+  alternates={alternates}
 >
   <Header activeMarket="US" />
   <div class="breadcrumbs animate-in">
