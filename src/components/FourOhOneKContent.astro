@@ -1,0 +1,205 @@
+<!-- ═══════════════════════════════════════ -->
+<!-- ZONE 2: Content below result           -->
+<!-- ═══════════════════════════════════════ -->
+
+<!-- ── HOW TO USE ── -->
+<div class="content-section reveal">
+  <div class="section-divider"></div>
+</div>
+
+<section class="content-section reveal">
+  <h2>How to Use This Calculator</h2>
+
+  <h3>Growth tab</h3>
+  <p>Enter your <strong>current age</strong>, <strong>retirement age</strong>, <strong>current 401(k) balance</strong>, and <strong>annual contribution</strong>. The calculator projects your balance at retirement with compound growth. Expand <strong>"More Options"</strong> to add an <strong>employer match</strong> percentage and match limit — this shows how much free money your employer adds on top of your contributions.</p>
+
+  <h3>Max Out tab</h3>
+  <p>Enter your <strong>annual salary</strong> and current <strong>contribution percentage</strong>. The calculator shows how much more you could contribute to hit the IRS annual limit. If you're 50 or older, toggle <strong>catch-up contributions</strong> to see the higher limit. It also shows the per-paycheck increase needed to max out.</p>
+
+  <h3>Share your result</h3>
+  <p>Every input is encoded in the URL. Click <strong>Share</strong>, send the link — they'll see your exact numbers. No re-entering, no screenshots.</p>
+</section>
+
+<!-- ── FORMULA ── -->
+<section class="content-section reveal">
+  <h2>The Formula</h2>
+  <p>A 401(k) grows through <strong>compound interest</strong> on your contributions, employer match, and investment returns. The future value combines your existing balance and recurring contributions:</p>
+  <div class="formula-box">
+    FV = PV &times; (1 + r)<sup>n</sup> + PMT &times; [(1 + r)<sup>n</sup> &minus; 1] / r
+  </div>
+  <p>Where <strong>PV</strong> = current balance, <strong>PMT</strong> = annual contribution (yours + employer match), <strong>r</strong> = annual rate of return, <strong>n</strong> = years until retirement.</p>
+
+  <h3>Employer match</h3>
+  <div class="formula-box">
+    Employer Match = min(your_contribution, salary &times; match_limit%) &times; match_%
+  </div>
+  <p>For example, if your employer matches 50% of contributions up to 6% of salary, they contribute up to 3% of your salary each year — but only if you contribute at least 6%.</p>
+</section>
+
+<!-- ── EXAMPLE ── -->
+<section class="content-section reveal">
+  <h2>Example</h2>
+
+  <div class="example-box">
+    <h4>Mike — planning for retirement at 65</h4>
+    <p>Mike is 30 years old, earns $75,000/year, and has $25,000 in his 401(k). He contributes $6,000/year. His employer matches 50% of contributions up to 6% of salary. He expects a 7% average annual return.</p>
+
+    <h3>Inputs</h3>
+    <div class="example-data">
+      <div class="example-row"><span class="label">Current age</span><span class="value">30</span></div>
+      <div class="example-row"><span class="label">Retirement age</span><span class="value">65</span></div>
+      <div class="example-row"><span class="label">Current balance</span><span class="value">$25,000</span></div>
+      <div class="example-row"><span class="label">Annual contribution</span><span class="value">$6,000</span></div>
+      <div class="example-row"><span class="label">Employer match</span><span class="value">50% up to 6% of salary</span></div>
+      <div class="example-row"><span class="label">Annual return</span><span class="value">7%</span></div>
+    </div>
+
+    <h3>Breakdown at 65</h3>
+    <div class="example-data">
+      <div class="example-row"><span class="label">Employer match/year</span><span class="value">$2,250 (50% of $4,500 limit)</span></div>
+      <div class="example-row"><span class="label">Total annual contribution</span><span class="value">$8,250 ($6,000 + $2,250)</span></div>
+      <div class="example-row"><span class="label">Your contributions (35 yrs)</span><span class="value">$210,000</span></div>
+      <div class="example-row"><span class="label">Employer contributions</span><span class="value">$78,750</span></div>
+      <div class="example-row"><span class="label">Investment growth</span><span class="value">~$850,000+</span></div>
+      <div class="example-row"><span class="label">Projected balance at 65</span><span class="value">~$1,140,000+</span></div>
+    </div>
+    <p>Most of Mike's final balance comes from compound growth — not his contributions. Starting at 30 gives him 35 years for compounding to do the heavy lifting. The employer match adds over $78K in free money.</p>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="content-section reveal">
+  <h2>FAQ</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      How much should I contribute to my 401(k)?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        At minimum, contribute enough to get your full employer match — that's free money you'd otherwise leave on the table. Beyond that, aim for 15% of your gross income (including the match). If you can't hit 15% right away, increase your contribution by 1% each year until you get there.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      What is the 2025 contribution limit?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        The 2025 401(k) employee contribution limit is $23,500. If you're 50 or older, you can make an additional catch-up contribution of $7,500, bringing your total to $31,000. These limits apply to your employee deferrals only — employer match contributions don't count toward this cap.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Traditional vs Roth 401(k) — what's the difference?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Traditional 401(k) contributions are pre-tax — they lower your taxable income now, but you pay income tax on withdrawals in retirement. Roth 401(k) contributions are after-tax — no tax break today, but qualified withdrawals in retirement are completely tax-free. Choose Traditional if you expect to be in a lower tax bracket in retirement; choose Roth if you expect your rate to stay the same or go up.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Can I catch up if I started saving late?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Yes. Once you turn 50, you're eligible for catch-up contributions ($7,500 extra in 2025). Beyond that, save as aggressively as you can — even 20-25% of income if possible. Consider delaying retirement by a few years, which gives your money more time to compound and reduces the number of years you need to fund. Use the Max Out tab to see exactly how much room you have left under the limit.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      What rate of return should I use?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        A common assumption is 7% for a real (inflation-adjusted) return, or 10% for a nominal return — both based on the long-term average of a diversified stock portfolio. Use 7% if you want your result in today's dollars (more conservative and practical). Use 10% if you want the raw future dollar amount. If you're closer to retirement and hold more bonds, 5-6% may be more realistic.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RELATED CALCS ── -->
+<section class="content-section reveal">
+  <h2>Related Calculators</h2>
+  <div class="related-grid">
+    <a href="/us/roth-ira-calculator" class="related-card">
+      <div class="related-card-title">Roth IRA Calculator</div>
+      <div class="related-card-desc">Project tax-free growth in your Roth IRA.</div>
+    </a>
+    <a href="/us/income-tax-calculator" class="related-card">
+      <div class="related-card-title">Income Tax Calculator</div>
+      <div class="related-card-desc">See how 401(k) contributions reduce your tax.</div>
+    </a>
+    <a href="/compound-interest-calculator" class="related-card">
+      <div class="related-card-title">Compound Interest Calculator</div>
+      <div class="related-card-desc">See how any investment grows over time.</div>
+    </a>
+  </div>
+</section>
+
+<!-- ── EMBED ── -->
+<div class="embed-section reveal">
+  <h3>Add This Calculator to Your Website</h3>
+  <p>Embed the sum.money 401(k) calculator on your site. Free, responsive, always up-to-date.</p>
+  <div class="embed-code">&lt;iframe src="https://sum.money/embed/us/401k-calculator" width="100%" height="700"&gt;&lt;/iframe&gt;</div>
+</div>
+
+<!-- ── FAQ Accordion + Scroll Reveal scripts ── -->
+<script is:inline>
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(function(q) {
+  q.addEventListener('click', function() {
+    var item = q.parentElement;
+    var answer = item.querySelector('.faq-answer');
+    var isOpen = item.classList.contains('open');
+
+    document.querySelectorAll('.faq-item').forEach(function(fi) {
+      fi.classList.remove('open');
+      fi.querySelector('.faq-answer').style.maxHeight = '0';
+      fi.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      q.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// Scroll reveal
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+// Track related calc clicks
+document.querySelectorAll('.related-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    try {
+      var payload = { event: 'related_click', timestamp: Date.now(), target: card.getAttribute('href'), url: location.pathname };
+      if (navigator.sendBeacon) navigator.sendBeacon('/api/track', JSON.stringify(payload));
+    } catch(e) {}
+  });
+});
+</script>

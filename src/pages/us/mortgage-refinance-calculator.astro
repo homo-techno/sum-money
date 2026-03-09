@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import MortgageRefinanceCalculator from '../../components/MortgageRefinanceCalculator.tsx';
+import MortgageRefinanceContent from '../../components/MortgageRefinanceContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "When does it make sense to refinance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Refinancing typically makes sense when you can lower your rate by at least 0.75-1%, plan to stay in the home past the break-even point, and closing costs are reasonable. The break-even point is when your monthly savings exceed the closing costs — this calculator shows you exactly when that is."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does it cost to refinance a mortgage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Closing costs for a refinance typically run 2-5% of the loan amount, or $3,000-$6,000 on a $280,000 mortgage. This includes appraisal fees, title insurance, origination fees, and other charges. Some lenders offer 'no-closing-cost' refinances by rolling costs into a slightly higher rate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I refinance to a shorter term?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Refinancing from a 30-year to a 15-year mortgage means higher monthly payments but significantly less total interest. If you can afford the higher payment, you'll save tens of thousands in interest and build equity faster. The calculator lets you compare different term lengths."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does refinancing reset my mortgage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — refinancing creates a new loan with a new term. If you've paid 5 years of a 30-year mortgage and refinance into a new 30-year, you're now paying for 35 years total. Consider refinancing into a shorter term to avoid extending your payoff date."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="Mortgage Refinance Calculator — Should I Refinance? — sum.money"
+  description="See if refinancing your mortgage saves money. Compare monthly payments, total savings, and break-even point. Free, instant, shareable."
+  schema={schema}
+>
+  <Header activeMarket="US" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span><a href="/us">US</a><span>›</span>Mortgage Refinance Calculator
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">Mortgage Refinance Calculator</h1>
+    <p class="subtitle animate-in delay-2">Should you refinance? See your monthly savings and break-even point.</p>
+    <MortgageRefinanceCalculator client:load />
+    <MortgageRefinanceContent />
+  </main>
+</BaseLayout>

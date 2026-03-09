@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import AutoLoanCalculator from '../../components/AutoLoanCalculator.tsx';
+import AutoLoanContent from '../../components/AutoLoanContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much should I put down on a car?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Financial experts recommend 20% down on a new car and 10% on a used car. A larger down payment means a smaller loan, lower monthly payments, and less interest paid overall. It also helps avoid being 'upside down' — owing more than the car is worth."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's a good interest rate for an auto loan in 2025?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As of 2025, good rates range from 4.5% to 6.5% for new cars with excellent credit (750+). Used car rates are typically 1-2% higher. Rates above 10% are considered high — if that's your offer, consider improving your credit score or making a larger down payment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I choose a longer or shorter loan term?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shorter terms (36-48 months) mean higher monthly payments but significantly less total interest. A 60-month loan is the sweet spot for most buyers. Avoid 72-84 month loans unless necessary — you'll pay thousands more in interest and risk negative equity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a trade-in reduce my loan amount?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Your trade-in value is subtracted from the purchase price before financing. If you buy a $35,000 car with a $5,000 trade-in and $5,000 down payment, you only finance $25,000. This lowers your monthly payment and total interest."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="Auto Loan Calculator — sum.money"
+  description="Calculate your monthly car payment, total interest, and total cost. Compare loan terms from 24 to 84 months. Free, instant, shareable."
+  schema={schema}
+>
+  <Header activeMarket="US" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span><a href="/us">US</a><span>›</span>Auto Loan Calculator
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">Auto Loan Calculator</h1>
+    <p class="subtitle animate-in delay-2">See your monthly car payment — and how much interest you'll pay over the life of the loan.</p>
+    <AutoLoanCalculator client:load />
+    <AutoLoanContent />
+  </main>
+</BaseLayout>

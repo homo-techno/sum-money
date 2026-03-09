@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import CapitalGainsTaxCalculator from '../../components/CapitalGainsTaxCalculator.tsx';
+import CapitalGainsTaxContent from '../../components/CapitalGainsTaxContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between long-term and short-term capital gains?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Long-term capital gains apply to assets held for more than one year and are taxed at preferential rates (0%, 15%, or 20%). Short-term capital gains apply to assets held one year or less and are taxed as ordinary income (10-37%). Holding an asset for over a year can save you significantly in taxes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the 2025 long-term capital gains tax rates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For 2025, single filers pay 0% on gains up to $48,350, 15% on gains from $48,351 to $533,400, and 20% above $533,400. Married filing jointly: 0% up to $96,700, 15% up to $600,050, and 20% above. These thresholds are based on taxable income including the gain."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can capital losses offset gains?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Capital losses offset capital gains dollar-for-dollar. If you have more losses than gains, you can deduct up to $3,000 of net capital losses against ordinary income per year. Excess losses carry forward to future tax years indefinitely."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I pay capital gains on my primary residence?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can exclude up to $250,000 of gain ($500,000 if married filing jointly) on the sale of your primary residence if you've lived there for at least 2 of the past 5 years. This is one of the most valuable tax breaks available to homeowners."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="Capital Gains Tax Calculator 2025 — sum.money"
+  description="Calculate your capital gains tax on stocks, real estate, or other investments. Long-term and short-term rates for 2025. Free, instant."
+  schema={schema}
+>
+  <Header activeMarket="US" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span><a href="/us">US</a><span>›</span>Capital Gains Tax Calculator
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">Capital Gains Tax Calculator 2025</h1>
+    <p class="subtitle animate-in delay-2">See how much tax you'll owe on your investment gains — long-term or short-term.</p>
+    <CapitalGainsTaxCalculator client:load />
+    <CapitalGainsTaxContent />
+  </main>
+</BaseLayout>

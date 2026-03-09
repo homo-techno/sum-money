@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import DownPaymentCalculator from '../../components/DownPaymentCalculator.tsx';
+import DownPaymentContent from '../../components/DownPaymentContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much down payment do I need for a house?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the loan type. Conventional loans require as little as 3% down, FHA loans 3.5%, and VA/USDA loans may require 0%. However, putting 20% down avoids PMI (private mortgage insurance), saving you $100-300/month. On a $350,000 home, 20% down is $70,000."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is PMI and when can I remove it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PMI (Private Mortgage Insurance) is required when your down payment is less than 20%. It typically costs 0.3-1.5% of the loan amount annually. You can request PMI removal once you reach 20% equity, and lenders must automatically cancel it at 22% equity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it better to save more for a down payment or buy sooner?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your market. If home prices are rising 5%+ per year, waiting to save a larger down payment may cost more than PMI. If prices are flat or declining, saving more makes sense. Also consider: rent costs while saving, opportunity cost of tying up cash, and your financial stability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where should I keep my down payment savings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Keep your down payment savings in a high-yield savings account (HYSA) earning 4-5% APY. Avoid investing in stocks if you plan to buy within 2-3 years — market volatility could reduce your savings when you need them most. CDs are another safe option if you have a fixed timeline."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="Down Payment Calculator — sum.money"
+  description="Calculate your down payment amount, see if you need PMI, or create a savings plan. Compare 3% to 25% down options. Free, instant."
+  schema={schema}
+>
+  <Header activeMarket="US" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span><a href="/us">US</a><span>›</span>Down Payment Calculator
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">Down Payment Calculator</h1>
+    <p class="subtitle animate-in delay-2">See how much you need for a down payment — or how long it'll take to save.</p>
+    <DownPaymentCalculator client:load />
+    <DownPaymentContent />
+  </main>
+</BaseLayout>

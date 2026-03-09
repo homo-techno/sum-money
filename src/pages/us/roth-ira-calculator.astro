@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import RothIraCalculator from '../../components/RothIraCalculator.tsx';
+import RothIraContent from '../../components/RothIraContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the Roth IRA contribution limit for 2025?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 2025 Roth IRA contribution limit is $7,000 per year, or $8,000 if you're age 50 or older. Income limits apply: single filers earning above $150,000 and married filing jointly above $236,000 have reduced contribution limits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a Roth IRA better than a Traditional IRA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your current vs. retirement tax bracket. Roth is better if you expect higher taxes in retirement — you pay tax now but withdraw tax-free. Traditional is better if your tax rate will drop in retirement. If unsure, Roth is often recommended for younger investors with decades of tax-free growth ahead."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When can I withdraw from my Roth IRA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can withdraw your contributions (not earnings) at any time, tax- and penalty-free. Earnings can be withdrawn tax-free after age 59½ if the account has been open for at least 5 years. Early withdrawal of earnings may incur a 10% penalty plus income tax."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I contribute to both a 401(k) and a Roth IRA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. 401(k) and IRA contribution limits are separate. You can contribute up to $23,500 to a 401(k) and up to $7,000 to a Roth IRA in 2025. This is a powerful combination — get your employer match in the 401(k), then max out your Roth IRA for tax-free growth."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="Roth IRA Calculator 2025 — sum.money"
+  description="Project your Roth IRA balance at retirement. Compare Roth vs Traditional IRA after-tax outcomes. Free, instant, shareable."
+  schema={schema}
+>
+  <Header activeMarket="US" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span><a href="/us">US</a><span>›</span>Roth IRA Calculator
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">Roth IRA Calculator 2025</h1>
+    <p class="subtitle animate-in delay-2">See your tax-free growth — or compare Roth vs Traditional IRA outcomes.</p>
+    <RothIraCalculator client:load />
+    <RothIraContent />
+  </main>
+</BaseLayout>

@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import DebtPayoffCalculator from '../../components/DebtPayoffCalculator.tsx';
+import DebtPayoffContent from '../../components/DebtPayoffContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's the difference between snowball and avalanche?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Snowball pays off the smallest balance first for quick wins and motivation. Avalanche targets the highest interest rate first and saves more money over time. Mathematically, avalanche is optimal — but snowball's psychological wins help many people stay on track."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much extra should I pay toward my debt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Even $100-200 extra per month makes a significant difference. On $20,000 of credit card debt at 22%, an extra $200/month saves over $5,000 in interest and gets you debt-free 2+ years faster. Use the calculator to see the impact of different extra payment amounts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I pay off debt or invest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compare your debt's interest rate to expected investment returns. If your debt charges 22% (credit cards), pay it off first — no investment reliably returns 22%. If your debt is 4-5% (student loans, mortgage), you might invest instead, especially if you have an employer 401(k) match."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this calculator account for minimum payment changes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This calculator uses fixed minimum payments. In reality, some lenders reduce minimums as your balance drops, which extends payoff time. For the most accurate estimate, use your current minimum payments and commit to keeping them at that level even as balances decrease."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="Debt Payoff Calculator — Snowball vs Avalanche — sum.money"
+  description="Compare snowball and avalanche strategies. See your debt-free date and how much interest you'll save with extra payments. Free, instant."
+  schema={schema}
+>
+  <Header activeMarket="US" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span><a href="/us">US</a><span>›</span>Debt Payoff Calculator
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">Debt Payoff Calculator</h1>
+    <p class="subtitle animate-in delay-2">Find your debt-free date — snowball or avalanche, with extra payments.</p>
+    <DebtPayoffCalculator client:load />
+    <DebtPayoffContent />
+  </main>
+</BaseLayout>

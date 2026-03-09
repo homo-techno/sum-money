@@ -1,0 +1,191 @@
+<!-- ═══════════════════════════════════════ -->
+<!-- ZONE 2: Content below result           -->
+<!-- ═══════════════════════════════════════ -->
+
+<!-- ── HOW TO USE ── -->
+<div class="content-section reveal">
+  <div class="section-divider"></div>
+</div>
+
+<section class="content-section reveal">
+  <h2>How to Use This Calculator</h2>
+
+  <h3>Income</h3>
+  <p>Enter your <strong>gross annual household income</strong> — the combined total before taxes. This is the starting point lenders use to determine how much mortgage payment you can handle each month.</p>
+
+  <h3>Monthly debts</h3>
+  <p>Add up your recurring monthly obligations: car payments, student loans, credit card minimums, personal loans, and any other fixed debt payments. The calculator subtracts these from your allowable monthly housing budget.</p>
+
+  <h3>More Options</h3>
+  <p>Expand <strong>"More Options"</strong> to fine-tune your estimate. You can adjust the <strong>down payment</strong> amount, <strong>interest rate</strong>, <strong>loan term</strong> (15 or 30 years), <strong>debt-to-income ratio</strong> (DTI), <strong>property tax</strong> rate, and <strong>homeowners insurance</strong>. These all affect how much home you can afford.</p>
+
+  <h3>Share your result</h3>
+  <p>Every input is encoded in the URL. Click <strong>Share</strong>, send the link — they'll see your exact numbers. No re-entering, no screenshots.</p>
+</section>
+
+<!-- ── FORMULA ── -->
+<section class="content-section reveal">
+  <h2>The Formula</h2>
+  <p>Lenders use your <strong>debt-to-income ratio</strong> to cap your total monthly obligations. The calculator works backwards from that cap to find the maximum home price you can afford.</p>
+  <div class="formula-box">
+    Max Monthly Payment = (Annual Income &divide; 12) &times; DTI% &minus; Monthly Debts<br><br>
+    Max Loan = Payment &times; [(1 + r)<sup>n</sup> &minus; 1] &divide; [r &times; (1 + r)<sup>n</sup>]<br>
+    <small>where r = monthly interest rate, n = number of payments</small><br><br>
+    Max Home Price = Max Loan + Down Payment
+  </div>
+
+  <p>The first line determines how much of your monthly income is available for a mortgage after existing debts. The second line is the <strong>present-value annuity formula</strong> — it converts a monthly payment into the total loan amount a lender will approve. Adding your down payment gives the maximum purchase price.</p>
+</section>
+
+<!-- ── EXAMPLE ── -->
+<section class="content-section reveal">
+  <h2>Example</h2>
+
+  <div class="example-box">
+    <h4>Mark & Lisa — shopping for their first home</h4>
+    <p>Mark and Lisa have a combined income of $120,000 and $800/month in existing debt payments. They've saved $80,000 for a down payment and are looking at 30-year fixed mortgages at 6.5%. Their lender uses a 36% DTI limit.</p>
+
+    <h3>Inputs</h3>
+    <div class="example-data">
+      <div class="example-row"><span class="label">Gross annual income</span><span class="value">$120,000</span></div>
+      <div class="example-row"><span class="label">Monthly debts</span><span class="value">$800</span></div>
+      <div class="example-row"><span class="label">Down payment</span><span class="value">$80,000</span></div>
+      <div class="example-row"><span class="label">Interest rate</span><span class="value">6.5%</span></div>
+      <div class="example-row"><span class="label">Loan term</span><span class="value">30 years</span></div>
+      <div class="example-row"><span class="label">DTI ratio</span><span class="value">36%</span></div>
+    </div>
+
+    <h3>Result</h3>
+    <div class="example-data">
+      <div class="example-row"><span class="label">Max monthly payment</span><span class="value">($120,000 &divide; 12) &times; 36% &minus; $800 = $2,800</span></div>
+      <div class="example-row"><span class="label">Max loan amount</span><span class="value">~$340,000</span></div>
+      <div class="example-row"><span class="label">Max home price</span><span class="value">~$420,000</span></div>
+    </div>
+    <p>With $80,000 down and a $340K mortgage, Mark and Lisa can afford a home up to roughly $420,000 while staying within lender guidelines.</p>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="content-section reveal">
+  <h2>FAQ</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      What DTI ratio do lenders want?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Most lenders follow the <strong>28/36 rule</strong>. Your housing costs (mortgage, taxes, insurance) shouldn't exceed 28% of gross monthly income, and your total debt payments shouldn't exceed 36%. Some loan programs (FHA, VA) allow higher ratios — up to 43% or even 50% with strong compensating factors like a large down payment or excellent credit. This calculator uses total DTI, which you can adjust under "More Options."
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      How much house can I afford on a $100K salary?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        With a $100,000 salary, 36% DTI, no other debts, 6.5% rate, and 30-year term, your max monthly payment is about $3,000. That supports roughly a $475K loan. Add a $50K down payment and you're looking at a home around $525K. But if you carry $500/month in car and student loan payments, your budget drops to about $395K. The answer depends heavily on your debts, rate, and down payment — plug in your real numbers above.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Does a larger down payment increase how much home I can afford?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Yes — but not by changing your monthly payment limit. Your DTI determines the maximum mortgage payment, which sets the maximum loan amount. A larger down payment is added on top of that loan amount, directly raising the purchase price dollar for dollar. It also eliminates PMI (if you put 20%+ down), which frees up more of your monthly budget for the actual mortgage payment.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      What hidden costs of homeownership should I plan for?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Beyond the mortgage payment, budget for <strong>property taxes</strong> (typically 0.5–2.5% of home value per year), <strong>homeowners insurance</strong> ($1,000–$3,000+/year), <strong>PMI</strong> if your down payment is under 20%, <strong>HOA fees</strong> if applicable, and <strong>maintenance</strong> (a common rule of thumb is 1% of the home's value per year). Closing costs usually run 2–5% of the purchase price. These extras can add $500–$1,500+ per month on top of your mortgage.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RELATED CALCS ── -->
+<section class="content-section reveal">
+  <h2>Related Calculators</h2>
+  <div class="related-grid">
+    <a href="/us/mortgage-calculator" class="related-card">
+      <div class="related-card-title">🏠 Mortgage Calculator</div>
+      <div class="related-card-desc">Calculate your monthly mortgage payment, interest, and amortization.</div>
+    </a>
+    <a href="/us/down-payment-calculator" class="related-card">
+      <div class="related-card-title">💰 Down Payment Calculator</div>
+      <div class="related-card-desc">Figure out how much to save for a down payment.</div>
+    </a>
+    <a href="/us/mortgage-refinance-calculator" class="related-card">
+      <div class="related-card-title">🔄 Mortgage Refinance Calculator</div>
+      <div class="related-card-desc">See if refinancing your mortgage will save you money.</div>
+    </a>
+  </div>
+</section>
+
+<!-- ── EMBED ── -->
+<div class="embed-section reveal">
+  <h3>Add This Calculator to Your Website</h3>
+  <p>Embed the sum.money home affordability calculator on your site. Free, responsive, always up-to-date.</p>
+  <div class="embed-code">&lt;iframe src="https://sum.money/embed/us/home-affordability-calculator" width="100%" height="600"&gt;&lt;/iframe&gt;</div>
+</div>
+
+<!-- ── FAQ Accordion + Scroll Reveal scripts ── -->
+<script is:inline>
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(function(q) {
+  q.addEventListener('click', function() {
+    var item = q.parentElement;
+    var answer = item.querySelector('.faq-answer');
+    var isOpen = item.classList.contains('open');
+
+    document.querySelectorAll('.faq-item').forEach(function(fi) {
+      fi.classList.remove('open');
+      fi.querySelector('.faq-answer').style.maxHeight = '0';
+      fi.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      q.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// Scroll reveal
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+// Track related calc clicks
+document.querySelectorAll('.related-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    try {
+      var payload = { event: 'related_click', timestamp: Date.now(), target: card.getAttribute('href'), url: location.pathname };
+      if (navigator.sendBeacon) navigator.sendBeacon('/api/track', JSON.stringify(payload));
+    } catch(e) {}
+  });
+});
+</script>

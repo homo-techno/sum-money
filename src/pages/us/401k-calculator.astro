@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import FourOhOneKCalculator from '../../components/FourOhOneKCalculator.tsx';
+import FourOhOneKContent from '../../components/FourOhOneKContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much should I contribute to my 401(k)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "At minimum, contribute enough to get your full employer match — that's free money. Financial advisors recommend saving 15% of gross income for retirement (including employer match). The 2025 employee contribution limit is $23,500, or $31,000 if you're 50 or older."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is an employer match?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An employer match is when your company contributes to your 401(k) based on your own contributions. A common match is 50% of your contribution up to 6% of salary. If you earn $75,000 and contribute 6% ($4,500), your employer adds $2,250. Not taking the full match is leaving free money on the table."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What rate of return should I expect from my 401(k)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The S&P 500 has historically returned about 10% per year before inflation, or roughly 7% after inflation. A balanced portfolio of stocks and bonds might return 6-8%. Use 7% as a reasonable estimate for long-term planning. Actual returns will vary year to year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I withdraw from my 401(k) early?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Withdrawals before age 59½ typically incur a 10% early withdrawal penalty plus regular income tax. Exceptions exist for hardship, disability, or if you leave your job at 55+. Consider a 401(k) loan instead — you borrow from yourself and repay with interest."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I choose Traditional or Roth 401(k)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Traditional 401(k) contributions are pre-tax — they reduce your taxable income now, but you pay tax on withdrawals in retirement. Roth 401(k) contributions are after-tax — no tax break now, but withdrawals in retirement are tax-free. Choose Roth if you expect to be in a higher tax bracket in retirement."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="401(k) Calculator 2025 — sum.money"
+  description="Project your 401(k) balance at retirement with employer match and compound growth. Check if you're on track to max out. Free, no registration."
+  schema={schema}
+>
+  <Header activeMarket="US" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span><a href="/us">US</a><span>›</span>401(k) Calculator
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">401(k) Calculator 2025</h1>
+    <p class="subtitle animate-in delay-2">See how your 401(k) grows — or check if you're maxing out your contributions.</p>
+    <FourOhOneKCalculator client:load />
+    <FourOhOneKContent />
+  </main>
+</BaseLayout>

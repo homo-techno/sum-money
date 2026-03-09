@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import HomeAffordabilityCalculator from '../../components/HomeAffordabilityCalculator.tsx';
+import HomeAffordabilityContent from '../../components/HomeAffordabilityContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much house can I afford on a $85,000 salary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With an $85,000 salary, $500 monthly debts, $60,000 down payment, and a 36% DTI limit, you can typically afford a home around $350,000-$380,000. The exact amount depends on your interest rate, property taxes, and insurance costs. Use the calculator above for your specific numbers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is DTI and why does it matter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DTI (debt-to-income ratio) is your total monthly debt payments divided by gross monthly income. Lenders use two DTI ratios: front-end (housing costs only, typically max 28%) and back-end (all debts, typically max 36-43%). This calculator uses the back-end DTI, which is the binding constraint for most buyers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I put 20% down on a house?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "20% down avoids PMI (private mortgage insurance), which saves $100-300/month. But it's not required — FHA loans accept 3.5% down, conventional loans as low as 3%. Putting less down means a larger loan and higher monthly payments, but gets you into a home sooner."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What costs beyond the mortgage should I budget for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Budget for property taxes (0.5-2.5% of home value annually), homeowner's insurance ($1,000-3,000/year), maintenance (1% of home value/year), HOA fees if applicable, and closing costs (2-5% of loan amount). The 'true' cost of homeownership is typically 30-50% more than just the mortgage payment."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="Home Affordability Calculator — How Much House Can I Afford? — sum.money"
+  description="Find out how much house you can afford based on your income, debts, and down payment. Uses the standard 36% DTI rule. Free, instant, shareable."
+  schema={schema}
+>
+  <Header activeMarket="US" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span><a href="/us">US</a><span>›</span>Home Affordability Calculator
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">Home Affordability Calculator</h1>
+    <p class="subtitle animate-in delay-2">How much house can you afford? Enter your income and debts to find out.</p>
+    <HomeAffordabilityCalculator client:load />
+    <HomeAffordabilityContent />
+  </main>
+</BaseLayout>

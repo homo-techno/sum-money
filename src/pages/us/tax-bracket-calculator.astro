@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import TaxBracketCalculator from '../../components/TaxBracketCalculator.tsx';
+import TaxBracketContent from '../../components/TaxBracketContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What tax bracket am I in for 2025?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your tax bracket depends on your taxable income and filing status. For 2025, single filers earning $85,000 in taxable income are in the 22% bracket. But you don't pay 22% on all income — only on income between $48,476 and $103,350. Enter your income above to see your exact bracket."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my effective rate lower than my marginal rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because the US uses progressive brackets. Your marginal rate is the rate on your last dollar of income. Your effective rate is total tax divided by total income. With $85,000 taxable income, your marginal rate is 22% but your effective rate is only about 14.4%, because the first $11,925 is taxed at just 10%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the 2025 federal tax brackets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For single filers in 2025: 10% on income up to $11,925; 12% from $11,926 to $48,475; 22% from $48,476 to $103,350; 24% from $103,351 to $197,300; 32% from $197,301 to $250,525; 35% from $250,526 to $626,350; and 37% above $626,350."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does moving to a higher tax bracket mean all my income is taxed more?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — this is a common misconception. Only the income within each bracket is taxed at that rate. If you earn $50,000 and cross into the 22% bracket, only the amount above $48,475 ($1,525) is taxed at 22%. Your income below that threshold is still taxed at 10% and 12%."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="Tax Bracket Calculator 2025 — What Bracket Am I In? — sum.money"
+  description="See which 2025 federal tax bracket you're in. Visual breakdown of how much you pay at each rate. Free, instant, shareable."
+  schema={schema}
+>
+  <Header activeMarket="US" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span><a href="/us">US</a><span>›</span>Tax Bracket Calculator
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">Tax Bracket Calculator 2025</h1>
+    <p class="subtitle animate-in delay-2">See which bracket you're in — and how much you pay at each rate.</p>
+    <TaxBracketCalculator client:load />
+    <TaxBracketContent />
+  </main>
+</BaseLayout>

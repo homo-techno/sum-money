@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import PaycheckCalculator from '../../components/PaycheckCalculator.tsx';
+import PaycheckContent from '../../components/PaycheckContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much of my paycheck goes to taxes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For most workers, 20-35% of gross pay goes to federal taxes and FICA. At $75,000 salary (single), expect about 12% federal income tax and 7.65% FICA, totaling roughly 20%. Higher earners pay more due to progressive tax brackets. This doesn't include state taxes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is FICA and why is it taken from my paycheck?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "FICA stands for Federal Insurance Contributions Act. It funds Social Security (6.2% on income up to $176,100 in 2025) and Medicare (1.45% on all income, plus 0.9% additional Medicare tax on income above $200,000 for single filers). Your employer pays a matching amount."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does pay frequency affect my paycheck?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pay frequency doesn't change your annual net pay — it only changes how it's divided. Biweekly (26 paychecks) means smaller checks than semi-monthly (24 paychecks), but you get two extra checks per year. Weekly gives the smallest individual checks but most frequent pay."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does a 401(k) contribution affect my paycheck?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Traditional 401(k) contributions are pre-tax — they reduce your taxable income, so you pay less federal income tax. A $500/month 401(k) contribution doesn't reduce your paycheck by $500; it reduces it by roughly $380-$420 because of the tax savings."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="Paycheck Calculator 2025 — sum.money"
+  description="Calculate your take-home pay per paycheck. Salary or hourly, with federal tax and FICA. See how 401(k) and deductions affect your net pay."
+  schema={schema}
+>
+  <Header activeMarket="US" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span><a href="/us">US</a><span>›</span>Paycheck Calculator
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">Paycheck Calculator 2025</h1>
+    <p class="subtitle animate-in delay-2">See your take-home pay per paycheck — from salary or hourly rate.</p>
+    <PaycheckCalculator client:load />
+    <PaycheckContent />
+  </main>
+</BaseLayout>
