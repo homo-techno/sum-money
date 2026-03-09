@@ -1,0 +1,219 @@
+<!-- ═══════════════════════════════════════ -->
+<!-- ZONE 2: Content below result           -->
+<!-- ═══════════════════════════════════════ -->
+
+<!-- ── HOW TO USE ── -->
+<div class="content-section reveal">
+  <div class="section-divider"></div>
+</div>
+
+<section class="content-section reveal">
+  <h2>How to Use This Calculator</h2>
+
+  <h3>Annual tab</h3>
+  <p>Enter your <strong>annual salary</strong> (gross, before deductions). Add your <strong>pension contribution</strong> percentage, select a <strong>student loan plan</strong> if applicable, and choose your preferred <strong>pay frequency</strong> (monthly, weekly, or four-weekly). The calculator instantly shows your take-home pay after income tax, National Insurance, pension, and student loan repayments.</p>
+
+  <h3>Contractor tab</h3>
+  <p>Enter your <strong>daily rate</strong> and the number of <strong>working days per year</strong>. Select your <strong>IR35 status</strong> — inside or outside — and add any <strong>pension contributions</strong>. The calculator adjusts your take-home pay based on how HMRC treats your income under each IR35 scenario.</p>
+
+  <h3>Share your result</h3>
+  <p>Every input is encoded in the URL. Click <strong>Share</strong>, send the link — they'll see your exact numbers. No re-entering, no screenshots.</p>
+</section>
+
+<!-- ── FORMULA ── -->
+<section class="content-section reveal">
+  <h2>The Formula</h2>
+  <p>Your take-home pay is what's left after all statutory deductions are removed from your gross salary.</p>
+  <div class="formula-box">
+    Take-Home Pay = Gross Salary &minus; Income Tax &minus; National Insurance &minus; Pension &minus; Student Loan
+  </div>
+
+  <h3>Contractor — inside IR35</h3>
+  <p>If you work inside IR35, you're taxed in the same way as an employee. Income tax, National Insurance, and any other deductions are applied to your gross pay just as they would be for a permanent worker.</p>
+  <div class="formula-box">
+    Take-Home = Contract Income &minus; Income Tax &minus; NI &minus; Pension &minus; Student Loan<br>
+    (Same calculation as employed)
+  </div>
+
+  <h3>Contractor — outside IR35</h3>
+  <p>Outside IR35, you typically pay yourself a small salary up to the Personal Allowance and take the remainder as dividends after corporation tax.</p>
+  <div class="formula-box">
+    Salary = &pound;12,570 (tax-free Personal Allowance)<br>
+    Remaining Profit = Contract Income &minus; Salary &minus; Expenses<br>
+    Corporation Tax = Remaining Profit &times; 25%<br>
+    Dividends = Remaining Profit &minus; Corporation Tax<br>
+    Take-Home = Salary + Dividends (after dividend tax)
+  </div>
+</section>
+
+<!-- ── EXAMPLE ── -->
+<section class="content-section reveal">
+  <h2>Example</h2>
+
+  <div class="example-box">
+    <h4>Tom — &pound;45,000 salary with pension and student loan</h4>
+    <p>Tom earns &pound;45,000 per year. He contributes 5% to his workplace pension and is repaying a Plan 2 student loan.</p>
+
+    <h3>Annual tab</h3>
+    <div class="example-data">
+      <div class="example-row"><span class="label">Gross salary</span><span class="value">&pound;45,000</span></div>
+      <div class="example-row"><span class="label">Personal Allowance</span><span class="value">&pound;12,570</span></div>
+      <div class="example-row"><span class="label">Taxable income</span><span class="value">&pound;32,430</span></div>
+    </div>
+
+    <p>His deductions break down as follows:</p>
+    <div class="example-data">
+      <div class="example-row"><span class="label">Income tax</span><span class="value">~&pound;6,486</span></div>
+      <div class="example-row"><span class="label">National Insurance</span><span class="value">~&pound;2,594</span></div>
+      <div class="example-row"><span class="label">Pension (5%)</span><span class="value">&pound;2,250</span></div>
+      <div class="example-row"><span class="label">Student loan (Plan 2)</span><span class="value">~&pound;588</span></div>
+      <div class="example-row"><span class="label">Total deductions</span><span class="value">~&pound;11,918</span></div>
+      <div class="example-row"><span class="label">Annual take-home</span><span class="value">~&pound;33,082</span></div>
+      <div class="example-row"><span class="label">Monthly take-home</span><span class="value">~&pound;2,757</span></div>
+    </div>
+    <p>Tom keeps roughly 73.5% of his gross salary. His pension and student loan repayments reduce take-home but build long-term savings and clear his debt.</p>
+  </div>
+
+  <div class="example-box" style="margin-top: 20px;">
+    <h4>Contractor — &pound;500/day, inside IR35</h4>
+    <p>A contractor billing &pound;500 per day for 220 working days earns &pound;110,000 gross. Inside IR35, they're taxed as an employee.</p>
+
+    <h3>Contractor tab</h3>
+    <div class="example-data">
+      <div class="example-row"><span class="label">Daily rate</span><span class="value">&pound;500</span></div>
+      <div class="example-row"><span class="label">Working days</span><span class="value">220</span></div>
+      <div class="example-row"><span class="label">Gross annual income</span><span class="value">&pound;110,000</span></div>
+      <div class="example-row"><span class="label">IR35 status</span><span class="value">Inside</span></div>
+      <div class="example-row"><span class="label">Income tax</span><span class="value">~&pound;29,432</span></div>
+      <div class="example-row"><span class="label">National Insurance</span><span class="value">~&pound;5,954</span></div>
+      <div class="example-row"><span class="label">Annual take-home</span><span class="value">~&pound;70,534</span></div>
+      <div class="example-row"><span class="label">Monthly take-home</span><span class="value">~&pound;5,878</span></div>
+    </div>
+    <p>Inside IR35, the contractor's effective tax rate is significantly higher than an equivalent permanent employee because they don't receive employer benefits such as holiday pay or sick pay.</p>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="content-section reveal">
+  <h2>FAQ</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      What's the difference between this and the income tax calculator?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        The take-home pay calculator focuses on what you actually receive each pay period — after income tax, National Insurance, pension, and student loan repayments are deducted. The income tax calculator focuses on your annual tax breakdown, showing how much tax you owe across each bracket. Use this calculator to understand your monthly or weekly pay; use the income tax calculator to understand your annual tax position.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      What's the difference between inside and outside IR35?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        IR35 determines how HMRC taxes contractors working through a limited company. <strong>Inside IR35</strong> means you're treated as a disguised employee — income tax and National Insurance are deducted at source, just like a permanent worker. <strong>Outside IR35</strong> means you're genuinely self-employed and can pay yourself a small salary plus dividends, which is typically more tax-efficient. The client (or agency) decides your IR35 status based on how you work, not what your contract says.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      How does salary sacrifice work?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Salary sacrifice is an arrangement where you agree to reduce your gross salary in exchange for a non-cash benefit — most commonly a higher employer pension contribution. Because the sacrificed amount is taken <strong>before</strong> tax and National Insurance are calculated, you pay less income tax and less NI. Your employer also saves on employer NI contributions. The trade-off is a lower gross salary on paper, which can affect mortgage applications and some benefits. It's one of the most effective ways to boost your pension while reducing your tax bill.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      What's a good salary in the UK?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        The UK median full-time salary is approximately &pound;30,000. Anything above &pound;45,000 puts you well above average — roughly in the top 25% of earners. In London and the South East, salaries tend to be higher to offset the cost of living. What counts as "good" depends on your location, lifestyle, and financial commitments, but &pound;45,000+ is a comfortable income in most parts of the country.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RELATED CALCS ── -->
+<section class="content-section reveal">
+  <h2>Related Calculators</h2>
+  <div class="related-grid">
+    <a href="/uk/income-tax-calculator" class="related-card">
+      <div class="related-card-title">🧾 Income Tax Calculator</div>
+      <div class="related-card-desc">See your full annual tax breakdown across UK income tax bands.</div>
+    </a>
+    <a href="/uk/pension-calculator" class="related-card">
+      <div class="related-card-title">🏦 Pension Calculator</div>
+      <div class="related-card-desc">Project your retirement pot based on contributions and growth.</div>
+    </a>
+    <a href="/uk/student-loan-calculator" class="related-card">
+      <div class="related-card-title">🎓 Student Loan Calculator</div>
+      <div class="related-card-desc">Estimate your monthly repayments and total cost of your student loan.</div>
+    </a>
+  </div>
+</section>
+
+<!-- ── EMBED ── -->
+<div class="embed-section reveal">
+  <h3>Add This Calculator to Your Website</h3>
+  <p>Embed the sum.money take-home pay calculator on your site. Free, responsive, always up-to-date.</p>
+  <div class="embed-code">&lt;iframe src="https://sum.money/embed/uk/take-home-pay-calculator" width="100%" height="700"&gt;&lt;/iframe&gt;</div>
+</div>
+
+<!-- ── FAQ Accordion + Scroll Reveal scripts ── -->
+<script is:inline>
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(function(q) {
+  q.addEventListener('click', function() {
+    var item = q.parentElement;
+    var answer = item.querySelector('.faq-answer');
+    var isOpen = item.classList.contains('open');
+
+    document.querySelectorAll('.faq-item').forEach(function(fi) {
+      fi.classList.remove('open');
+      fi.querySelector('.faq-answer').style.maxHeight = '0';
+      fi.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      q.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// Scroll reveal
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+// Track related calc clicks
+document.querySelectorAll('.related-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    try {
+      var payload = { event: 'related_click', timestamp: Date.now(), target: card.getAttribute('href'), url: location.pathname };
+      if (navigator.sendBeacon) navigator.sendBeacon('/api/track', JSON.stringify(payload));
+    } catch(e) {}
+  });
+});
+</script>

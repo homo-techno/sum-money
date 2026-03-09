@@ -1,0 +1,218 @@
+<!-- ═══════════════════════════════════════ -->
+<!-- ZONE 2: Content below result           -->
+<!-- ═══════════════════════════════════════ -->
+
+<!-- ── HOW TO USE ── -->
+<div class="content-section reveal">
+  <div class="section-divider"></div>
+</div>
+
+<section class="content-section reveal">
+  <h2>How to Use This Calculator</h2>
+
+  <h3>Employed tab</h3>
+  <p>Enter your <strong>annual salary</strong> (gross pay before tax) and <strong>tax code</strong> (1257L is the standard code for most people). If you make workplace pension contributions or repay a student loan, expand <strong>"More options"</strong> to include them — both reduce the amount of tax you owe or your net pay.</p>
+
+  <h3>Self-Employed tab</h3>
+  <p>Enter your <strong>taxable profit</strong> for the tax year. The calculator works out your income tax, Class 2 and Class 4 National Insurance contributions, and shows your take-home figure. If you pay into a personal pension or have a student loan, add those under <strong>"More options"</strong> to see their effect.</p>
+
+  <h3>More options</h3>
+  <ul>
+    <li><strong>Pension contribution</strong> — enter a percentage or fixed amount; it reduces your taxable income before tax is calculated</li>
+    <li><strong>Student loan</strong> — choose your plan (Plan 1, Plan 2, Plan 4, or Postgraduate) so the correct repayment threshold and rate are applied</li>
+  </ul>
+
+  <h3>Share your result</h3>
+  <p>Every input is encoded in the URL. Click <strong>Share</strong>, send the link — they'll see your exact numbers. No re-entering, no screenshots.</p>
+</section>
+
+<!-- ── FORMULA ── -->
+<section class="content-section reveal">
+  <h2>The Formula</h2>
+  <p>The UK uses a <strong>progressive tax band system</strong>. You don't pay your highest rate on all income — each band applies only to the income within that range.</p>
+  <div class="formula-box">
+    Taxable Income = Gross Income &minus; Pension Contributions &minus; Personal Allowance<br><br>
+    Income Tax = &sum; (Income in Each Band &times; Band Rate)
+  </div>
+
+  <h3>2025/26 Income Tax Bands</h3>
+  <div class="example-data">
+    <div class="example-row"><span class="label">Personal Allowance (0%)</span><span class="value">Up to £12,570</span></div>
+    <div class="example-row"><span class="label">Basic rate (20%)</span><span class="value">£12,571 – £50,270</span></div>
+    <div class="example-row"><span class="label">Higher rate (40%)</span><span class="value">£50,271 – £125,140</span></div>
+    <div class="example-row"><span class="label">Additional rate (45%)</span><span class="value">Over £125,140</span></div>
+  </div>
+
+  <h3>Employee National Insurance</h3>
+  <div class="formula-box">
+    8% on earnings between £12,570 and £50,270<br>
+    2% on earnings above £50,270
+  </div>
+
+  <h3>Self-employed National Insurance</h3>
+  <div class="formula-box">
+    Class 2: £3.50 per week (if profits above £12,570)<br>
+    Class 4: 6% on profits between £12,570 and £50,270<br>
+    Class 4: 2% on profits above £50,270
+  </div>
+</section>
+
+<!-- ── EXAMPLE ── -->
+<section class="content-section reveal">
+  <h2>Example</h2>
+
+  <div class="example-box">
+    <h4>Emma — £45,000 employed, 5% pension, no student loan</h4>
+    <p>Emma earns £45,000 per year. She contributes 5% of her salary to a workplace pension and has no student loan to repay.</p>
+
+    <h3>Employed tab</h3>
+    <div class="example-data">
+      <div class="example-row"><span class="label">Gross salary</span><span class="value">£45,000</span></div>
+      <div class="example-row"><span class="label">Pension contribution (5%)</span><span class="value">£2,250</span></div>
+      <div class="example-row"><span class="label">Taxable income</span><span class="value">£42,750</span></div>
+    </div>
+
+    <p>Her tax is calculated across two bands:</p>
+    <div class="example-data">
+      <div class="example-row"><span class="label">Personal Allowance (£12,570)</span><span class="value">£0</span></div>
+      <div class="example-row"><span class="label">Basic rate (20%) on £30,180</span><span class="value">£6,036</span></div>
+      <div class="example-row"><span class="label">Income tax</span><span class="value">£6,036</span></div>
+    </div>
+
+    <p>National Insurance on gross salary:</p>
+    <div class="example-data">
+      <div class="example-row"><span class="label">8% on £32,430 (£12,570–£45,000)</span><span class="value">£2,594</span></div>
+      <div class="example-row"><span class="label">Employee NI</span><span class="value">£2,594</span></div>
+    </div>
+
+    <div class="example-data" style="margin-top: 12px;">
+      <div class="example-row"><span class="label">Take-home pay</span><span class="value">~£34,120/yr (~£2,843/mo)</span></div>
+    </div>
+    <p>Emma's marginal rate is 20%, and her combined effective rate (income tax + NI) is around 19% — because the Personal Allowance shelters the first £12,570 from tax entirely.</p>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="content-section reveal">
+  <h2>FAQ</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      What is the 60% tax trap?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        When your income is between £100,000 and £125,140, your Personal Allowance is gradually reduced — you lose £1 of allowance for every £2 earned above £100,000. This means income in that range is effectively taxed at 60% (40% higher rate plus 20% from the lost allowance). It's one of the most misunderstood parts of the UK tax system. Pension contributions are a common way to bring taxable income below £100,000 and avoid the trap.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      How does pension tax relief work?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Pension contributions reduce your taxable income before tax is calculated. A basic-rate taxpayer effectively saves 20p in tax for every £1 contributed. A higher-rate taxpayer saves 40p per £1, and an additional-rate taxpayer saves 45p per £1. If you use salary sacrifice, you also save on National Insurance. It's one of the most tax-efficient ways to build retirement savings in the UK.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      What's my tax code?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        The standard tax code for 2025/26 is <strong>1257L</strong>, which gives you the full Personal Allowance of £12,570. You can find your tax code on your payslip, P60, or PAYE coding notice from HMRC. If your code is different, it usually means HMRC has adjusted your allowance — for example, to collect tax owed from a previous year or to account for employee benefits.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      NI vs income tax — what's the difference?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Income tax funds general government spending, while National Insurance contributions (NICs) are ring-fenced for state benefits — the State Pension, statutory sick pay, and maternity allowance, among others. They have different thresholds and rates: income tax starts at 20% above the Personal Allowance, while employee NI is 8% between £12,570 and £50,270 and 2% above that. Both are deducted from your pay, but they serve different purposes.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RELATED CALCS ── -->
+<section class="content-section reveal">
+  <h2>Related Calculators</h2>
+  <div class="related-grid">
+    <a href="/uk/take-home-pay-calculator" class="related-card">
+      <div class="related-card-title">💷 Take-Home Pay Calculator</div>
+      <div class="related-card-desc">See your net pay after tax, NI, pension, and student loan deductions.</div>
+    </a>
+    <a href="/uk/pension-calculator" class="related-card">
+      <div class="related-card-title">🏦 Pension Calculator</div>
+      <div class="related-card-desc">Estimate your pension pot at retirement with tax relief included.</div>
+    </a>
+    <a href="/uk/student-loan-calculator" class="related-card">
+      <div class="related-card-title">🎓 Student Loan Calculator</div>
+      <div class="related-card-desc">Work out your monthly repayments and total cost of your student loan.</div>
+    </a>
+  </div>
+</section>
+
+<!-- ── EMBED ── -->
+<div class="embed-section reveal">
+  <h3>Add This Calculator to Your Website</h3>
+  <p>Embed the sum.money UK income tax calculator on your site. Free, responsive, always up-to-date.</p>
+  <div class="embed-code">&lt;iframe src="https://sum.money/embed/uk/income-tax-calculator" width="100%" height="700"&gt;&lt;/iframe&gt;</div>
+</div>
+
+<!-- ── FAQ Accordion + Scroll Reveal scripts ── -->
+<script is:inline>
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(function(q) {
+  q.addEventListener('click', function() {
+    var item = q.parentElement;
+    var answer = item.querySelector('.faq-answer');
+    var isOpen = item.classList.contains('open');
+
+    document.querySelectorAll('.faq-item').forEach(function(fi) {
+      fi.classList.remove('open');
+      fi.querySelector('.faq-answer').style.maxHeight = '0';
+      fi.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      q.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// Scroll reveal
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+// Track related calc clicks
+document.querySelectorAll('.related-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    try {
+      var payload = { event: 'related_click', timestamp: Date.now(), target: card.getAttribute('href'), url: location.pathname };
+      if (navigator.sendBeacon) navigator.sendBeacon('/api/track', JSON.stringify(payload));
+    } catch(e) {}
+  });
+});
+</script>

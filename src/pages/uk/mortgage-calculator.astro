@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import UkMortgageCalculator from '../../components/UkMortgageCalculator.tsx';
+import UkMortgageContent from '../../components/UkMortgageContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much can I borrow for a mortgage in the UK?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most UK lenders offer 4 to 4.5 times your annual income. On a £45,000 salary, you could borrow around £202,500. With a 10% deposit, that means a property up to roughly £225,000. Some lenders may stretch to 5× or more for high earners or specific professions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens when my fixed-rate mortgage ends?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When your fixed rate ends, you'll move onto your lender's Standard Variable Rate (SVR), which is usually much higher — often 7–8%. Most people remortgage to a new fixed deal before their current one expires. Start looking 3–6 months before your fix ends to lock in a better rate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much can I overpay on my mortgage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most UK mortgage deals allow you to overpay up to 10% of your outstanding balance per year without an early repayment charge. Overpaying £200/month on a £250,000 mortgage at 4.5% over 25 years could save you over £30,000 in interest and take years off your term."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What deposit do I need for a UK mortgage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The minimum is typically 5% of the property price, but 10%+ gets you access to better interest rates. A 15–20% deposit gives the most competitive rates. On a £300,000 property, that's £15,000 at 5%, £30,000 at 10%, or £60,000 at 20%."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="UK Mortgage Calculator — sum.money"
+  description="Calculate how much you can borrow, compare remortgage deals, or see how overpayments save you money. Free, instant, no registration."
+  schema={schema}
+>
+  <Header activeMarket="UK" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span><a href="/uk">UK</a><span>›</span>Mortgage Calculator
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">UK Mortgage Calculator</h1>
+    <p class="subtitle animate-in delay-2">How much can you borrow? What will your remortgage save? How much do overpayments help?</p>
+    <UkMortgageCalculator client:load />
+    <UkMortgageContent />
+  </main>
+</BaseLayout>

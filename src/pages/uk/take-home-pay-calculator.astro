@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import TakeHomePayCalculator from '../../components/TakeHomePayCalculator.tsx';
+import TakeHomePayContent from '../../components/TakeHomePayContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I work out my monthly take-home pay?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Take your annual salary, subtract income tax, National Insurance, pension contributions, and any student loan repayments, then divide by 12. On a £45,000 salary with 5% pension and no student loan, your monthly take-home is approximately £2,779."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I convert a contractor day rate to salary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiply your daily rate by the number of working days per year (typically 220–230). A £500/day contractor working 220 days earns £110,000 gross annually. Inside IR35, your take-home is similar to an employee on £110,000. Outside IR35, you can optimise via salary plus dividends through a limited company."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does inside vs outside IR35 mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IR35 is tax legislation that determines whether a contractor is effectively an employee. Inside IR35: you pay tax and NI like an employee via PAYE. Outside IR35: you can pay yourself a small salary and take the rest as dividends through a limited company, typically resulting in lower overall tax."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much pension should I contribute?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The auto-enrolment minimum is 5% (employee) plus 3% (employer) = 8% total. Financial advisers often suggest 12–15% total (including employer). Pension contributions are tax-efficient — a 40% taxpayer gets 40p of tax relief for every £1 contributed."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="Take-Home Pay Calculator — sum.money"
+  description="Convert annual salary to monthly take-home, or compare contractor daily rates inside and outside IR35. Tax year 2025/26."
+  schema={schema}
+>
+  <Header activeMarket="UK" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span><a href="/uk">UK</a><span>›</span>Take-Home Pay Calculator
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">Take-Home Pay Calculator</h1>
+    <p class="subtitle animate-in delay-2">See your monthly take-home — or convert a contractor daily rate to equivalent salary.</p>
+    <TakeHomePayCalculator client:load />
+    <TakeHomePayContent />
+  </main>
+</BaseLayout>

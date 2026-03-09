@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import UkIncomeTaxCalculator from '../../components/UkIncomeTaxCalculator.tsx';
+import UkIncomeTaxContent from '../../components/UkIncomeTaxContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much income tax do I pay in the UK?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For 2025/26, you pay 0% on the first £12,570 (Personal Allowance), 20% on £12,571–£50,270, 40% on £50,271–£125,140, and 45% above £125,140. On a £45,000 salary, your income tax is approximately £6,486 — an effective rate of about 14.4%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is National Insurance and how much do I pay?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "National Insurance (NI) is a separate tax that funds state benefits and the NHS. Employees pay 8% on earnings between £12,570 and £50,270, and 2% above £50,270. Self-employed pay Class 4 NI at 6% and 2% on the same bands, plus voluntary Class 2 at £3.50/week."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the 60% tax trap?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Between £100,000 and £125,140, your Personal Allowance is reduced by £1 for every £2 of income above £100,000. This means you effectively pay 40% tax plus lose 20% of the allowance — a marginal rate of 60%. Pension contributions can help reduce income below £100,000 to avoid this."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do student loan repayments work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Student loan repayments are deducted from your salary at 9% of earnings above the plan threshold. For Plan 2 (most common), the threshold is £28,470 in 2025/26. On a £35,000 salary, you'd repay about £49/month. The loan is written off after 30 years."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="UK Income Tax Calculator 2025/26 — sum.money"
+  description="Calculate your take-home pay after income tax, National Insurance, pension, and student loan. Employed or self-employed. Tax year 2025/26."
+  schema={schema}
+>
+  <Header activeMarket="UK" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span><a href="/uk">UK</a><span>›</span>Income Tax Calculator
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">UK Income Tax Calculator 2025/26</h1>
+    <p class="subtitle animate-in delay-2">See your take-home pay after income tax, NI, pension, and student loan.</p>
+    <UkIncomeTaxCalculator client:load />
+    <UkIncomeTaxContent />
+  </main>
+</BaseLayout>

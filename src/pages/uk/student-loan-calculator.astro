@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import StudentLoanCalculator from '../../components/StudentLoanCalculator.tsx';
+import StudentLoanContent from '../../components/StudentLoanContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much do I repay on my student loan each month?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You repay 9% of your income above the repayment threshold (6% for postgraduate loans). On Plan 2 with a £35,000 salary, the threshold is £28,470, so you'd repay 9% of £6,530 = £587.70/year, or about £49/month. If you earn below the threshold, you repay nothing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When does my student loan get written off?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Plan 2 loans are written off 30 years after your first repayment was due. Plan 5 (from September 2023) is written off after 40 years. Plan 1 loans taken out from September 2006 are written off after 25 years. The write-off is automatic and tax-free."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which student loan plan am I on?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Plan 1: Started before September 2012 (England/Wales) or any time in Northern Ireland. Plan 2: Started from September 2012 (England/Wales). Plan 4: Scotland. Plan 5: Started from September 2023 (England). Postgraduate: Master's or Doctoral loan. Check your plan at gov.uk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I pay off my student loan early?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For most people, no. If your balance will be written off before you repay it fully, paying it off early means you've overpaid. Use this calculator to check — if the 'amount written off' is significant, you're better off keeping the money invested or saving it elsewhere."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="Student Loan Repayment Calculator — sum.money"
+  description="Calculate your monthly student loan repayment, time to repay, and how much gets written off. Plans 1–5 and Postgraduate. Tax year 2025/26."
+  schema={schema}
+>
+  <Header activeMarket="UK" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span><a href="/uk">UK</a><span>›</span>Student Loan Calculator
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">Student Loan Repayment Calculator</h1>
+    <p class="subtitle animate-in delay-2">Monthly repayment, years to clear, and how much gets written off.</p>
+    <StudentLoanCalculator client:load />
+    <StudentLoanContent />
+  </main>
+</BaseLayout>

@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import PensionCalculator from '../../components/PensionCalculator.tsx';
+import PensionContent from '../../components/PensionContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much pension will I have at retirement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your contributions, employer match, and investment returns. A 30-year-old earning £45,000, contributing 5% with a 3% employer match and 5% annual growth, could have a pot of around £450,000 by age 67 — enough for roughly £18,000/year using the 4% withdrawal rule."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much is the State Pension in 2025/26?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The full new State Pension is £230.25 per week (£11,973 per year) in 2025/26. You need 35 qualifying years of National Insurance contributions for the full amount, and a minimum of 10 years to receive anything. Check your record at gov.uk/check-state-pension."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is auto-enrolment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Auto-enrolment is a UK law requiring employers to set up a workplace pension and automatically enrol eligible employees. The minimum contribution is 8% of qualifying earnings (5% employee, 3% employer). You can opt out, but you'd lose the employer contribution — essentially free money."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When can I access my pension?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can access your workplace/private pension from age 55 (rising to 57 from 2028). The State Pension age is currently 67. You can take up to 25% of your pension pot as a tax-free lump sum. The rest is taxed as income when you withdraw it."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="UK Pension Calculator — sum.money"
+  description="Project your workplace pension pot at retirement, or check your State Pension entitlement. Free, instant, no registration."
+  schema={schema}
+>
+  <Header activeMarket="UK" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span><a href="/uk">UK</a><span>›</span>Pension Calculator
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">UK Pension Calculator</h1>
+    <p class="subtitle animate-in delay-2">How much will your pension pot be at retirement? What State Pension will you get?</p>
+    <PensionCalculator client:load />
+    <PensionContent />
+  </main>
+</BaseLayout>

@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import VatCalculator from '../../components/VatCalculator.tsx';
+import VatContent from '../../components/VatContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate VAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To add VAT: multiply the net amount by 1.20 (for 20% VAT). £100 + VAT = £120. To remove VAT: divide the gross amount by 1.20. £120 ÷ 1.20 = £100 net, with £20 VAT. The VAT fraction for standard rate is 1/6 of the gross amount."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the UK VAT rates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standard rate: 20% — applies to most goods and services. Reduced rate: 5% — applies to home energy, child car seats, and some other items. Zero rate: 0% — applies to most food, children's clothing, books, and newspapers. Some items are VAT-exempt (financial services, insurance, education)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When do I need to register for VAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You must register for VAT if your taxable turnover exceeds £90,000 in any 12-month period (from April 2024). You can also register voluntarily if your turnover is below this threshold — useful if you sell mainly to VAT-registered businesses."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the VAT flat rate scheme?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The flat rate scheme lets small businesses pay a fixed percentage of their gross turnover as VAT, rather than calculating VAT on each transaction. The percentage varies by industry (e.g., 14.5% for computer services). It simplifies VAT returns but may not suit all businesses."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="VAT Calculator — Add or Remove VAT — sum.money"
+  description="Add VAT to a net amount or remove VAT from a gross amount. Standard 20%, reduced 5%, and zero rate. Free, instant."
+  schema={schema}
+>
+  <Header activeMarket="UK" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span><a href="/uk">UK</a><span>›</span>VAT Calculator
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">VAT Calculator</h1>
+    <p class="subtitle animate-in delay-2">Add or remove VAT — at 20%, 5%, or 0%.</p>
+    <VatCalculator client:load />
+    <VatContent />
+  </main>
+</BaseLayout>

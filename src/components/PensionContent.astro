@@ -1,0 +1,205 @@
+<!-- ═══════════════════════════════════════ -->
+<!-- ZONE 2: Content below result           -->
+<!-- ═══════════════════════════════════════ -->
+
+<!-- ── HOW TO USE ── -->
+<div class="content-section reveal">
+  <div class="section-divider"></div>
+</div>
+
+<section class="content-section reveal">
+  <h2>How to Use This Calculator</h2>
+
+  <h3>Workplace Pension tab</h3>
+  <p>Enter your <strong>current age</strong> and <strong>retirement age</strong> (default 67). Add your <strong>annual salary</strong>, <strong>employee contribution</strong> (e.g. 5%) and <strong>employer contribution</strong> (e.g. 3%). If you already have a pension pot, enter its current value. Finally, set your expected <strong>annual investment return</strong> — the calculator projects your total pot at retirement and your estimated annual income using the 4% safe withdrawal rule.</p>
+
+  <h3>State Pension tab</h3>
+  <p>Enter your <strong>National Insurance qualifying years</strong> (you need 35 for the full State Pension). The calculator shows your weekly and annual State Pension entitlement based on the current full rate of £230.25 per week.</p>
+
+  <h3>Share your result</h3>
+  <p>Every input is encoded in the URL. Click <strong>Share</strong>, send the link — they'll see your exact numbers. No re-entering, no screenshots.</p>
+</section>
+
+<!-- ── FORMULA ── -->
+<section class="content-section reveal">
+  <h2>The Formula</h2>
+  <p>Workplace pension projections use the <strong>future value of a growing investment with regular contributions</strong>. The State Pension is a proportion of the full rate based on qualifying years.</p>
+  <div class="formula-box">
+    FV = PV(1+r)<sup>n</sup> + PMT &times; [(1+r)<sup>n</sup> &minus; 1] / r
+  </div>
+  <p>Where <strong>FV</strong> is the future value of your pension pot, <strong>PV</strong> is the current pot, <strong>r</strong> is the annual return rate, <strong>n</strong> is years to retirement, and <strong>PMT</strong> is total annual contributions (employee + employer).</p>
+
+  <h3>State Pension</h3>
+  <div class="formula-box">
+    Weekly State Pension = (Qualifying Years / 35) &times; £230.25
+  </div>
+  <p>You need a minimum of 10 qualifying years to receive any State Pension. The maximum is 35 years for the full amount.</p>
+
+  <h3>Annual retirement income</h3>
+  <div class="formula-box">
+    Annual Income = Pension Pot &times; 4% (safe withdrawal rule)
+  </div>
+  <p>The <strong>4% rule</strong> is a widely used guideline suggesting you can withdraw 4% of your pot each year for a sustainable retirement income lasting roughly 30 years.</p>
+</section>
+
+<!-- ── EXAMPLE ── -->
+<section class="content-section reveal">
+  <h2>Example</h2>
+
+  <div class="example-box">
+    <h4>Lisa — planning for retirement at 67</h4>
+    <p>Lisa is 30 years old, earns £45,000 a year, and wants to know what her pension could look like when she retires at 67. She contributes 5% and her employer adds 3%. She already has £10,000 in her pot and expects a 5% annual return.</p>
+
+    <h3>Workplace Pension tab</h3>
+    <div class="example-data">
+      <div class="example-row"><span class="label">Current age</span><span class="value">30</span></div>
+      <div class="example-row"><span class="label">Retirement age</span><span class="value">67</span></div>
+      <div class="example-row"><span class="label">Annual salary</span><span class="value">£45,000</span></div>
+      <div class="example-row"><span class="label">Employee contribution</span><span class="value">5%</span></div>
+      <div class="example-row"><span class="label">Employer contribution</span><span class="value">3%</span></div>
+      <div class="example-row"><span class="label">Total annual contributions</span><span class="value">£3,600/yr</span></div>
+      <div class="example-row"><span class="label">Current pot</span><span class="value">£10,000</span></div>
+      <div class="example-row"><span class="label">Expected return</span><span class="value">5%</span></div>
+    </div>
+
+    <p>Results:</p>
+    <div class="example-data">
+      <div class="example-row"><span class="label">Projected pot at 67</span><span class="value">~£447,000</span></div>
+      <div class="example-row"><span class="label">Annual income (4% rule)</span><span class="value">~£17,880</span></div>
+    </div>
+    <p>Lisa's workplace pension alone could provide roughly £17,880 per year in retirement. Combined with the State Pension, her total income would be considerably higher.</p>
+
+    <h3>State Pension tab</h3>
+    <div class="example-data">
+      <div class="example-row"><span class="label">NI qualifying years</span><span class="value">35</span></div>
+      <div class="example-row"><span class="label">Weekly State Pension</span><span class="value">£230.25</span></div>
+      <div class="example-row"><span class="label">Annual State Pension</span><span class="value">£11,973</span></div>
+    </div>
+    <p>With 35 qualifying years, Lisa receives the full State Pension of £230.25 per week — that's £11,973 per year. Combined with her workplace pension income, her estimated total retirement income is roughly £29,853 per year.</p>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="content-section reveal">
+  <h2>FAQ</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      How much should I save for retirement?
+      <span class="faq-chevron">&#9660;</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        A common rule of thumb is to save half your age as a percentage of your salary. If you start at 30, aim for 15%. At a minimum, you should be contributing at least 8% in total (employee + employer combined) to build a meaningful pot. The earlier you start, the more compound growth works in your favour.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      What is auto-enrolment?
+      <span class="faq-chevron">&#9660;</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Auto-enrolment is a UK government scheme that requires employers to automatically enrol eligible workers into a workplace pension. The minimum contributions are 5% from the employee and 3% from the employer, totalling 8% of qualifying earnings. You can opt out, but you'd lose the employer contribution — essentially turning down free money.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      When can I access my pension?
+      <span class="faq-chevron">&#9660;</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        You can currently access your workplace pension from age 55. This is rising to 57 from 2028. The State Pension age is 67 for most people. You don't have to stop working to claim either — but you cannot access your workplace pot early without significant tax penalties except in very limited circumstances.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      What's the 4% rule?
+      <span class="faq-chevron">&#9660;</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        The 4% rule is a retirement income guideline. It suggests that if you withdraw 4% of your pension pot in your first year of retirement — and adjust for inflation each year after — your money should last roughly 30 years. For example, a £400,000 pot would give you £16,000 per year. It's a useful starting point, though actual results depend on investment returns and spending.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RELATED CALCS ── -->
+<section class="content-section reveal">
+  <h2>Related Calculators</h2>
+  <div class="related-grid">
+    <a href="/uk/income-tax-calculator" class="related-card">
+      <div class="related-card-title">Income Tax Calculator</div>
+      <div class="related-card-desc">Calculate your UK income tax and see your effective tax rate.</div>
+    </a>
+    <a href="/uk/take-home-pay-calculator" class="related-card">
+      <div class="related-card-title">Take-Home Pay Calculator</div>
+      <div class="related-card-desc">See your actual pay after tax, NI, and pension deductions.</div>
+    </a>
+    <a href="/uk/student-loan-calculator" class="related-card">
+      <div class="related-card-title">Student Loan Calculator</div>
+      <div class="related-card-desc">Work out your monthly student loan repayments and total cost.</div>
+    </a>
+  </div>
+</section>
+
+<!-- ── EMBED ── -->
+<div class="embed-section reveal">
+  <h3>Add This Calculator to Your Website</h3>
+  <p>Embed the sum.money pension calculator on your site. Free, responsive, always up-to-date.</p>
+  <div class="embed-code">&lt;iframe src="https://sum.money/embed/uk/pension-calculator" width="100%" height="700"&gt;&lt;/iframe&gt;</div>
+</div>
+
+<!-- ── FAQ Accordion + Scroll Reveal scripts ── -->
+<script is:inline>
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(function(q) {
+  q.addEventListener('click', function() {
+    var item = q.parentElement;
+    var answer = item.querySelector('.faq-answer');
+    var isOpen = item.classList.contains('open');
+
+    document.querySelectorAll('.faq-item').forEach(function(fi) {
+      fi.classList.remove('open');
+      fi.querySelector('.faq-answer').style.maxHeight = '0';
+      fi.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      q.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// Scroll reveal
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+// Track related calc clicks
+document.querySelectorAll('.related-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    try {
+      var payload = { event: 'related_click', timestamp: Date.now(), target: card.getAttribute('href'), url: location.pathname };
+      if (navigator.sendBeacon) navigator.sendBeacon('/api/track', JSON.stringify(payload));
+    } catch(e) {}
+  });
+});
+</script>
