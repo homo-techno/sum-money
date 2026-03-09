@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import DiscountCalculator from '../components/DiscountCalculator.tsx';
+import DiscountCalculatorContent from '../components/DiscountCalculatorContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate 30% off?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiply the original price by 0.70. For example, 30% off $89.99 = $89.99 × 0.70 = $62.99. The calculator does this instantly — enter the price and discount percentage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do discounts stack by adding percentages?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. A 30% discount followed by a 15% discount is NOT 45% off. The second discount applies to the already-reduced price. 30% + 15% stacked = 40.5% effective discount. Use the Double Discount tab to see the real number."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a double discount?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Two sequential discounts applied one after another — for example, a 30% sale plus an extra 15% coupon. The second discount applies to the sale price, not the original price. This is common in retail during clearance events."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is the effective discount less than the sum of both discounts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because the second discount applies to the already-reduced price, not the original. A 30% discount brings $100 to $70. A 15% discount on $70 saves $10.50 — not $15. The total saved is $40.50 (40.5%), not $45."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="Discount Calculator — sum.money"
+  description="Calculate the final price after a discount — or stack two discounts to see the real savings. Free, instant, shareable link."
+  schema={schema}
+>
+  <Header activeMarket="" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span>Discount Calculator
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">Discount Calculator</h1>
+    <p class="subtitle animate-in delay-2">See the final price after one or two stacked discounts.</p>
+    <DiscountCalculator client:load />
+    <DiscountCalculatorContent />
+  </main>
+</BaseLayout>

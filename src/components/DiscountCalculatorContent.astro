@@ -1,0 +1,195 @@
+<!-- ═══════════════════════════════════════ -->
+<!-- ZONE 2: Content below result           -->
+<!-- ═══════════════════════════════════════ -->
+
+<!-- ── HOW TO USE ── -->
+<div class="content-section reveal">
+  <div class="section-divider"></div>
+</div>
+
+<section class="content-section reveal">
+  <h2>How to Use This Calculator</h2>
+
+  <h3>Single Discount tab</h3>
+  <p>Enter the <strong>original price</strong> and <strong>discount percentage</strong>. The calculator instantly shows the final price and how much you save. Use this for straightforward sales — "30% off," "25% discount," etc.</p>
+
+  <h3>Double Discount tab</h3>
+  <p>For stacked discounts — like "extra 20% off sale items." Enter the <strong>original price</strong>, the <strong>first discount</strong>, and the <strong>second discount</strong>. The calculator applies them sequentially and shows the final price, total savings, and the effective combined discount (which is always less than the sum of the two).</p>
+
+  <h3>Share your result</h3>
+  <p>Every input is encoded in the URL. Click <strong>Share</strong>, send the link — they'll see your exact numbers. No re-entering, no screenshots.</p>
+</section>
+
+<!-- ── FORMULA ── -->
+<section class="content-section reveal">
+  <h2>The Formula</h2>
+  <p>Single discount:</p>
+  <div class="formula-box">
+    Final Price = Original Price &times; (1 &minus; Discount &divide; 100)
+  </div>
+  <p>Double (stacked) discount:</p>
+  <div class="formula-box">
+    Final Price = Original Price &times; (1 &minus; D1 &divide; 100) &times; (1 &minus; D2 &divide; 100)
+  </div>
+  <p>Effective combined discount:</p>
+  <div class="formula-box">
+    Effective Discount = 1 &minus; (1 &minus; D1 &divide; 100) &times; (1 &minus; D2 &divide; 100)
+  </div>
+  <p>Where:</p>
+  <ul>
+    <li><strong>D1</strong> = first discount percentage</li>
+    <li><strong>D2</strong> = second discount percentage</li>
+  </ul>
+  <p>The key insight: stacked discounts <strong>multiply</strong>, they don't add. 30% + 15% is not 45% off — it's 40.5% off, because the second discount applies to the already-reduced price.</p>
+</section>
+
+<!-- ── EXAMPLE ── -->
+<section class="content-section reveal">
+  <h2>Example</h2>
+
+  <div class="example-box">
+    <h4>Jacket on sale with an extra coupon</h4>
+    <p>You find an $89.99 jacket marked 30% off. At checkout, you have an extra 15% coupon that stacks on top.</p>
+
+    <div class="example-data">
+      <div class="example-row"><span class="label">Original price</span><span class="value">$89.99</span></div>
+      <div class="example-row"><span class="label">First discount (30%)</span><span class="value">&minus;$27.00</span></div>
+      <div class="example-row"><span class="label">Price after 30% off</span><span class="value">$63.00</span></div>
+      <div class="example-row"><span class="label">Second discount (15%)</span><span class="value">&minus;$9.45</span></div>
+      <div class="example-row"><span class="label">Final price</span><span class="value">$53.55</span></div>
+      <div class="example-row"><span class="label">Total saved</span><span class="value">$36.44</span></div>
+      <div class="example-row"><span class="label">Effective discount</span><span class="value">40.5% (not 45%)</span></div>
+    </div>
+
+    <p>The second discount applies to $63.00, not the original $89.99 — that's why the effective discount is 40.5%, not 45%.</p>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="content-section reveal">
+  <h2>FAQ</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      How to calculate 30% off?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Multiply the price by 0.70. For example, 30% off $80 = $80 &times; 0.70 = $56. The quick trick: subtract the discount percentage from 100, move the decimal two places left, and multiply. 30% off → multiply by 0.70.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Do discounts stack by adding?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        No — discounts multiply, they don't add. A 30% discount followed by a 15% discount is not 45% off. The second discount applies to the already-reduced price. The effective combined discount is 40.5%. This is true for all stacked discounts, coupons, and sequential markdowns.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      What is a double discount?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        A double discount is when two separate discounts are applied sequentially to the same item. Common examples: a sale price plus an additional coupon, an employee discount on top of a clearance price, or "extra 20% off all sale items." The order doesn't matter — 30% then 15% gives the same result as 15% then 30%.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Why is the effective discount less than the sum?
+      <span class="faq-chevron">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Because the second discount applies to the already-reduced price, not the original. When you take 30% off first, the price drops to 70% of the original. Then 15% off that reduced amount removes 15% of 70%, which is only 10.5% of the original. So the total is 30% + 10.5% = 40.5%, not 30% + 15% = 45%.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RELATED CALCS ── -->
+<section class="content-section reveal">
+  <h2>Related Calculators</h2>
+  <div class="related-grid">
+    <a href="/percentage-calculator" class="related-card">
+      <div class="related-card-title">📊 Percentage Calculator</div>
+      <div class="related-card-desc">Find percentages, percentage of a number, or percentage change.</div>
+    </a>
+    <a href="/tip-calculator" class="related-card">
+      <div class="related-card-title">🍽️ Tip Calculator</div>
+      <div class="related-card-desc">Calculate tips and split bills with your group.</div>
+    </a>
+    <a href="/margin-calculator" class="related-card">
+      <div class="related-card-title">📈 Margin Calculator</div>
+      <div class="related-card-desc">Calculate profit margin and markup for business pricing.</div>
+    </a>
+    <a href="/loan-calculator" class="related-card">
+      <div class="related-card-title">💰 Loan Calculator</div>
+      <div class="related-card-desc">Calculate monthly payments and total interest on any loan.</div>
+    </a>
+  </div>
+</section>
+
+<!-- ── EMBED ── -->
+<div class="embed-section reveal">
+  <h3>Add This Calculator to Your Website</h3>
+  <p>Embed the sum.money discount calculator on your site. Free, responsive, always up-to-date.</p>
+  <div class="embed-code">&lt;iframe src="https://sum.money/embed/discount-calculator" width="100%" height="600"&gt;&lt;/iframe&gt;</div>
+</div>
+
+<!-- ── FAQ Accordion + Scroll Reveal scripts ── -->
+<script is:inline>
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(function(q) {
+  q.addEventListener('click', function() {
+    var item = q.parentElement;
+    var answer = item.querySelector('.faq-answer');
+    var isOpen = item.classList.contains('open');
+
+    document.querySelectorAll('.faq-item').forEach(function(fi) {
+      fi.classList.remove('open');
+      fi.querySelector('.faq-answer').style.maxHeight = '0';
+      fi.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      q.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// Scroll reveal
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+// Track related calc clicks
+document.querySelectorAll('.related-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    try {
+      var payload = { event: 'related_click', timestamp: Date.now(), target: card.getAttribute('href'), url: location.pathname };
+      if (navigator.sendBeacon) navigator.sendBeacon('/api/track', JSON.stringify(payload));
+    } catch(e) {}
+  });
+});
+</script>

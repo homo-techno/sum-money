@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import TipCalculator from '../components/TipCalculator.tsx';
+import TipCalculatorContent from '../components/TipCalculatorContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much should I tip at restaurants?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In the US, 15–20% of the pre-tax bill is standard for sit-down restaurants. 18% is the most common default. For exceptional service, 20–25%. For counter service or takeout, tipping is optional — 0–10% is typical."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I tip on the pre-tax or after-tax amount?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Either is acceptable. Technically, tipping on the pre-tax subtotal is correct since the tax goes to the government, not the server. In practice, most people tip on the total bill including tax — the difference is small."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is tipping expected outside the US?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It varies widely. In Japan, tipping can be considered rude. In most of Europe, service is included in the price — rounding up or leaving 5–10% is appreciated but not expected. In Canada and Mexico, tipping culture is similar to the US."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if the service was bad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In the US, 10% is considered the minimum even for poor service, since servers rely on tips as part of their income. If the experience was truly unacceptable, speak to the manager rather than leaving no tip."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="Tip Calculator — sum.money"
+  description="Calculate tip and split the bill. Enter your bill amount, choose a tip percentage, and split among any number of people. Free, instant, shareable."
+  schema={schema}
+>
+  <Header activeMarket="" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span>Tip Calculator
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">Tip Calculator</h1>
+    <p class="subtitle animate-in delay-2">Calculate your tip and split the bill evenly.</p>
+    <TipCalculator client:load />
+    <TipCalculatorContent />
+  </main>
+</BaseLayout>

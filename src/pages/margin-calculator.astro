@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import MarginCalculator from '../components/MarginCalculator.tsx';
+import MarginCalculatorContent from '../components/MarginCalculatorContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between margin and markup?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Margin is profit as a percentage of revenue (selling price). Markup is profit as a percentage of cost. A product that costs $45 and sells for $79 has a 43% margin but a 75.6% markup. Margin is always lower than markup for the same product."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good profit margin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It varies by industry. Grocery stores operate on 1–3% margins. Retail averages 5–10%. Software companies can achieve 60–80%. A 'good' margin means you cover all costs and have enough profit to grow. Compare within your industry, not across industries."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I convert markup to margin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Margin = Markup / (1 + Markup/100) × 100. For example, a 100% markup = 100 / (1 + 1) × 100 = 50% margin. A 50% markup = 50 / 1.5 × 100 = 33.3% margin. The calculator shows both automatically."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my margin seem low?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Margin is always lower than markup for the same product. If you're used to thinking in markup terms, the margin number will look smaller. A 100% markup (doubling the price) gives only a 50% margin. This is not a problem — it's just a different way of measuring the same profit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can margin be over 100%?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Margin is profit divided by revenue — since profit can never exceed revenue, margin caps at just under 100%. Markup, however, has no upper limit. If you sell something for 10x its cost, that's a 900% markup but a 90% margin."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="Profit Margin Calculator — sum.money"
+  description="Calculate profit margin from cost and revenue — or find the selling price from cost and markup. Understand the difference between margin and markup."
+  schema={schema}
+>
+  <Header activeMarket="" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span>Profit Margin Calculator
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">Profit Margin Calculator</h1>
+    <p class="subtitle animate-in delay-2">Calculate margin from revenue — or find the price from markup.</p>
+    <MarginCalculator client:load />
+    <MarginCalculatorContent />
+  </main>
+</BaseLayout>
