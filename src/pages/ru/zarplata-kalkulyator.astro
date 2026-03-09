@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import ZarplataCalculator from '../../components/ZarplataCalculator.tsx';
+import ZarplataContent from '../../components/ZarplataContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Как рассчитать зарплату на руки?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Из оклада (gross) вычитается НДФЛ. При окладе до 2,4 млн ₽/год ставка 13%. Пример: оклад 100 000 ₽ → НДФЛ 13 000 ₽ → на руки 87 000 ₽. Стандартные вычеты на детей уменьшают налогооблагаемую базу."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что такое gross и net зарплата?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gross (брутто) — зарплата до вычета налогов, сумма в трудовом договоре. Net (нетто) — сумма «на руки» после удержания НДФЛ. В России работодатель удерживает и перечисляет НДФЛ, поэтому работник получает net."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Сколько работодатель платит сверх зарплаты?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Работодатель платит страховые взносы: 30% от зарплаты (до предельной базы 2 225 000 ₽ в 2025 году), сверх базы — 15,1%. В взносы входят: пенсионное страхование, медицинское страхование и социальное страхование."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как перевести зарплату net в gross?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "При ставке 13%: gross = net / 0.87. Пример: хотите 100 000 ₽ на руки → gross = 100 000 / 0.87 ≈ 114 943 ₽. При прогрессивной шкале (доход > 2,4 млн ₽) расчёт сложнее — используйте наш калькулятор."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="Калькулятор зарплаты — Gross в Net и обратно — sum.money"
+  description="Рассчитайте зарплату на руки из оклада (gross → net) или наоборот. НДФЛ 2025, вычеты на детей. Бесплатно, мгновенно."
+  schema={schema}
+>
+  <Header activeMarket="RU" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span><a href="/ru">Россия</a><span>›</span>Калькулятор зарплаты
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">Калькулятор зарплаты</h1>
+    <p class="subtitle animate-in delay-2">Из оклада — на руки. Или наоборот: сколько просить gross, чтобы получить нужный net.</p>
+    <ZarplataCalculator client:load />
+    <ZarplataContent />
+  </main>
+</BaseLayout>

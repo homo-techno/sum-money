@@ -1,0 +1,192 @@
+<!-- ═══════════════════════════════════════ -->
+<!-- ZONE 2: Content below result           -->
+<!-- ═══════════════════════════════════════ -->
+
+<!-- ── HOW TO USE ── -->
+<div class="content-section reveal">
+  <div class="section-divider"></div>
+</div>
+
+<section class="content-section reveal">
+  <h2>Как пользоваться калькулятором вкладов</h2>
+
+  <h3>Вкладка «Доходность»</h3>
+  <p>Введите <strong>сумму вклада</strong>, <strong>процентную ставку</strong> и <strong>срок</strong> в месяцах. Калькулятор мгновенно покажет начисленные проценты и итоговую сумму. Выберите тип начисления — простые проценты или с капитализацией (ежемесячной). Используйте этот режим, чтобы узнать, сколько принесёт ваш вклад.</p>
+
+  <h3>Вкладка «Сравнить»</h3>
+  <p>Добавьте два или более вкладов с разными условиями — суммой, ставкой, сроком и типом капитализации. Калькулятор покажет разницу в доходности и поможет выбрать лучшее предложение. Удобно, когда вы сравниваете условия нескольких банков.</p>
+
+  <h3>Мгновенный результат</h3>
+  <p>Результаты обновляются при вводе — не нужно нажимать кнопку. Переключайтесь между вкладками, чтобы рассчитать доходность или сравнить варианты.</p>
+
+  <h3>Поделитесь результатом</h3>
+  <p>Все параметры сохраняются в URL. Нажмите <strong>«Поделиться»</strong> и отправьте ссылку — получатель увидит ваш точный расчёт. Не нужно вводить заново или делать скриншот.</p>
+</section>
+
+<!-- ── FORMULA ── -->
+<section class="content-section reveal">
+  <h2>Формула</h2>
+  <p>Доход по вкладу зависит от суммы, ставки, срока и наличия капитализации. При простом начислении проценты выплачиваются в конце срока. При капитализации проценты прибавляются к телу вклада и начисляются на увеличенную сумму.</p>
+
+  <div class="formula-box">
+    <strong>Простые проценты:</strong> Доход = Сумма &times; Ставка &times; Срок / 12<br><br>
+    <strong>С ежемесячной капитализацией:</strong> S = P &times; (1 + r/12)<sup>n</sup><br><br>
+    <em>где P — начальная сумма, r — годовая ставка (десятичная дробь), n — количество месяцев, S — итоговая сумма</em>
+  </div>
+</section>
+
+<!-- ── EXAMPLE ── -->
+<section class="content-section reveal">
+  <h2>Пример</h2>
+
+  <div class="example-box">
+    <h4>Без капитализации</h4>
+    <p>Вклад 1 000 000 ₽ под 21% годовых на 12 месяцев, проценты выплачиваются в конце срока.</p>
+
+    <div class="example-data">
+      <div class="example-row"><span class="label">Сумма вклада</span><span class="value">1 000 000 ₽</span></div>
+      <div class="example-row"><span class="label">Ставка</span><span class="value">21%</span></div>
+      <div class="example-row"><span class="label">Срок</span><span class="value">12 месяцев</span></div>
+      <div class="example-row"><span class="label">Начисленные проценты</span><span class="value">~210 000 ₽</span></div>
+      <div class="example-row"><span class="label">Итого</span><span class="value">~1 210 000 ₽</span></div>
+    </div>
+  </div>
+
+  <div class="example-box" style="margin-top: 20px;">
+    <h4>С ежемесячной капитализацией</h4>
+    <p>Те же условия — 1 000 000 ₽ под 21% на 12 месяцев, но проценты капитализируются каждый месяц.</p>
+
+    <div class="example-data">
+      <div class="example-row"><span class="label">Сумма вклада</span><span class="value">1 000 000 ₽</span></div>
+      <div class="example-row"><span class="label">Ставка</span><span class="value">21%</span></div>
+      <div class="example-row"><span class="label">Срок</span><span class="value">12 месяцев</span></div>
+      <div class="example-row"><span class="label">Начисленные проценты</span><span class="value">~231 000 ₽</span></div>
+      <div class="example-row"><span class="label">Итого</span><span class="value">~1 231 000 ₽</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="content-section reveal">
+  <h2>Часто задаваемые вопросы</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Какой налог на проценты по вкладам?
+      <span class="faq-chevron">&#9660;</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Проценты по вкладам облагаются НДФЛ по ставке 13%. Налог начисляется не на всю сумму процентов, а только на превышение необлагаемого лимита. Лимит рассчитывается как 1 000 000 ₽ &times; максимальная ключевая ставка ЦБ на 1-е число каждого месяца года. Например, при ключевой ставке 21% лимит составит 210 000 ₽ — с процентов в пределах этой суммы налог не удерживается. ФНС рассчитывает налог автоматически и присылает уведомление.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Что такое капитализация процентов?
+      <span class="faq-chevron">&#9660;</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Капитализация процентов — это присоединение начисленных процентов к основной сумме вклада. После капитализации проценты начисляются уже на увеличенную сумму, то есть работает эффект «сложного процента». Чем чаще происходит капитализация (ежемесячно, ежеквартально), тем выше итоговый доход при одинаковой номинальной ставке. Например, при вкладе 1 000 000 ₽ под 21% на год разница между простым начислением и ежемесячной капитализацией составляет около 21 000 ₽.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Какая средняя ставка по вкладам в 2025 году?
+      <span class="faq-chevron">&#9660;</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        В 2025 году средняя ставка по рублёвым вкладам в крупнейших банках составляет 20–22% годовых. Ставки зависят от ключевой ставки ЦБ РФ, срока размещения и суммы вклада. Краткосрочные вклады (3–6 месяцев) обычно предлагают чуть более высокую ставку, чем долгосрочные, так как банки ожидают снижения ключевой ставки. Актуальные предложения лучше сравнивать на сайтах банков или агрегаторах.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Застрахован ли мой вклад?
+      <span class="faq-chevron">&#9660;</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Вклады физических лиц застрахованы Агентством по страхованию вкладов (АСВ) на сумму до 1 400 000 ₽ в одном банке. Страхование покрывает сумму вклада и начисленные проценты на дату наступления страхового случая. Если у вас вклады в нескольких банках, лимит действует для каждого банка отдельно. Страхование распространяется на рублёвые и валютные вклады, а также на средства на счетах и дебетовых картах.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RELATED CALCS ── -->
+<section class="content-section reveal">
+  <h2>Похожие калькуляторы</h2>
+  <div class="related-grid">
+    <a href="/ru/kredit-kalkulyator" class="related-card">
+      <div class="related-card-title">Кредитный калькулятор</div>
+      <div class="related-card-desc">Рассчитайте ежемесячный платёж, переплату и график погашения кредита.</div>
+    </a>
+    <a href="/ru/ipoteka-kalkulyator" class="related-card">
+      <div class="related-card-title">Ипотечный калькулятор</div>
+      <div class="related-card-desc">Узнайте размер платежа по ипотеке с учётом ставки и первоначального взноса.</div>
+    </a>
+    <a href="/ru/ndfl-kalkulyator" class="related-card">
+      <div class="related-card-title">Калькулятор НДФЛ</div>
+      <div class="related-card-desc">Рассчитайте налог на доходы физических лиц и сумму на руки.</div>
+    </a>
+  </div>
+</section>
+
+<!-- ── EMBED ── -->
+<div class="embed-section reveal">
+  <h3>Добавьте калькулятор на свой сайт</h3>
+  <p>Встройте калькулятор вкладов sum.money на ваш сайт. Бесплатно, адаптивно, всегда актуально.</p>
+  <div class="embed-code">&lt;iframe src="https://sum.money/embed/ru/vklad-kalkulyator" width="100%" height="500"&gt;&lt;/iframe&gt;</div>
+</div>
+
+<!-- ── FAQ Accordion + Scroll Reveal scripts ── -->
+<script is:inline>
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(function(q) {
+  q.addEventListener('click', function() {
+    var item = q.parentElement;
+    var answer = item.querySelector('.faq-answer');
+    var isOpen = item.classList.contains('open');
+
+    document.querySelectorAll('.faq-item').forEach(function(fi) {
+      fi.classList.remove('open');
+      fi.querySelector('.faq-answer').style.maxHeight = '0';
+      fi.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      q.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// Scroll reveal
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+// Track related calc clicks
+document.querySelectorAll('.related-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    try {
+      var payload = { event: 'related_click', timestamp: Date.now(), target: card.getAttribute('href'), url: location.pathname };
+      if (navigator.sendBeacon) navigator.sendBeacon('/api/track', JSON.stringify(payload));
+    } catch(e) {}
+  });
+});
+</script>

@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import IpotekaCalculator from '../../components/IpotekaCalculator.tsx';
+import IpotekaContent from '../../components/IpotekaContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Как рассчитать ипотечный платёж?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Аннуитетный платёж рассчитывается по формуле: M = P × [r(1+r)^n] / [(1+r)^n − 1], где P — сумма кредита, r — месячная ставка, n — количество месяцев. При кредите 5 000 000 ₽ под 24% на 20 лет ежемесячный платёж составит около 101 000 ₽."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какая средняя ставка по ипотеке в 2025 году?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Средняя рыночная ставка по ипотеке в 2025 году составляет 24–28%. Льготная ипотека для семей с детьми — 6%. IT-ипотека — 5%. Дальневосточная/арктическая ипотека — 2%. Ставки зависят от ключевой ставки ЦБ РФ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "В чём разница между аннуитетным и дифференцированным платежом?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Аннуитетный — равные ежемесячные платежи на весь срок. Удобно планировать бюджет, но переплата больше. Дифференцированный — основной долг делится поровну, проценты уменьшаются. Первые платежи выше, но общая переплата меньше."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Стоит ли делать досрочное погашение ипотеки?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, если ставка по ипотеке выше доходности ваших инвестиций. Досрочное погашение в первые годы экономит больше всего — в начале срока большая часть платежа идёт на проценты. Можно уменьшить срок или платёж."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="Ипотечный калькулятор — Рассчитать ипотеку онлайн — sum.money"
+  description="Рассчитайте ипотечный платёж, узнайте максимальную сумму кредита или экономию от досрочного погашения. Аннуитетный и дифференцированный платёж."
+  schema={schema}
+>
+  <Header activeMarket="RU" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span><a href="/ru">Россия</a><span>›</span>Ипотечный калькулятор
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">Ипотечный калькулятор</h1>
+    <p class="subtitle animate-in delay-2">Рассчитайте платёж, максимальную сумму или экономию от досрочного погашения.</p>
+    <IpotekaCalculator client:load />
+    <IpotekaContent />
+  </main>
+</BaseLayout>

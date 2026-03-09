@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import NdflCalculator from '../../components/NdflCalculator.tsx';
+import NdflContent from '../../components/NdflContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Какие ставки НДФЛ действуют в 2025 году?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "С 2025 года действует прогрессивная шкала НДФЛ: 13% — до 2,4 млн ₽, 15% — от 2,4 до 5 млн ₽, 18% — от 5 до 20 млн ₽, 20% — от 20 до 50 млн ₽, 22% — свыше 50 млн ₽. Для большинства работников ставка остаётся 13%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какие стандартные вычеты на детей?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Вычет на 1-го и 2-го ребёнка — 1 400 ₽/мес, на 3-го и последующих — 3 000 ₽/мес. С 2025 года лимит дохода для вычетов увеличен до 450 000 ₽ (накопительным итогом с начала года). Вычет применяется к каждому родителю."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как платит налог самозанятый?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Самозанятые платят налог на профессиональный доход (НПД): 4% при работе с физлицами, 6% при работе с юрлицами и ИП. Максимальный доход — 2,4 млн ₽ в год. Нет страховых взносов, нет отчётности — только чеки в приложении «Мой налог»."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чем НДФЛ отличается от НПД?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "НДФЛ платят работники по трудовому договору (13–22%). НПД — режим для самозанятых (4–6%), без страховых взносов и пенсионных отчислений. НПД выгоднее по ставке, но не формирует пенсионный стаж и имеет лимит дохода 2,4 млн ₽/год."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="Калькулятор НДФЛ 2025 — Рассчитать подоходный налог — sum.money"
+  description="Рассчитайте НДФЛ с учётом прогрессивной шкалы 2025 года (13–22%). Вычеты на детей, самозанятые (НПД 4%/6%). Бесплатно, без регистрации."
+  schema={schema}
+>
+  <Header activeMarket="RU" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span><a href="/ru">Россия</a><span>›</span>Калькулятор НДФЛ
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">Калькулятор НДФЛ 2025</h1>
+    <p class="subtitle animate-in delay-2">Рассчитайте подоходный налог по прогрессивной шкале. Работник или самозанятый.</p>
+    <NdflCalculator client:load />
+    <NdflContent />
+  </main>
+</BaseLayout>

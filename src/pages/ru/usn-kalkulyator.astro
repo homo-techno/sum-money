@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import UsnCalculator from '../../components/UsnCalculator.tsx';
+import UsnContent from '../../components/UsnContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Какие ставки УСН действуют в 2025 году?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "УСН «Доходы» — 6% (8% при доходе свыше 60 млн ₽). УСН «Доходы минус расходы» — 15% (20% при доходе свыше 60 млн ₽). Минимальный налог на «Доходы минус расходы» — 1% от доходов. Предельный доход для применения УСН — 450 млн ₽."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какие страховые взносы платит ИП на УСН?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Фиксированные взносы ИП в 2025 году — 53 658 ₽. Дополнительно 1% от дохода свыше 300 000 ₽ (на УСН «Доходы минус расходы» — 1% от прибыли). Максимум общих взносов — 354 546 ₽. Взносы можно вычесть из налога."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как вычесть страховые взносы из налога УСН?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "На УСН «Доходы»: ИП без работников уменьшает налог на 100% взносов, с работниками — до 50%. На УСН «Доходы минус расходы»: взносы включаются в расходы и уменьшают налоговую базу, но не сам налог напрямую."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "УСН «Доходы» или «Доходы минус расходы» — что выбрать?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Если расходы менее 60% от доходов — выгоднее «Доходы» (6%). Если расходы более 60% — выгоднее «Доходы минус расходы» (15%). Также учитывайте: на «Доходы» проще учёт, не нужно подтверждать расходы документами."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="Калькулятор УСН 2025 — Рассчитать налог — sum.money"
+  description="Рассчитайте налог УСН «Доходы» (6%) или «Доходы минус расходы» (15%). Страховые взносы ИП, вычеты, повышенные ставки."
+  schema={schema}
+>
+  <Header activeMarket="RU" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span><a href="/ru">Россия</a><span>›</span>Калькулятор УСН
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">Калькулятор УСН 2025</h1>
+    <p class="subtitle animate-in delay-2">Рассчитайте налог на упрощёнке — «Доходы» или «Доходы минус расходы».</p>
+    <UsnCalculator client:load />
+    <UsnContent />
+  </main>
+</BaseLayout>

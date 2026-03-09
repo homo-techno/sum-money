@@ -1,0 +1,196 @@
+<!-- ═══════════════════════════════════════ -->
+<!-- ZONE 2: Content below result           -->
+<!-- ═══════════════════════════════════════ -->
+
+<!-- ── HOW TO USE ── -->
+<div class="content-section reveal">
+  <div class="section-divider"></div>
+</div>
+
+<section class="content-section reveal">
+  <h2>Как пользоваться калькулятором кредита</h2>
+
+  <h3>Основные параметры</h3>
+  <p>Введите <strong>сумму кредита</strong>, <strong>процентную ставку</strong> и <strong>срок в месяцах</strong>. Калькулятор мгновенно рассчитает ежемесячный платёж, общую сумму выплат и переплату по кредиту.</p>
+
+  <h3>Ещё параметры</h3>
+  <p>Нажмите <strong>«Ещё параметры»</strong>, чтобы переключиться между <strong>аннуитетным</strong> и <strong>дифференцированным</strong> типом платежа. По умолчанию используется аннуитетный — равные платежи каждый месяц. Дифференцированный означает уменьшающиеся платежи: тело кредита делится поровну, а проценты начисляются на остаток.</p>
+
+  <h3>Мгновенный результат</h3>
+  <p>Результат обновляется при каждом вводе — нажимать кнопку не нужно. Переключайте тип платежа, чтобы сравнить аннуитетный и дифференцированный варианты.</p>
+
+  <h3>Поделитесь результатом</h3>
+  <p>Все параметры сохраняются в ссылке. Нажмите <strong>«Поделиться»</strong> и отправьте ссылку — получатель увидит ваш расчёт. Без скриншотов и повторного ввода.</p>
+</section>
+
+<!-- ── FORMULA ── -->
+<section class="content-section reveal">
+  <h2>Формула расчёта</h2>
+  <p>Аннуитетный платёж одинаков каждый месяц. Дифференцированный — убывает, потому что проценты начисляются на уменьшающийся остаток долга.</p>
+
+  <div class="formula-box">
+    <strong>Аннуитетный платёж:</strong><br>
+    M = P &times; [r(1 + r)<sup>n</sup>] / [(1 + r)<sup>n</sup> &minus; 1]<br><br>
+    где P — сумма кредита, r — месячная ставка (годовая / 12), n — срок в месяцах.<br><br>
+    <strong>Дифференцированный платёж:</strong><br>
+    Основной долг = P / n (фиксированная часть)<br>
+    Проценты = остаток долга &times; r (убывающая часть)<br><br>
+    Каждый месяц процентная часть уменьшается, поэтому общий платёж снижается.
+  </div>
+</section>
+
+<!-- ── EXAMPLE ── -->
+<section class="content-section reveal">
+  <h2>Пример</h2>
+
+  <div class="example-box">
+    <h4>Аннуитетный платёж</h4>
+    <p>Кредит 500&nbsp;000&nbsp;&#8381; под 24% годовых на 36 месяцев, аннуитетный тип платежа.</p>
+
+    <div class="example-data">
+      <div class="example-row"><span class="label">Сумма кредита</span><span class="value">500&nbsp;000&nbsp;&#8381;</span></div>
+      <div class="example-row"><span class="label">Ставка</span><span class="value">24% годовых</span></div>
+      <div class="example-row"><span class="label">Срок</span><span class="value">36 месяцев</span></div>
+      <div class="example-row"><span class="label">Ежемесячный платёж</span><span class="value">&asymp; 19&nbsp;700&nbsp;&#8381;</span></div>
+      <div class="example-row"><span class="label">Общая сумма выплат</span><span class="value">&asymp; 710&nbsp;000&nbsp;&#8381;</span></div>
+      <div class="example-row"><span class="label">Переплата</span><span class="value">&asymp; 210&nbsp;000&nbsp;&#8381;</span></div>
+    </div>
+  </div>
+
+  <div class="example-box" style="margin-top: 20px;">
+    <h4>Дифференцированный платёж</h4>
+    <p>Те же условия: 500&nbsp;000&nbsp;&#8381; под 24% на 36 месяцев, но с дифференцированным типом.</p>
+
+    <div class="example-data">
+      <div class="example-row"><span class="label">Первый платёж</span><span class="value">&asymp; 23&nbsp;889&nbsp;&#8381;</span></div>
+      <div class="example-row"><span class="label">Последний платёж</span><span class="value">&asymp; 14&nbsp;167&nbsp;&#8381;</span></div>
+      <div class="example-row"><span class="label">Переплата</span><span class="value">&asymp; 185&nbsp;000&nbsp;&#8381;</span></div>
+    </div>
+    <p style="margin-top: 10px;">Переплата при дифференцированном платеже ниже, но первые месяцы нагрузка выше.</p>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="content-section reveal">
+  <h2>Частые вопросы</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      В чём разница аннуитетного и дифференцированного платежа?
+      <span class="faq-chevron">&#9660;</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        При <strong>аннуитетном</strong> платеже вы платите одинаковую сумму каждый месяц — это удобно для планирования бюджета, но переплата выше. При <strong>дифференцированном</strong> платеже основной долг делится поровну на весь срок, а проценты начисляются на остаток — первые платежи больше, но общая переплата меньше. Большинство банков по умолчанию предлагают аннуитетную схему.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Какая средняя ставка по потребительским кредитам?
+      <span class="faq-chevron">&#9660;</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Средняя ставка по потребительским кредитам в России составляет <strong>22–28%</strong> годовых в зависимости от банка, суммы, срока и кредитной истории заёмщика. Для зарплатных клиентов банка ставка может быть ниже на 1–3 процентных пункта. Актуальные значения можно проверить на сайте Банка России.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Как уменьшить переплату по кредиту?
+      <span class="faq-chevron">&#9660;</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Несколько способов снизить переплату: выбрать <strong>меньший срок</strong> кредита (платёж будет выше, но процентов набежит меньше), вносить <strong>досрочные погашения</strong> с уменьшением срока, выбрать <strong>дифференцированную</strong> схему платежей, а также рассмотреть <strong>рефинансирование</strong>, если ставки на рынке снизились после оформления кредита.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Можно ли досрочно погасить кредит?
+      <span class="faq-chevron">&#9660;</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Да, по российскому законодательству (ст. 11 ФЗ «О потребительском кредите») заёмщик имеет право досрочно погасить кредит <strong>без штрафов и комиссий</strong>. Достаточно уведомить банк не менее чем за 30 дней (если иной срок не указан в договоре). При досрочном погашении можно выбрать уменьшение срока или уменьшение ежемесячного платежа.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RELATED CALCS ── -->
+<section class="content-section reveal">
+  <h2>Похожие калькуляторы</h2>
+  <div class="related-grid">
+    <a href="/ru/ipoteka-kalkulyator" class="related-card">
+      <div class="related-card-title">Ипотечный калькулятор</div>
+      <div class="related-card-desc">Рассчитайте ежемесячный платёж по ипотеке, переплату и график погашения.</div>
+    </a>
+    <a href="/ru/vklad-kalkulyator" class="related-card">
+      <div class="related-card-title">Калькулятор вклада</div>
+      <div class="related-card-desc">Узнайте доход по вкладу с учётом капитализации процентов.</div>
+    </a>
+    <a href="/ru/zarplata-kalkulyator" class="related-card">
+      <div class="related-card-title">Калькулятор зарплаты</div>
+      <div class="related-card-desc">Рассчитайте зарплату на руки после вычета НДФЛ и взносов.</div>
+    </a>
+  </div>
+</section>
+
+<!-- ── EMBED ── -->
+<div class="embed-section reveal">
+  <h3>Добавьте калькулятор на свой сайт</h3>
+  <p>Встройте кредитный калькулятор sum.money на ваш сайт. Бесплатно, адаптивно, всегда актуально.</p>
+  <div class="embed-code">&lt;iframe src="https://sum.money/embed/ru/kredit-kalkulyator" width="100%" height="500"&gt;&lt;/iframe&gt;</div>
+</div>
+
+<!-- ── FAQ Accordion + Scroll Reveal scripts ── -->
+<script is:inline>
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(function(q) {
+  q.addEventListener('click', function() {
+    var item = q.parentElement;
+    var answer = item.querySelector('.faq-answer');
+    var isOpen = item.classList.contains('open');
+
+    document.querySelectorAll('.faq-item').forEach(function(fi) {
+      fi.classList.remove('open');
+      fi.querySelector('.faq-answer').style.maxHeight = '0';
+      fi.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      q.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// Scroll reveal
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+// Track related calc clicks
+document.querySelectorAll('.related-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    try {
+      var payload = { event: 'related_click', timestamp: Date.now(), target: card.getAttribute('href'), url: location.pathname };
+      if (navigator.sendBeacon) navigator.sendBeacon('/api/track', JSON.stringify(payload));
+    } catch(e) {}
+  });
+});
+</script>
