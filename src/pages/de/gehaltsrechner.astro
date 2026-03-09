@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import GehaltsrechnerCalculator from '../../components/GehaltsrechnerCalculator.tsx';
+import GehaltsrechnerContent from '../../components/GehaltsrechnerContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Warum ist mein Netto so viel weniger als mein Brutto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Von Ihrem Bruttogehalt werden Lohnsteuer, Solidaritätszuschlag (falls zutreffend), Kirchensteuer und Sozialabgaben (KV, PV, RV, AV) abgezogen. Bei €4.500 Brutto in Steuerklasse I bleiben ca. €2.830 Netto — etwa 63% des Brutto. Die größten Posten sind Einkommensteuer (~16%) und Sozialabgaben (~21%)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ändert sich bei Steuerklasse III vs. I?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Steuerklasse III nutzt das Ehegattensplitting: Ihr Einkommen wird steuerlich halbiert, besteuert und verdoppelt. Das ergibt deutlich weniger Lohnsteuer als Klasse I. Bei €4.500 Brutto zahlen Sie in Klasse III ca. €300 weniger Lohnsteuer als in Klasse I. Aber: Der Partner in Klasse V zahlt entsprechend mehr."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich den KV-Zusatzbeitrag beeinflussen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Der Zusatzbeitrag variiert je nach Krankenkasse von ca. 0,9% bis über 3%. Der Durchschnitt 2025 liegt bei 2,5%. Durch einen Kassenwechsel können Sie monatlich 20-40€ sparen. Vergleichen Sie die Zusatzbeiträge auf der Website Ihrer Kasse oder bei der GKV."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Stimmt das Ergebnis genau mit meiner Gehaltsabrechnung überein?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der Rechner liefert eine gute Näherung. Kleine Abweichungen sind möglich durch: individuelle KV-Zusatzbeiträge, VWL, betriebliche Altersvorsorge, Freibeträge auf der Lohnsteuerkarte oder Kirchensteuer-Besonderheiten Ihres Bundeslandes. Für die exakte Abrechnung ist Ihr Arbeitgeber zuständig."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="Gehaltsrechner 2025 — Brutto Netto Rechner — sum.money"
+  description="Brutto-Netto-Rechner 2025: Monatsgehalt umrechnen mit Steuerklasse, Kirchensteuer und Sozialabgaben. Oder Wunsch-Netto in Brutto umrechnen."
+  schema={schema}
+  lang="de"
+>
+  <Header activeMarket="DE" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span><a href="/de">DE</a><span>›</span>Gehaltsrechner
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">Gehaltsrechner 2025</h1>
+    <p class="subtitle animate-in delay-2">Brutto in Netto umrechnen — oder Wunsch-Netto in Brutto.</p>
+    <GehaltsrechnerCalculator client:load />
+    <GehaltsrechnerContent />
+  </main>
+</BaseLayout>

@@ -1,0 +1,214 @@
+<!-- ═══════════════════════════════════════ -->
+<!-- ZONE 2: Content below result           -->
+<!-- ═══════════════════════════════════════ -->
+
+<div class="content-section reveal">
+  <div class="section-divider"></div>
+</div>
+
+<!-- ── SO NUTZEN SIE DIESEN RECHNER ── -->
+<section class="content-section reveal">
+  <h2>So nutzen Sie diesen Rechner</h2>
+
+  <h3>Brutto &rarr; Netto</h3>
+  <p>Geben Sie Ihr <strong>Monatsbrutto</strong> und Ihre <strong>Steuerklasse</strong> ein &mdash; der Rechner zeigt sofort Ihr Nettoeinkommen. Unter <strong>&bdquo;Weitere Optionen&ldquo;</strong> k&ouml;nnen Sie zus&auml;tzlich Kirchensteuer, Kinderfreibetr&auml;ge und den KV-Zusatzbeitrag anpassen.</p>
+
+  <h3>Netto &rarr; Brutto</h3>
+  <p>Geben Sie Ihr <strong>Wunsch-Netto</strong> ein und der Rechner ermittelt das daf&uuml;r ben&ouml;tigte Bruttogehalt. Ideal f&uuml;r <strong>Gehaltsverhandlungen</strong> &mdash; so wissen Sie genau, welches Brutto Sie fordern m&uuml;ssen.</p>
+
+  <h3>Ergebnis teilen</h3>
+  <p>Alle Eingaben sind in der URL kodiert. Klicken Sie auf <strong>Teilen</strong> und senden Sie den Link &mdash; Ihr Gegen&uuml;ber sieht exakt Ihre Zahlen.</p>
+</section>
+
+<!-- ── DIE FORMEL ── -->
+<section class="content-section reveal">
+  <h2>Die Formel</h2>
+  <p>Das monatliche Nettogehalt ergibt sich aus dem Bruttogehalt abz&uuml;glich aller gesetzlichen Abz&uuml;ge:</p>
+  <div class="formula-box">
+    Monatliches Netto = Brutto &minus; Lohnsteuer &minus; Soli &minus; KiSt &minus; Sozialversicherung
+  </div>
+
+  <h3>Lohnsteuer</h3>
+  <p>Die Lohnsteuer wird aus der <strong>Jahres-Einkommensteuer</strong> abgeleitet und auf 12 Monate verteilt. Die Berechnung folgt &sect;32a EStG und ber&uuml;cksichtigt die jeweilige <strong>Steuerklasse</strong>. Der Solidarit&auml;tszuschlag (5,5% der Lohnsteuer) f&auml;llt erst ab einer Freigrenze an; bei den meisten Arbeitnehmern betr&auml;gt er 0&nbsp;&euro;.</p>
+  <div class="formula-box">
+    Lohnsteuer &asymp; Jahres-ESt / 12 (gem&auml;&szlig; &sect;32a EStG + Steuerklasse)
+  </div>
+
+  <h3>Sozialversicherung</h3>
+  <p>Die Sozialversicherungsbeitr&auml;ge setzen sich aus vier Zweigen zusammen (Arbeitnehmeranteil):</p>
+  <ul>
+    <li><strong>Krankenversicherung (KV)</strong> &mdash; 7,3% + individueller Zusatzbeitrag (ca. 0,8&ndash;1,7%), Beitragsbemessungsgrenze: 5.175&nbsp;&euro;/Monat</li>
+    <li><strong>Pflegeversicherung (PV)</strong> &mdash; 1,7% (kinderlos ab 23: +0,6% Zuschlag), Beitragsbemessungsgrenze: 5.175&nbsp;&euro;/Monat</li>
+    <li><strong>Rentenversicherung (RV)</strong> &mdash; 9,3%, Beitragsbemessungsgrenze: 7.550&nbsp;&euro;/Monat (West)</li>
+    <li><strong>Arbeitslosenversicherung (AV)</strong> &mdash; 1,3%, Beitragsbemessungsgrenze: 7.550&nbsp;&euro;/Monat (West)</li>
+  </ul>
+
+  <h3>Netto &rarr; Brutto</h3>
+  <p>Die R&uuml;ckrechnung vom Wunsch-Netto zum ben&ouml;tigten Brutto ist nicht direkt m&ouml;glich, da die Abz&uuml;ge vom Brutto abh&auml;ngen. Der Rechner verwendet daher ein <strong>Bisektionsverfahren</strong> (iterative Ann&auml;herung), um das passende Brutto zu ermitteln.</p>
+</section>
+
+<!-- ── BEISPIEL ── -->
+<section class="content-section reveal">
+  <h2>Beispiel</h2>
+
+  <div class="example-box">
+    <h4>Beispiel 1: Thomas &mdash; Brutto &rarr; Netto</h4>
+    <p>Thomas verdient 4.500&nbsp;&euro; brutto im Monat, Steuerklasse&nbsp;I, keine Kinder, keine Kirchensteuer.</p>
+
+    <h3>Brutto &rarr; Netto</h3>
+    <div class="example-data">
+      <div class="example-row"><span class="label">Monatsbrutto</span><span class="value">4.500 &euro;</span></div>
+      <div class="example-row"><span class="label">Steuerklasse</span><span class="value">I</span></div>
+      <div class="example-row"><span class="label">Lohnsteuer</span><span class="value">~730 &euro;</span></div>
+      <div class="example-row"><span class="label">Solidarit&auml;tszuschlag</span><span class="value">0 &euro;</span></div>
+      <div class="example-row"><span class="label">Krankenversicherung</span><span class="value">~384 &euro;</span></div>
+      <div class="example-row"><span class="label">Pflegeversicherung</span><span class="value">~81 &euro;</span></div>
+      <div class="example-row"><span class="label">Rentenversicherung</span><span class="value">~419 &euro;</span></div>
+      <div class="example-row"><span class="label">Arbeitslosenversicherung</span><span class="value">~59 &euro;</span></div>
+      <div class="example-row"><span class="label">Monatliches Netto</span><span class="value">~2.828 &euro;</span></div>
+    </div>
+    <p>Von 4.500&nbsp;&euro; brutto bleiben Thomas nach allen Abz&uuml;gen rund 2.828&nbsp;&euro; netto &uuml;brig &mdash; das entspricht etwa 63% des Bruttogehalts.</p>
+
+    <h4>Beispiel 2: Anna &mdash; Netto &rarr; Brutto</h4>
+    <p>Anna m&ouml;chte 3.000&nbsp;&euro; netto im Monat verdienen und nutzt den Netto-&rarr;-Brutto-Tab, Steuerklasse&nbsp;I.</p>
+
+    <h3>Netto &rarr; Brutto</h3>
+    <div class="example-data">
+      <div class="example-row"><span class="label">Wunsch-Netto</span><span class="value">3.000 &euro;</span></div>
+      <div class="example-row"><span class="label">Steuerklasse</span><span class="value">I</span></div>
+      <div class="example-row"><span class="label">Ben&ouml;tigtes Brutto</span><span class="value">~4.780 &euro;</span></div>
+      <div class="example-row"><span class="label">Lohnsteuer</span><span class="value">~800 &euro;</span></div>
+      <div class="example-row"><span class="label">Solidarit&auml;tszuschlag</span><span class="value">0 &euro;</span></div>
+      <div class="example-row"><span class="label">Krankenversicherung</span><span class="value">~408 &euro;</span></div>
+      <div class="example-row"><span class="label">Pflegeversicherung</span><span class="value">~86 &euro;</span></div>
+      <div class="example-row"><span class="label">Rentenversicherung</span><span class="value">~445 &euro;</span></div>
+      <div class="example-row"><span class="label">Arbeitslosenversicherung</span><span class="value">~62 &euro;</span></div>
+    </div>
+    <p>F&uuml;r 3.000&nbsp;&euro; netto muss Anna ein Bruttogehalt von rund 4.780&nbsp;&euro; verhandeln. Das ist die Zahl, die sie im Vorstellungsgespr&auml;ch nennen sollte.</p>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="content-section reveal">
+  <h2>H&auml;ufige Fragen</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Warum ist mein Netto so viel weniger als mein Brutto?
+      <span class="faq-chevron">&#9660;</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        In Deutschland werden vom Bruttogehalt sowohl Steuern (Lohnsteuer, ggf. Soli und Kirchensteuer) als auch Sozialversicherungsbeitr&auml;ge (Kranken-, Pflege-, Renten- und Arbeitslosenversicherung) abgezogen. Der Arbeitnehmeranteil der Sozialversicherung allein betr&auml;gt rund 20% des Bruttos. Zusammen mit der Lohnsteuer bleiben typischerweise nur 55&ndash;70% des Bruttogehalts als Netto &uuml;brig &mdash; je nach Steuerklasse und H&ouml;he des Einkommens.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Was &auml;ndert sich bei Steuerklasse III vs. I?
+      <span class="faq-chevron">&#9660;</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Steuerklasse&nbsp;III hat deutlich h&ouml;here Freibetr&auml;ge als Steuerklasse&nbsp;I. Dadurch f&auml;llt die monatliche Lohnsteuer wesentlich niedriger aus, und das Netto steigt sp&uuml;rbar. Steuerklasse&nbsp;III ist typischerweise f&uuml;r Verheiratete gedacht, bei denen ein Partner deutlich mehr verdient (der andere w&auml;hlt dann Steuerklasse&nbsp;V). Wichtig: Die Steuerklasse beeinflusst nur die monatliche Vorauszahlung &mdash; die tats&auml;chliche j&auml;hrliche Steuerlast wird &uuml;ber die Steuererkl&auml;rung ausgeglichen.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Kann ich den KV-Zusatzbeitrag beeinflussen?
+      <span class="faq-chevron">&#9660;</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Ja. Der KV-Zusatzbeitrag wird von jeder Krankenkasse individuell festgelegt und variiert zwischen ca. 0,8% und 1,7%. Sie k&ouml;nnen Ihre Krankenkasse wechseln, um von einem niedrigeren Zusatzbeitrag zu profitieren. Die Grundleistungen sind bei allen gesetzlichen Krankenkassen gleich &mdash; Unterschiede gibt es vor allem bei Zusatzleistungen und Service. Ein Wechsel ist mit einer K&uuml;ndigungsfrist von zwei Monaten zum Monatsende m&ouml;glich.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      Stimmt das Ergebnis genau mit meiner Gehaltsabrechnung &uuml;berein?
+      <span class="faq-chevron">&#9660;</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Der Rechner liefert eine sehr gute N&auml;herung, kann aber geringf&uuml;gig von Ihrer tats&auml;chlichen Gehaltsabrechnung abweichen. Gr&uuml;nde daf&uuml;r sind unter anderem: geldwerte Vorteile (z.B. Firmenwagen), betriebliche Altersvorsorge, verm&ouml;genswirksame Leistungen, individuelle Freibetr&auml;ge auf der Lohnsteuerkarte oder ein abweichender KV-Zusatzbeitrag. F&uuml;r eine exakte Berechnung wenden Sie sich an Ihren Steuerberater oder Ihre Personalabteilung.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VERWANDTE RECHNER ── -->
+<section class="content-section reveal">
+  <h2>Verwandte Rechner</h2>
+  <div class="related-grid">
+    <a href="/de/einkommensteuerrechner" class="related-card">
+      <div class="related-card-title">&#128203; Einkommensteuerrechner</div>
+      <div class="related-card-desc">J&auml;hrliche Steuerlast berechnen.</div>
+    </a>
+    <a href="/de/hypothekenrechner" class="related-card">
+      <div class="related-card-title">&#127968; Hypothekenrechner</div>
+      <div class="related-card-desc">Maximalen Kaufpreis berechnen.</div>
+    </a>
+    <a href="/de/kreditrechner" class="related-card">
+      <div class="related-card-title">&#128179; Kreditrechner</div>
+      <div class="related-card-desc">Rate und Zinskosten berechnen.</div>
+    </a>
+  </div>
+</section>
+
+<!-- ── EMBED ── -->
+<div class="embed-section reveal">
+  <h3>Diesen Rechner auf Ihrer Website einbinden</h3>
+  <p>Binden Sie den sum.money Gehaltsrechner auf Ihrer Seite ein. Kostenlos, responsiv, immer aktuell.</p>
+  <div class="embed-code">&lt;iframe src="https://sum.money/embed/de/gehaltsrechner" width="100%" height="600"&gt;&lt;/iframe&gt;</div>
+</div>
+
+<!-- ── FAQ Accordion + Scroll Reveal scripts ── -->
+<script is:inline>
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(function(q) {
+  q.addEventListener('click', function() {
+    var item = q.parentElement;
+    var answer = item.querySelector('.faq-answer');
+    var isOpen = item.classList.contains('open');
+
+    document.querySelectorAll('.faq-item').forEach(function(fi) {
+      fi.classList.remove('open');
+      fi.querySelector('.faq-answer').style.maxHeight = '0';
+      fi.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      q.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// Scroll reveal
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+// Track related calc clicks
+document.querySelectorAll('.related-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    try {
+      var payload = { event: 'related_click', timestamp: Date.now(), target: card.getAttribute('href'), url: location.pathname };
+      if (navigator.sendBeacon) navigator.sendBeacon('/api/track', JSON.stringify(payload));
+    } catch(e) {}
+  });
+});
+</script>

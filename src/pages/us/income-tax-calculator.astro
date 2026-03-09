@@ -50,11 +50,17 @@ const schema = {
     }
   ]
 };
+
+const alternates = [
+  { hreflang: 'en-us', href: 'https://sum.money/us/income-tax-calculator' },
+  { hreflang: 'de-de', href: 'https://sum.money/de/einkommensteuerrechner' },
+];
 ---
 <BaseLayout
   title="US Income Tax Calculator 2025 — sum.money"
   description="Calculate your 2025 federal income tax, take-home pay, and effective rate. Employee and self-employed. Updated for tax year 2025. Free, no registration."
   schema={schema}
+  alternates={alternates}
 >
   <Header activeMarket="US" />
   <div class="breadcrumbs animate-in">

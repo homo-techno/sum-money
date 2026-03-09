@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import KreditrechnerCalculator from '../../components/KreditrechnerCalculator.tsx';
+import KreditrechnerContent from '../../components/KreditrechnerContent.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was ist der Unterschied zwischen Sollzins und Effektivzins?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der Sollzins ist der reine Darlehenszins ohne Nebenkosten. Der Effektivzins (effektiver Jahreszins) berücksichtigt zusätzlich Bearbeitungsgebühren und andere Kreditkosten. Vergleichen Sie Kreditangebote immer anhand des Effektivzinses — er zeigt die tatsächlichen Kosten."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich diesen Rechner für jeden Kredit verwenden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja — er funktioniert für Ratenkredite, Autokredite, Konsumkredite und andere Darlehen mit fester Laufzeit und gleichbleibender Rate. Für Immobilienfinanzierungen nutzen Sie unseren Hypothekenrechner, der zusätzlich Zinsbindung und Sondertilgung berücksichtigt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warum spart eine kürzere Laufzeit Geld?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bei kürzerer Laufzeit zahlen Sie weniger Monate lang Zinsen und die Restschuld sinkt schneller. Ein €15.000-Kredit bei 5,5% kostet über 48 Monate €1.757 Zinsen, über 36 Monate nur €1.307 — eine Ersparnis von €450. Die monatliche Rate ist höher, aber die Gesamtkosten sind niedriger."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist eine Bearbeitungsgebühr?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eine einmalige Gebühr, die manche Banken für die Kreditbearbeitung erheben. Sie wird vom Kreditbetrag abgezogen oder aufgeschlagen. Seit 2014 sind Bearbeitungsgebühren bei Verbraucherkrediten in Deutschland weitgehend unzulässig — prüfen Sie Ihren Vertrag. Der Rechner zeigt, wie sich eine Gebühr auf den Effektivzins auswirkt."
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="Kreditrechner — sum.money"
+  description="Kreditrate berechnen: Monatliche Rate, Gesamtkosten und effektiver Jahreszins für jeden Ratenkredit. Kostenlos, sofort, teilbar."
+  schema={schema}
+  lang="de"
+>
+  <Header activeMarket="DE" />
+  <div class="breadcrumbs animate-in">
+    <a href="/">Home</a><span>›</span><a href="/de">DE</a><span>›</span>Kreditrechner
+  </div>
+  <main>
+    <h1 class="animate-in delay-1">Kreditrechner</h1>
+    <p class="subtitle animate-in delay-2">Monatliche Rate und Gesamtkosten für Ihren Kredit berechnen.</p>
+    <KreditrechnerCalculator client:load />
+    <KreditrechnerContent />
+  </main>
+</BaseLayout>
